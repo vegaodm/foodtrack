@@ -302,8 +302,8 @@
             <p>
               Create it yourself: <strong>Settings → Categories → +</strong>. Enter the per-100 g
               values from the package; only the name is required. You can also tap
-              <strong>Ask a local model</strong> in the food picker, then paste the model's JSON
-              reply back, or import a CSV/JSON file from
+              <strong>Ask an AI</strong> in the food picker, then paste the reply back, or import a
+              CSV/JSON file from
               <strong>Settings → Categories → Import food library</strong>.
             </p>
           </div>
@@ -403,14 +403,20 @@
         </details>
 
         <details>
-          <summary>The local model lookup does nothing. How do I set it up?</summary>
+          <summary>How do I set up AI lookup?</summary>
           <div class="body">
             <p>
-              Open <strong>Settings → Local model</strong> and enter the URL your model app accepts,
-              keeping <code>{prompt}</code> where the question belongs. The default is
-              <code>localgemma://ask?q={prompt}</code>. If the app is not installed, iOS cannot open
-              the URL and Spendly Food Track tells you so. You can always enter nutrition manually
-              or paste a model reply.
+              Open <strong>Settings → AI lookup</strong> and choose a service: ChatGPT (the default),
+              Claude, Perplexity, Microsoft Copilot, Brave Search, LocalGemma, or a custom URL. In
+              the meal form, tap <strong>Estimate with AI</strong>, check the question, then
+              <strong>Copy question</strong> or <strong>Open the AI</strong>. Paste the answer back
+              and tap <strong>Read reply</strong>.
+            </p>
+            <p>
+              Spendly Food Track sends nothing itself and stores no API key. An online service
+              receives the question under its own privacy policy; a local model keeps it on the
+              device. If a service does not open, copy the question instead, or point the custom URL
+              at an app you have installed.
             </p>
           </div>
         </details>
@@ -541,8 +547,8 @@
             <p>
               Lege es selbst an: <strong>Einstellungen → Kategorien → +</strong>. Trage die Werte pro
               100 g von der Verpackung ein; nur der Name ist Pflicht. Alternativ kannst du im
-              Lebensmittel-Auswahlfenster <strong>Lokales Modell fragen</strong> nutzen und die
-              JSON-Antwort einfügen oder unter
+              Lebensmittel-Auswahlfenster <strong>KI fragen</strong> nutzen und die Antwort
+              einfügen oder unter
               <strong>Einstellungen → Kategorien → Lebensmittelbibliothek importieren</strong> eine
               CSV-/JSON-Datei laden.
             </p>
@@ -647,14 +653,20 @@
         </details>
 
         <details>
-          <summary>Die Abfrage beim lokalen Modell tut nichts. Wie richte ich sie ein?</summary>
+          <summary>Wie richte ich die KI-Abfrage ein?</summary>
           <div class="body">
             <p>
-              Öffne <strong>Einstellungen → Lokales Modell</strong> und trage die URL ein, die deine
-              Modell-App akzeptiert; <code>{prompt}</code> bleibt an der Stelle der Frage. Standard
-              ist <code>localgemma://ask?q={prompt}</code>. Ist die App nicht installiert, kann iOS
-              die URL nicht öffnen und Spendly Food Track weist darauf hin. Nährwerte kannst du
-              jederzeit manuell eintragen oder eine Antwort einfügen.
+              Öffne <strong>Einstellungen → KI-Abfrage</strong> und wähle einen Dienst: ChatGPT
+              (Standard), Claude, Perplexity, Microsoft Copilot, Brave Search, LocalGemma oder eine
+              eigene URL. Tippe im Mahlzeiten-Formular auf <strong>Mit KI schätzen</strong>, prüfe
+              die Frage und dann <strong>Frage kopieren</strong> oder <strong>KI öffnen</strong>.
+              Füge die Antwort ein und tippe auf <strong>Antwort lesen</strong>.
+            </p>
+            <p>
+              Spendly Food Track sendet nichts selbst und speichert keinen API-Schlüssel. Ein
+              Online-Dienst erhält die Frage nach seiner eigenen Datenschutzerklärung; ein lokales
+              Modell behält sie auf dem Gerät. Öffnet ein Dienst nicht, kopiere die Frage oder
+              hinterlege im eigenen URL-Feld eine installierte App.
             </p>
           </div>
         </details>
@@ -787,8 +799,8 @@
             <p>
               Créez-le : <strong>Réglages → Catégories → +</strong>. Saisissez les valeurs pour
               100 g indiquées sur l'emballage ; seul le nom est obligatoire. Vous pouvez aussi
-              toucher <strong>Interroger le modèle local</strong> dans le sélecteur d'aliments puis
-              coller la réponse JSON, ou importer un fichier CSV/JSON depuis
+              toucher <strong>Interroger une IA</strong> dans le sélecteur d'aliments puis coller la
+              réponse, ou importer un fichier CSV/JSON depuis
               <strong>Réglages → Catégories → Importer la bibliothèque</strong>.
             </p>
           </div>
@@ -892,14 +904,21 @@
         </details>
 
         <details>
-          <summary>La recherche par modèle local ne fait rien. Comment la configurer ?</summary>
+          <summary>Comment configurer la recherche IA ?</summary>
           <div class="body">
             <p>
-              Ouvrez <strong>Réglages → Modèle local</strong> et saisissez l'URL acceptée par votre
-              app de modèle, en gardant <code>{prompt}</code> à la place de la question. La valeur par
-              défaut est <code>localgemma://ask?q={prompt}</code>. Si l'app n'est pas installée, iOS
-              ne peut pas ouvrir l'URL et Spendly Food Track vous le signale. Vous pouvez toujours
-              saisir les valeurs manuellement ou coller une réponse.
+              Ouvrez <strong>Réglages → Recherche IA</strong> et choisissez un service : ChatGPT
+              (par défaut), Claude, Perplexity, Microsoft Copilot, Brave Search, LocalGemma ou une URL
+              personnalisée. Dans le formulaire de repas, touchez <strong>Estimer avec l'IA</strong>,
+              vérifiez la question, puis <strong>Copier la question</strong> ou
+              <strong>Ouvrir l'IA</strong>. Collez la réponse et touchez
+              <strong>Lire la réponse</strong>.
+            </p>
+            <p>
+              Spendly Food Track n'envoie rien lui-même et ne stocke aucune clé API. Un service en
+              ligne reçoit la question selon sa propre politique de confidentialité ; un modèle
+              local la garde sur l'appareil. Si un service ne s'ouvre pas, copiez la question ou
+              indiquez dans l'URL personnalisée une app installée.
             </p>
           </div>
         </details>

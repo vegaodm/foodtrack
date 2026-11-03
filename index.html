@@ -214,7 +214,7 @@
           <li><strong>No account.</strong> The app works fully offline and never asks for an email address.</li>
           <li><strong>No tracking.</strong> No analytics, advertising identifiers, crash-reporting SDKs or cross-app tracking.</li>
           <li><strong>No collection.</strong> The developer does not receive or store any of your data on a server.</li>
-          <li><strong>No sharing.</strong> Nothing leaves the device unless you export a file yourself.</li>
+          <li><strong>No sharing.</strong> Nothing leaves the device unless you export a file or explicitly hand a question to an AI service you chose.</li>
           <li><strong>Purchases through Apple.</strong> The app learns only whether Lifetime Membership is owned; it never sees payment details.</li>
         </ul>
       </div>
@@ -284,17 +284,20 @@
         <li>No location, contacts, calendars, health, motion or notification permissions are requested.</li>
       </ul>
 
-      <h2>Local model handoff</h2>
+      <h2>AI lookup</h2>
       <p>
-        Settings contains a configurable URL template (by default <code>localgemma://ask?q={prompt}</code>).
-        When you tap “Ask the local model”, the app opens that URL in the app you configured with a
-        question about the food you are entering. The question contains the food name and the list
-        of nutrient fields being requested. Nothing is sent to a server by Spendly Food Track, and
-        no reply is received automatically: you copy the answer back yourself.
+        Settings lets you choose where a nutrition question goes: ChatGPT, Claude, Perplexity,
+        Microsoft Copilot, Brave Search, a local model such as LocalGemma, or a custom URL. When you
+        tap “Open the AI”, the app opens that service — a website in your browser, or an installed
+        app through its own URL scheme — with a question about the food and portion you are entering.
+        The question contains the food name, the grams and the nutrient fields being requested.
       </p>
       <p>
-        What the other app does with that question is governed by its own privacy policy. If it is
-        a local model running on your device, the question does not leave the device either.
+        Spendly Food Track itself sends nothing, stores no API key and never receives a reply
+        automatically: you copy the question into any AI, then paste the answer back yourself. If you
+        choose an online service, that service receives the question and its own privacy policy
+        applies; do not put sensitive personal information into a food name or note. If you choose
+        LocalGemma or another on-device model, the question stays on your device.
       </p>
 
       <h2>Purchases</h2>
@@ -382,7 +385,7 @@
           <li><strong>Kein Konto.</strong> Die App funktioniert vollständig offline und fragt nie nach einer E-Mail-Adresse.</li>
           <li><strong>Kein Tracking.</strong> Keine Analyse, keine Werbe-IDs, keine Crash-Reporting-SDKs, kein app-übergreifendes Tracking.</li>
           <li><strong>Keine Erhebung.</strong> Der Entwickler erhält und speichert deine Daten nicht auf einem Server.</li>
-          <li><strong>Keine Weitergabe.</strong> Nichts verlässt das Gerät, außer du exportierst selbst eine Datei.</li>
+          <li><strong>Keine Weitergabe.</strong> Nichts verlässt das Gerät, außer du exportierst eine Datei oder übergibst eine Frage ausdrücklich einem von dir gewählten KI-Dienst.</li>
           <li><strong>Käufe über Apple.</strong> Die App erfährt nur, ob die Lifetime-Mitgliedschaft vorhanden ist – nie Zahlungsdaten.</li>
         </ul>
       </div>
@@ -451,18 +454,20 @@
         <li>Standort, Kontakte, Kalender, Gesundheit, Bewegung und Mitteilungen werden nicht angefragt.</li>
       </ul>
 
-      <h2>Übergabe an das lokale Modell</h2>
+      <h2>KI-Abfrage</h2>
       <p>
-        In den Einstellungen steht eine anpassbare URL-Vorlage (standardmäßig
-        <code>localgemma://ask?q={prompt}</code>). Tippst du auf „Lokales Modell fragen“, öffnet die
-        App diese URL in der von dir gewählten App – mit einer Frage zum eingegebenen Lebensmittel.
-        Die Frage enthält den Namen und die Liste der gewünschten Nährstofffelder. Spendly Food
-        Track sendet nichts an einen Server und erhält keine automatische Antwort: Du kopierst die
-        Antwort selbst zurück.
+        In den Einstellungen wählst du, wohin eine Nährwertfrage geht: ChatGPT, Claude, Perplexity,
+        Microsoft Copilot, Brave Search, ein lokales Modell wie LocalGemma oder eine eigene URL.
+        Tippst du auf „KI öffnen“, öffnet die App diesen Dienst – eine Website im Browser oder eine
+        installierte App über ihr URL-Schema – mit einer Frage zum eingegebenen Lebensmittel und zur
+        Portion. Die Frage enthält Name, Grammzahl und die gewünschten Nährstofffelder.
       </p>
       <p>
-        Was die andere App mit der Frage macht, regelt deren eigene Datenschutzerklärung. Läuft dort
-        ein lokales Modell auf deinem Gerät, verlässt auch die Frage das Gerät nicht.
+        Spendly Food Track selbst sendet nichts, speichert keinen API-Schlüssel und erhält keine
+        Antwort automatisch: Du kopierst die Frage in eine beliebige KI und fügst die Antwort selbst
+        ein. Bei einem Online-Dienst erhält dieser die Frage; es gilt seine Datenschutzerklärung.
+        Schreibe keine sensiblen persönlichen Daten in Lebensmittelnamen oder Notizen. Bei LocalGemma
+        oder einem anderen lokalen Modell bleibt die Frage auf deinem Gerät.
       </p>
 
       <h2>Käufe</h2>
@@ -553,7 +558,7 @@
           <li><strong>Aucun compte.</strong> L'app fonctionne entièrement hors ligne et ne demande jamais d'adresse e-mail.</li>
           <li><strong>Aucun suivi.</strong> Ni analyse, ni identifiant publicitaire, ni SDK de rapport de plantage, ni suivi entre apps.</li>
           <li><strong>Aucune collecte.</strong> Le développeur ne reçoit ni ne stocke vos données sur un serveur.</li>
-          <li><strong>Aucun partage.</strong> Rien ne quitte l'appareil, sauf si vous exportez vous-même un fichier.</li>
+          <li><strong>Aucun partage.</strong> Rien ne quitte l'appareil, sauf si vous exportez un fichier ou confiez explicitement une question à un service d'IA que vous avez choisi.</li>
           <li><strong>Achats via Apple.</strong> L'app sait seulement si l'adhésion à vie est détenue ; elle ne voit jamais les données de paiement.</li>
         </ul>
       </div>
@@ -622,19 +627,21 @@
         <li>Aucune autorisation de localisation, contacts, calendrier, santé, mouvement ou notification n'est demandée.</li>
       </ul>
 
-      <h2>Passage au modèle local</h2>
+      <h2>Recherche IA</h2>
       <p>
-        Les Réglages contiennent un modèle d'URL modifiable (par défaut
-        <code>localgemma://ask?q={prompt}</code>). Quand vous touchez « Interroger le modèle local »,
-        l'app ouvre cette URL dans l'app configurée avec une question sur l'aliment saisi. La
-        question contient le nom de l'aliment et la liste des champs de nutriments demandés. Spendly
-        Food Track n'envoie rien à un serveur et ne reçoit aucune réponse automatique : vous copiez
-        la réponse vous-même.
+        Les Réglages déterminent où va une question nutritionnelle : ChatGPT, Claude, Perplexity,
+        Microsoft Copilot, Brave Search, un modèle local comme LocalGemma, ou une URL personnalisée.
+        Quand vous touchez « Ouvrir l'IA », l'app ouvre ce service — un site web dans votre
+        navigateur, ou une app installée via son schéma d'URL — avec une question sur l'aliment et la
+        portion saisis. La question contient le nom, les grammes et les champs de nutriments demandés.
       </p>
       <p>
-        Ce que l'autre app fait de cette question relève de sa propre politique de confidentialité.
-        S'il s'agit d'un modèle local exécuté sur votre appareil, la question ne quitte pas non plus
-        l'appareil.
+        Spendly Food Track n'envoie rien lui-même, ne stocke aucune clé API et ne reçoit jamais de
+        réponse automatiquement : vous copiez la question dans n'importe quelle IA, puis vous collez
+        la réponse vous-même. Avec un service en ligne, celui-ci reçoit la question et sa propre
+        politique de confidentialité s'applique ; n'inscrivez pas de données personnelles sensibles
+        dans un nom d'aliment ou une note. Avec LocalGemma ou un autre modèle local, la question reste
+        sur votre appareil.
       </p>
 
       <h2>Achats</h2>
