@@ -1,1380 +1,1042 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="index">
-<meta name="theme-color" content="#4f46e5">
-<title>Support · SleepHabit</title>
-<meta name="description" content="Help with SleepHabit: logging nights, understanding insights, the one-time unlock, backups, reminders and how to reach us.">
-<style>
-  :root {
-    color-scheme: light dark;
-    --bg: #f7f7fb;
-    --card: #ffffff;
-    --ink: #16161d;
-    --muted: #5c5c6e;
-    --line: #e4e4ee;
-    --accent: #4f46e5;
-    --accent-soft: #eef0ff;
-    --code: #f2f2f7;
-  }
-  @media (prefers-color-scheme: dark) {
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — Spendly Food Track</title>
+  <meta name="description" content="Support for Spendly Food Track: how to record a meal, add foods, manage goals and backups, restore a purchase, and reach the developer.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F08A3C">
+  <link rel="canonical" href="https://vegaodm.github.io/foodtrack/support.html">
+  <style>
     :root {
-      --bg: #0f0f14;
-      --card: #17171f;
-      --ink: #f2f2f7;
-      --muted: #a1a1b3;
-      --line: #2a2a36;
-      --accent: #a5b4fc;
-      --accent-soft: #1e1e2e;
-      --code: #20202b;
+      --accent: #e07a2b;
+      --accent-soft: rgba(240, 138, 60, 0.14);
+      --bg: #f6f5f2;
+      --surface: #ffffff;
+      --surface-2: #fbfaf8;
+      --text: #1c1b19;
+      --muted: #6b675f;
+      --line: rgba(28, 27, 25, 0.10);
+      --radius: 18px;
+      --max: 820px;
+      --shadow: 0 1px 2px rgba(28, 27, 25, 0.04), 0 12px 32px rgba(28, 27, 25, 0.06);
     }
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    padding: 0 20px 64px;
-  }
-  .wrap { max-width: 780px; margin: 0 auto; }
-  header.site {
-    display: flex; flex-wrap: wrap; gap: 12px;
-    align-items: center; justify-content: space-between;
-    padding: 22px 0 18px; border-bottom: 1px solid var(--line); margin-bottom: 28px;
-  }
-  .brand { display: flex; align-items: center; gap: 10px; font-weight: 650; letter-spacing: -0.01em; }
-  .brand svg { width: 22px; height: 22px; color: var(--accent); }
-  nav.top { display: flex; gap: 6px; flex-wrap: wrap; }
-  nav.top a {
-    color: var(--muted); text-decoration: none; font-size: 14px;
-    padding: 6px 11px; border-radius: 999px; border: 1px solid var(--line);
-  }
-  nav.top a:hover, nav.top a:focus-visible { color: var(--ink); border-color: var(--accent); }
-  nav.top a[aria-current="page"] { color: var(--accent); border-color: var(--accent); }
-  .navrow { display: flex; gap: 6px 8px; flex-wrap: wrap; align-items: center; }
-  .langs { display: flex; gap: 6px; flex-wrap: wrap; }
-  .langs button {
-    font: inherit; font-size: 13px; color: var(--muted); background: transparent;
-    padding: 6px 11px; border-radius: 999px; border: 1px solid var(--line);
-    cursor: pointer; -webkit-appearance: none; appearance: none;
-  }
-  .langs button:hover, .langs button:focus-visible { color: var(--ink); border-color: var(--accent); }
-  .langs button[aria-pressed="true"] {
-    color: var(--accent); border-color: var(--accent); background: var(--accent-soft);
-  }
-  [hidden] { display: none !important; }
-  h1 { font-size: 1.9rem; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 10px; }
-  .meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 26px; }
-  h2 { font-size: 1.18rem; letter-spacing: -0.01em; margin: 40px 0 6px; }
-  p, li { color: var(--ink); }
-  ul, ol { padding-left: 22px; }
-  li { margin: 5px 0; }
-  a { color: var(--accent); }
-  .lede {
-    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
-    padding: 18px 20px; margin: 0;
-  }
-  .lede p { margin: 0 0 8px; }
-  .lede p:last-child { margin-bottom: 0; }
-  .lede .mail { font-size: 1.15rem; font-weight: 650; letter-spacing: -0.01em; }
-  code {
-    background: var(--code); border-radius: 6px; padding: 1px 6px;
-    font-size: 0.88em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  }
-  details.faq {
-    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-    padding: 0 16px; margin: 10px 0;
-  }
-  details.faq > summary {
-    cursor: pointer; padding: 14px 0; font-weight: 600; color: var(--ink);
-    list-style: none; display: flex; align-items: baseline; gap: 12px;
-  }
-  details.faq > summary::-webkit-details-marker { display: none; }
-  details.faq > summary::after {
-    content: "+"; margin-left: auto; color: var(--accent);
-    font-weight: 700; font-size: 1.1rem; line-height: 1;
-  }
-  details.faq[open] > summary::after { content: "–"; }
-  details.faq > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
-  details.faq .answer { padding: 0 0 16px; }
-  details.faq .answer > :first-child { margin-top: 0; }
-  details.faq .answer > :last-child { margin-bottom: 0; }
-  .note {
-    border-left: 3px solid var(--accent); background: var(--accent-soft);
-    border-radius: 0 10px 10px 0; padding: 12px 16px; margin: 16px 0;
-  }
-  .note p { margin: 0; }
-  .steps { counter-reset: step; list-style: none; padding-left: 0; }
-  .steps li {
-    counter-increment: step; position: relative; padding-left: 40px; margin: 12px 0;
-  }
-  .steps li::before {
-    content: counter(step); position: absolute; left: 0; top: 0;
-    width: 26px; height: 26px; border-radius: 50%;
-    background: var(--accent-soft); color: var(--accent);
-    font-size: 0.85rem; font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .contact { font-weight: 600; }
-  footer {
-    max-width: 780px; margin: 56px auto 0; padding-top: 20px;
-    border-top: 1px solid var(--line); color: var(--muted); font-size: 0.86rem;
-    display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between;
-  }
-  footer a { color: var(--muted); }
-  footer a:hover { color: var(--ink); }
-  @media (max-width: 520px) { h1 { font-size: 1.6rem; } }
-</style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --accent: #ffab5e;
+        --accent-soft: rgba(255, 171, 94, 0.16);
+        --bg: #121110;
+        --surface: #1c1b19;
+        --surface-2: #232120;
+        --text: #f4f1ec;
+        --muted: #a8a29a;
+        --line: rgba(244, 241, 236, 0.12);
+        --shadow: none;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    code {
+      font: 0.9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: var(--surface-2); border: 1px solid var(--line);
+      padding: 1px 5px; border-radius: 6px;
+    }
+    .skip-link {
+      position: absolute; left: -9999px; top: 0; padding: 10px 14px;
+      background: var(--surface); color: var(--text); z-index: 100; border-radius: 0 0 10px 0;
+    }
+    .skip-link:focus { left: 0; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: saturate(180%) blur(18px);
+      -webkit-backdrop-filter: saturate(180%) blur(18px);
+      background: var(--bg);
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      max-width: var(--max); margin: 0 auto; padding: 12px 20px;
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 650; letter-spacing: -0.01em; color: var(--text); text-decoration: none;
+    }
+    .brand svg { width: 34px; height: 34px; border-radius: 9px; box-shadow: 0 1px 3px rgba(0,0,0,0.18); }
+    .site-nav { display: flex; gap: 4px; margin-left: auto; }
+    .site-nav a {
+      color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 550;
+      padding: 7px 10px; border-radius: 999px;
+    }
+    .site-nav a:hover { color: var(--text); background: var(--accent-soft); }
+    .site-nav a[aria-current="page"] { color: var(--accent); background: var(--accent-soft); }
+    .lang-switch {
+      display: flex; gap: 2px; padding: 3px; border-radius: 999px;
+      background: var(--surface-2); border: 1px solid var(--line);
+    }
+    .lang-switch button {
+      appearance: none; border: 0; background: transparent; color: var(--muted);
+      font: inherit; font-size: 0.78rem; font-weight: 650; letter-spacing: 0.03em;
+      padding: 5px 9px; border-radius: 999px; cursor: pointer;
+    }
+    .lang-switch button[aria-pressed="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 2px rgba(0,0,0,0.10); }
+
+    main { max-width: var(--max); margin: 0 auto; padding: 36px 20px 72px; }
+    .lang { display: none; }
+    html[data-lang="en"] .lang[data-lang="en"],
+    html[data-lang="de"] .lang[data-lang="de"],
+    html[data-lang="fr"] .lang[data-lang="fr"] { display: block; }
+
+    .hero { padding: 6px 0 22px; }
+    .eyebrow {
+      margin: 0 0 8px; color: var(--accent); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    h1 { margin: 0 0 14px; font-size: clamp(1.9rem, 5vw, 2.6rem); line-height: 1.15; letter-spacing: -0.025em; }
+    .lede { margin: 0; font-size: 1.06rem; max-width: 68ch; }
+    h2 { margin: 38px 0 12px; font-size: 1.28rem; letter-spacing: -0.015em; }
+    h3 { margin: 20px 0 6px; font-size: 1.02rem; }
+    p, li { max-width: 72ch; }
+    ul, ol { padding-left: 1.25em; }
+    li { margin: 4px 0; }
+    strong { font-weight: 650; }
+
+    .contact {
+      margin: 4px 0 8px; padding: 22px 24px;
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+      display: flex; flex-wrap: wrap; gap: 18px; align-items: center;
+    }
+    .contact .contact-text { flex: 1 1 320px; }
+    .contact h2 { margin: 0 0 6px; font-size: 1.1rem; }
+    .contact p { margin: 0; color: var(--muted); font-size: 0.94rem; }
+    .contact .button {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 18px; border-radius: 999px;
+      background: var(--accent); color: #fff; font-weight: 650; text-decoration: none;
+      white-space: nowrap;
+    }
+    .contact .button:hover { filter: brightness(1.05); }
+    .contact .button svg { width: 17px; height: 17px; }
+
+    .card {
+      margin: 18px 0; padding: 20px 22px;
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .card h2 { margin-top: 0; }
+    .card > :last-child { margin-bottom: 0; }
+
+    .faq { margin: 10px 0; }
+    details {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 14px; margin: 10px 0; overflow: hidden;
+    }
+    details[open] { box-shadow: var(--shadow); }
+    summary {
+      cursor: pointer; list-style: none; padding: 15px 18px;
+      font-weight: 600; display: flex; align-items: flex-start; gap: 12px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+"; margin-left: auto; color: var(--accent);
+      font-weight: 500; font-size: 1.25rem; line-height: 1;
+    }
+    details[open] summary::after { content: "−"; }
+    summary:hover { background: var(--surface-2); }
+    details .body { padding: 0 18px 16px; border-top: 1px solid var(--line); }
+    details .body > :first-child { margin-top: 12px; }
+    details .body p, details .body li { font-size: 0.96rem; }
+
+    .note {
+      margin: 16px 0; padding: 14px 16px;
+      background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 10px;
+      font-size: 0.94rem;
+    }
+    .req {
+      display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 0; padding: 0; list-style: none;
+    }
+    .req li {
+      margin: 0; padding: 7px 12px; border-radius: 999px;
+      background: var(--surface-2); border: 1px solid var(--line);
+      font-size: 0.85rem; color: var(--muted);
+    }
+    footer { border-top: 1px solid var(--line); margin-top: 24px; }
+    .footer-inner {
+      max-width: var(--max); margin: 0 auto; padding: 22px 20px 40px;
+      display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center;
+      font-size: 0.85rem; color: var(--muted);
+    }
+    .footer-inner a { color: var(--muted); }
+    .footer-inner .sep { flex: 1; }
+    @media (max-width: 560px) {
+      .site-nav { order: 3; margin-left: 0; width: 100%; justify-content: flex-start; }
+      .lang-switch { margin-left: auto; }
+      main { padding-top: 24px; }
+      .contact { padding: 18px; }
+    }
+    @media print {
+      .site-header, .lang-switch, .skip-link, .contact .button { display: none; }
+      body { background: #fff; }
+      .lang { display: block !important; }
+      details { break-inside: avoid; }
+      details .body { display: block !important; }
+    }
+  </style>
+  <noscript><style>.lang-switch { display: none; } .lang { display: block; } .lang + .lang { border-top: 1px solid var(--line); margin-top: 32px; padding-top: 8px; }</style></noscript>
 </head>
 <body>
-<div class="wrap">
-  <header class="site">
-    <div class="brand">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" stroke-linejoin="round"/>
-      </svg>
-      <span>SleepHabit</span>
-    </div>
-    <div class="navrow">
-      <nav class="top" aria-label="Site" id="sitenav">
-        <a href="index.html" id="nav-privacy">Privacy</a>
-        <a href="support.html" id="nav-support" aria-current="page">Support</a>
+  <a class="skip-link" href="#main">
+    <span data-lang="en">Skip to content</span>
+    <span data-lang="de">Zum Inhalt springen</span>
+    <span data-lang="fr">Aller au contenu</span>
+  </a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" data-keep-lang>
+        <svg viewBox="0 0 64 64" role="img" aria-label="Spendly Food Track">
+          <defs>
+            <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFF4DC"/><stop offset="1" stop-color="#F0A244"/>
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+          <path d="M14 32h36a18 18 0 0 1-36 0z" fill="#fff"/>
+          <ellipse cx="32" cy="32" rx="18" ry="2.6" fill="#F6C98A"/>
+          <path d="M28.4 29.4c-3.7-1.6-5.3-6.1-2.8-9.6 1.9 2.5 4.7 3.5 7.1 2.6-1 2.8-1.8 5.2-4.3 7z" fill="#4E9E63"/>
+          <circle cx="38" cy="25.4" r="2.2" fill="#F28A3C"/>
+          <circle cx="41.8" cy="28.4" r="1.3" fill="#F7B267"/>
+        </svg>
+        Spendly Food Track
+      </a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="index.html" data-keep-lang>
+          <span data-lang="en">Privacy</span><span data-lang="de">Datenschutz</span><span data-lang="fr">Confidentialité</span>
+        </a>
+        <a href="support.html" data-keep-lang aria-current="page">
+          <span data-lang="en">Support</span><span data-lang="de">Support</span><span data-lang="fr">Assistance</span>
+        </a>
       </nav>
-      <div class="top langs" role="group" aria-label="Language" id="langswitch">
-        <button type="button" data-lang="en" aria-pressed="true">English</button>
-        <button type="button" data-lang="de" lang="de" aria-pressed="false">Deutsch</button>
-        <button type="button" data-lang="fr" lang="fr" aria-pressed="false">Français</button>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-set-lang="en" lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="de" lang="de" aria-pressed="false">DE</button>
+        <button type="button" data-set-lang="fr" lang="fr" aria-pressed="false">FR</button>
       </div>
     </div>
   </header>
 
-  <main data-lang="en" lang="en">
-    <h1>Support</h1>
-    <p class="meta">SleepHabit for iPhone · Version 1.0.5</p>
-
-    <div class="lede">
-      <p><strong>Need a hand?</strong> Email us — a real person reads every message, usually within two
-      business days.</p>
-      <p class="mail"><a href="mailto:vegaodm@outlook.com?subject=SleepHabit%20support">vegaodm@outlook.com</a></p>
-      <p class="meta" style="margin:8px 0 0">To help us answer faster, include your iOS version, the app
-      version (Settings → About), and what you expected to happen versus what did.</p>
-    </div>
-
-    <h2>Getting started</h2>
-    <ol class="steps">
-      <li><strong>Log last night.</strong> On the Today tab, tap <em>Add last night</em>. Set when you went
-      to bed and when you woke, how many times you woke, and your energy from Wiped to Great.</li>
-      <li><strong>Tag the day before.</strong> Tap any of caffeine, alcohol, exercise, stress, screens or nap,
-      then pick roughly when it happened — morning, afternoon, evening, or within 2h of bed. Timing matters:
-      coffee at 3pm and coffee at 11pm are not the same night.</li>
-      <li><strong>Come back tomorrow.</strong> Insights appear once your log clears the sample gate on both
-      sides of a comparison. Keep logging; the app stays quiet until the data is strong enough to mean
-      something.</li>
-    </ol>
-
-    <h2>Logging</h2>
-
-    <details class="faq">
-      <summary>Can I fill in nights I missed?</summary>
-      <div class="answer">
-        <p>Yes. When you create an entry, tap <em>Night of</em> and pick the date. You can backfill nights
-        going back years, and the app will use them immediately in later insights.</p>
+  <main id="main">
+    <!-- ================================================================ EN -->
+    <section class="lang" data-lang="en" lang="en">
+      <div class="hero">
+        <p class="eyebrow">Support</p>
+        <h1>How can we help?</h1>
+        <p class="lede">
+          Spendly Food Track is built and supported by one developer. Write in English, German or
+          French and you will get an answer, usually within two business days.
+        </p>
       </div>
-    </details>
 
-    <details class="faq">
-      <summary>How do I edit or delete a night?</summary>
-      <div class="answer">
-        <p>Tap the card on the Today tab, or open the night from the History tab, and change whatever you
-        need. To delete, swipe left on the row in History, or use the Delete section at the bottom of the
-        entry.</p>
+      <div class="contact">
+        <div class="contact-text">
+          <h2>Email support</h2>
+          <p>
+            Include your iPhone or iPad model, the iOS version, the app version from
+            About, and what you did just before the problem.
+          </p>
+        </div>
+        <a class="button" href="mailto:vegaodm@outlook.com?subject=Spendly%20Food%20Track%20support">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+          </svg>
+          vegaodm@outlook.com
+        </a>
       </div>
-    </details>
 
-    <details class="faq">
-      <summary>What does each tag mean?</summary>
-      <div class="answer">
-        <p>Tags describe the waking day <em>before</em> the night, not the night itself.</p>
+      <div class="card">
+        <h2>Start here</h2>
         <ul>
-          <li><strong>Caffeine</strong> — coffee, tea, energy drinks, pre-workout.</li>
-          <li><strong>Alcohol</strong> — any alcoholic drink.</li>
-          <li><strong>Exercise</strong> — a workout or anything you would call exercise.</li>
-          <li><strong>Stress</strong> — a demanding or tense day, work or personal.</li>
-          <li><strong>Screens</strong> — phone, laptop or TV late in the day.</li>
-          <li><strong>Nap</strong> — daytime sleep.</li>
+          <li><strong>Record a meal:</strong> Records → <strong>+</strong> → Add meal, choose a food, enter grams or servings, then Save.</li>
+          <li><strong>Add a food that is missing:</strong> Settings → Categories → <strong>+</strong>, or import a CSV/JSON file.</li>
+          <li><strong>Change your target:</strong> Settings → Goals.</li>
+          <li><strong>Back up:</strong> Settings → Backup (Lifetime Membership).</li>
         </ul>
-        <p>You can tag the same factor in more than one time bucket in a single day.</p>
+        <ul class="req" aria-label="Requirements">
+          <li>iOS 26 or later</li>
+          <li>iPhone and iPad</li>
+          <li>No account</li>
+          <li>Works offline</li>
+        </ul>
       </div>
-    </details>
 
-    <details class="faq">
-      <summary>Why is my bedtime listed as the previous day?</summary>
-      <div class="answer">
-        <p>A "night" is labelled by the morning you woke up. If you went to bed at 1:20am on Saturday and woke
-        at 8am, that is Saturday's entry — the app handles the after-midnight bedtime for you.</p>
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details>
+          <summary>How do I record something I ate?</summary>
+          <div class="body">
+            <p>
+              Open <strong>Records</strong> and tap <strong>+</strong> → <strong>Add meal</strong>.
+              Choose a food, enter the amount in grams (or switch to servings if the food has one),
+              pick the meal and time, and add an optional note, photo or voice note. Save puts it on
+              the selected day and counts it against your target.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>A food is missing. What now?</summary>
+          <div class="body">
+            <p>
+              Create it yourself: <strong>Settings → Categories → +</strong>. Enter the per-100 g
+              values from the package; only the name is required. You can also tap
+              <strong>Ask a local model</strong> in the food picker, then paste the model's JSON
+              reply back, or import a CSV/JSON file from
+              <strong>Settings → Categories → Import food library</strong>.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Why did past entries change after I edited a food?</summary>
+          <div class="body">
+            <p>
+              Entries read the food's current nutrition, so correcting a food also corrects history.
+              That is intentional: a wrong value should not stay wrong in older rows. If you want to
+              keep the old numbers, duplicate the food before editing it. A food that is no longer
+              used can be archived instead of deleted, and entries keep their name and values.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Grams, servings, or both?</summary>
+          <div class="body">
+            <p>
+              Everything is stored per 100 g. If a food has a serving size (for example one slice =
+              43 g), the form offers a serving toggle. One portion is multiplied by the serving
+              grams before the nutrition is calculated.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How is my calorie target calculated?</summary>
+          <div class="body">
+            <p>
+              From the profile in <strong>Settings → Goals</strong>: Mifflin-St Jeor for basal
+              metabolic rate, multiplied by your activity level. You can override the result with
+              your own target. Macro goals are grams per day, and the meal split decides how much of
+              each macro belongs to breakfast, lunch, dinner and snacks.
+            </p>
+            <p>
+              Remaining calories = target − what you ate + what you logged as exercise. Exercise is
+              entered by hand; the app does not read HealthKit.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What is free, and what needs Lifetime Membership?</summary>
+          <div class="body">
+            <p>
+              Free: recording meals, photos and voice notes, the food library, goals, exercise, the
+              Day statistics and the food library import/export. Lifetime Membership (one-time
+              $4.99) unlocks Week, Month and Year statistics and database backup/export/import.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I restore my purchase on a new device?</summary>
+          <div class="body">
+            <p>
+              Install the app, open <strong>Settings → Membership → Restore purchases</strong> and
+              sign in with the same Apple Account used for the purchase. If nothing is found, check
+              that you are using that account. Family Sharing is not enabled for this product.
+            </p>
+            <p>
+              Refunds are handled by Apple: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do backups work?</summary>
+          <div class="body">
+            <p>
+              <strong>Settings → Backup → Export database</strong> creates the SQLite file and opens
+              the system share sheet. Keep it in Files or iCloud Drive. Importing validates the file
+              first, then asks for confirmation because it replaces everything on the device. The
+              previous database is kept in <code>FoodTrack/Backups</code> under Files.
+            </p>
+            <p>
+              A backup is the database only. Photos and recordings stay in
+              <code>FoodTrack/Photos</code> and <code>FoodTrack/Audio</code>; copy them separately if
+              you want them on another device.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Where are my photos and recordings?</summary>
+          <div class="body">
+            <p>
+              In the app's Documents folder, visible in <strong>Files → On My iPhone → Spendly Food
+              → FoodTrack</strong>. Photos are JPEG files under <code>Photos/yyyy/MM</code>; voice
+              notes are M4A files named with their timestamp under <code>Audio</code>. Deleting an
+              entry deletes its files.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>The local model lookup does nothing. How do I set it up?</summary>
+          <div class="body">
+            <p>
+              Open <strong>Settings → Local model</strong> and enter the URL your model app accepts,
+              keeping <code>{prompt}</code> where the question belongs. The default is
+              <code>localgemma://ask?q={prompt}</code>. If the app is not installed, iOS cannot open
+              the URL and Spendly Food Track tells you so. You can always enter nutrition manually
+              or paste a model reply.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>The camera or microphone is not available.</summary>
+          <div class="body">
+            <p>
+              Spendly Food Track asks for each permission only when you use it. If you denied it
+              earlier, enable it in iOS <strong>Settings → Spendly Food</strong>. Choosing a photo
+              from the library uses the system picker and needs no permission at all.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I start over or delete everything?</summary>
+          <div class="body">
+            <p>
+              <strong>Settings → Delete all data</strong> removes meals, exercise, photos,
+              recordings and your own foods, keeping the reference library and your goals. Deleting
+              the app removes its container entirely. An exported backup is a file you own — delete
+              it from Files yourself.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What does “Database Recovery” mean?</summary>
+          <div class="body">
+            <p>
+              The saved database could not be opened, so the app started with an empty one for this
+              session. Existing records were not deleted. Export a backup if you can, then try
+              reinstalling or contact support with the app version and the message you saw.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I change the language?</summary>
+          <div class="body">
+            <p>
+              <strong>Settings → Language</strong>: follow the device or pin English, German, French
+              or Spanish. The choice applies to the whole app immediately.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Something went wrong. How can I help you debug it?</summary>
+          <div class="body">
+            <p>
+              <strong>Settings → Data → Share diagnostics</strong> shares the local log. It contains
+              app errors and maintenance events, not your notes or nutrition values. Mention what
+              you were doing when it happened.
+            </p>
+          </div>
+        </details>
       </div>
-    </details>
 
-    <h2>Widget</h2>
-
-    <details class="faq">
-      <summary>How does the widget work?</summary>
-      <div class="answer">
-        <p>Add the SleepHabit widget to your Home Screen, tap <em>Start</em> when you get into bed and
-        <em>Stop</em> when you wake up. The widget only remembers those two times; the next time you open the
-        app it turns them into a night for you.</p>
-        <p>The small and medium sizes are supported. If you leave the night running, the widget switches to
-        <em>Still in bed?</em> after 16 hours rather than counting forever.</p>
+      <div class="note">
+        Nutrition values are estimates. They are not medical advice. See the
+        <a href="index.html" data-keep-lang>privacy policy</a> for what the app stores and where.
       </div>
-    </details>
+    </section>
 
-    <details class="faq">
-      <summary>The widget recorded a night but I can't see it</summary>
-      <div class="answer">
-        <p>The app drops a widget night in four cases, rather than writing something it cannot vouch for:</p>
+    <!-- ================================================================ DE -->
+    <section class="lang" data-lang="de" lang="de">
+      <div class="hero">
+        <p class="eyebrow">Support</p>
+        <h1>Wie können wir helfen?</h1>
+        <p class="lede">
+          Spendly Food Track wird von einem Entwickler gebaut und betreut. Schreib auf Deutsch,
+          Englisch oder Französisch – du erhältst in der Regel innerhalb von zwei Werktagen eine Antwort.
+        </p>
+      </div>
+
+      <div class="contact">
+        <div class="contact-text">
+          <h2>Support per E-Mail</h2>
+          <p>
+            Nenne dein iPhone- oder iPad-Modell, die iOS-Version, die App-Version aus „Über“ und was
+            du unmittelbar vor dem Problem gemacht hast.
+          </p>
+        </div>
+        <a class="button" href="mailto:vegaodm@outlook.com?subject=Spendly%20Food%20Track%20Support">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+          </svg>
+          vegaodm@outlook.com
+        </a>
+      </div>
+
+      <div class="card">
+        <h2>Erste Schritte</h2>
         <ul>
-          <li>you had already logged that night by hand — your entry is never overwritten by the widget;</li>
-          <li>the session was shorter than an hour;</li>
-          <li><em>Start</em> was tapped after 6am, which is a wake-up rather than a bedtime;</li>
-          <li>you recorded two nights from the widget without opening the app in between — only the later
-          one is kept.</li>
+          <li><strong>Mahlzeit erfassen:</strong> Erfassung → <strong>+</strong> → Mahlzeit hinzufügen, Lebensmittel wählen, Gramm oder Portionen eintragen, sichern.</li>
+          <li><strong>Fehlendes Lebensmittel:</strong> Einstellungen → Kategorien → <strong>+</strong> oder eine CSV-/JSON-Datei importieren.</li>
+          <li><strong>Ziel ändern:</strong> Einstellungen → Ziele.</li>
+          <li><strong>Sicherung:</strong> Einstellungen → Sicherung (Lifetime-Mitgliedschaft).</li>
         </ul>
-        <p>A session left running past 16 hours is filed as a 16-hour night and labelled as capped, so check
-        the times on the card afterwards. If a saved night is still waiting to be confirmed, Today shows a
-        <em>not saved yet</em> card with a retry button.</p>
+        <ul class="req" aria-label="Voraussetzungen">
+          <li>iOS 26 oder neuer</li>
+          <li>iPhone und iPad</li>
+          <li>Kein Konto</li>
+          <li>Funktioniert offline</li>
+        </ul>
       </div>
-    </details>
 
-    <details class="faq">
-      <summary>Why does the widget's night say energy 3 with 0 wakings?</summary>
-      <div class="answer">
-        <p>The widget can only know when you got into bed and when you woke, so it fills in the middle of the
-        scale and asks you to correct it. Tap <em>Add details</em> on the widget and the app opens straight on
-        that night's form — or tap the night on the Today tab, where the card says
-        <em>From the widget — confirm energy and tags</em> — and set how you actually felt and what you did
-        the day before.</p>
+      <h2>Häufige Fragen</h2>
+      <div class="faq">
+        <details>
+          <summary>Wie erfasse ich, was ich gegessen habe?</summary>
+          <div class="body">
+            <p>
+              Öffne <strong>Erfassung</strong> und tippe auf <strong>+</strong> →
+              <strong>Mahlzeit hinzufügen</strong>. Wähle ein Lebensmittel, trage die Menge in Gramm
+              ein (oder Portionen, falls hinterlegt), wähle Mahlzeit und Uhrzeit und ergänze bei
+              Bedarf Notiz, Foto oder Sprachnotiz. Beim Sichern landet der Eintrag am gewählten Tag
+              und zählt gegen dein Ziel.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ein Lebensmittel fehlt. Was nun?</summary>
+          <div class="body">
+            <p>
+              Lege es selbst an: <strong>Einstellungen → Kategorien → +</strong>. Trage die Werte pro
+              100 g von der Verpackung ein; nur der Name ist Pflicht. Alternativ kannst du im
+              Lebensmittel-Auswahlfenster <strong>Lokales Modell fragen</strong> nutzen und die
+              JSON-Antwort einfügen oder unter
+              <strong>Einstellungen → Kategorien → Lebensmittelbibliothek importieren</strong> eine
+              CSV-/JSON-Datei laden.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Warum ändern sich alte Einträge, wenn ich ein Lebensmittel bearbeite?</summary>
+          <div class="body">
+            <p>
+              Einträge lesen die aktuellen Nährwerte des Lebensmittels – eine Korrektur wirkt daher
+              auch auf die Historie. Das ist Absicht: ein falscher Wert soll nicht in alten Zeilen
+              falsch bleiben. Willst du die alten Zahlen behalten, dupliziere das Lebensmittel vor
+              der Bearbeitung. Ein nicht mehr genutztes Lebensmittel lässt sich archivieren statt
+              löschen; Einträge behalten Name und Werte.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Gramm, Portionen oder beides?</summary>
+          <div class="body">
+            <p>
+              Gespeichert wird immer pro 100 g. Hat ein Lebensmittel eine Portionsgröße (etwa eine
+              Scheibe = 43 g), bietet das Formular eine Portionsumschaltung. Die Portion wird mit den
+              Portionsgramm multipliziert, bevor die Nährwerte berechnet werden.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Wie wird mein Kalorienziel berechnet?</summary>
+          <div class="body">
+            <p>
+              Aus dem Profil unter <strong>Einstellungen → Ziele</strong>: Mifflin-St Jeor für den
+              Grundumsatz, multipliziert mit deinem Aktivitätsniveau. Du kannst das Ergebnis durch
+              ein eigenes Ziel ersetzen. Makroziele sind Gramm pro Tag; die Mahlzeitenverteilung
+              legt fest, welcher Anteil auf Frühstück, Mittagessen, Abendessen und Snacks entfällt.
+            </p>
+            <p>
+              Verbleibende Kalorien = Ziel − Gegessenes + eingetragener Sport. Sport trägst du manuell
+              ein; HealthKit wird nicht gelesen.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Was ist kostenlos, was braucht die Lifetime-Mitgliedschaft?</summary>
+          <div class="body">
+            <p>
+              Kostenlos: Mahlzeiten, Fotos und Sprachnotizen, Lebensmittelbibliothek, Ziele, Sport,
+              Tagesstatistik sowie Import und Export der Lebensmittelbibliothek. Die
+              Lifetime-Mitgliedschaft (einmalig 4,99 $) schaltet Wochen-, Monats- und Jahresstatistik
+              sowie Datenbanksicherung, Export und Import frei.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Wie stelle ich den Kauf auf einem neuen Gerät wieder her?</summary>
+          <div class="body">
+            <p>
+              Installiere die App, öffne
+              <strong>Einstellungen → Mitgliedschaft → Käufe wiederherstellen</strong> und melde dich
+              mit derselben Apple-ID wie beim Kauf an. Wird nichts gefunden, prüfe die verwendete
+              Apple-ID. Familienfreigabe ist für dieses Produkt nicht aktiviert.
+            </p>
+            <p>
+              Erstattungen bearbeitet Apple: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Wie funktionieren Sicherungen?</summary>
+          <div class="body">
+            <p>
+              <strong>Einstellungen → Sicherung → Datenbank exportieren</strong> erzeugt die
+              SQLite-Datei und öffnet das Teilen-Menü. Bewahre sie in Dateien oder iCloud Drive auf.
+              Beim Import wird die Datei zuerst geprüft und dann bestätigt, weil sie alles auf dem
+              Gerät ersetzt. Die vorherige Datenbank bleibt unter <code>FoodTrack/Backups</code> in
+              Dateien erhalten.
+            </p>
+            <p>
+              Eine Sicherung enthält nur die Datenbank. Fotos und Aufnahmen liegen in
+              <code>FoodTrack/Photos</code> und <code>FoodTrack/Audio</code>; kopiere sie separat,
+              wenn du sie auf einem anderen Gerät brauchst.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Wo liegen meine Fotos und Aufnahmen?</summary>
+          <div class="body">
+            <p>
+              Im Dokumentenordner der App, sichtbar unter <strong>Dateien → Auf meinem iPhone →
+              Spendly Food → FoodTrack</strong>. Fotos sind JPEG-Dateien unter
+              <code>Photos/JJJJ/MM</code>; Sprachnotizen sind M4A-Dateien mit Zeitstempel unter
+              <code>Audio</code>. Beim Löschen eines Eintrags werden seine Dateien mitgelöscht.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Die Abfrage beim lokalen Modell tut nichts. Wie richte ich sie ein?</summary>
+          <div class="body">
+            <p>
+              Öffne <strong>Einstellungen → Lokales Modell</strong> und trage die URL ein, die deine
+              Modell-App akzeptiert; <code>{prompt}</code> bleibt an der Stelle der Frage. Standard
+              ist <code>localgemma://ask?q={prompt}</code>. Ist die App nicht installiert, kann iOS
+              die URL nicht öffnen und Spendly Food Track weist darauf hin. Nährwerte kannst du
+              jederzeit manuell eintragen oder eine Antwort einfügen.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Kamera oder Mikrofon ist nicht verfügbar.</summary>
+          <div class="body">
+            <p>
+              Spendly Food Track fragt jede Berechtigung erst bei der Nutzung an. Hast du sie früher
+              abgelehnt, aktiviere sie in den iOS-<strong>Einstellungen → Spendly Food</strong>. Die
+              Auswahl eines Fotos aus der Mediathek nutzt die Systemauswahl und braucht keine
+              Berechtigung.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Wie fange ich neu an oder lösche alles?</summary>
+          <div class="body">
+            <p>
+              <strong>Einstellungen → Alle Daten löschen</strong> entfernt Mahlzeiten, Sport, Fotos,
+              Aufnahmen und eigene Lebensmittel; Referenzbibliothek und Ziele bleiben. Das Löschen
+              der App entfernt ihren Container vollständig. Eine exportierte Sicherung ist deine
+              Datei – lösche sie selbst in Dateien.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Was bedeutet „Datenbank wiederhergestellt“?</summary>
+          <div class="body">
+            <p>
+              Die gespeicherte Datenbank konnte nicht geöffnet werden, daher startet die App für
+              diese Sitzung mit einer leeren. Vorhandene Einträge wurden nicht gelöscht. Exportiere
+              wenn möglich eine Sicherung, installiere die App neu oder melde dich mit App-Version
+              und der angezeigten Meldung beim Support.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Wie ändere ich die Sprache?</summary>
+          <div class="body">
+            <p>
+              <strong>Einstellungen → Sprache</strong>: Gerätesprache folgen oder Englisch, Deutsch,
+              Französisch oder Spanisch festlegen. Die Auswahl gilt sofort für die ganze App.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Etwas ist schiefgelaufen. Wie hilfst du beim Eingrenzen?</summary>
+          <div class="body">
+            <p>
+              <strong>Einstellungen → Daten → Diagnose teilen</strong> teilt das lokale Protokoll. Es
+              enthält App-Fehler und Wartungsereignisse, nicht deine Notizen oder Nährwerte. Beschreibe
+              kurz, was du gerade getan hast.
+            </p>
+          </div>
+        </details>
       </div>
-    </details>
 
-    <h2>History and the sleep trend</h2>
-
-    <details class="faq">
-      <summary>Where is the trend chart?</summary>
-      <div class="answer">
-        <p>History opens with a <em>Last 30 nights</em> row showing your sleep length as a small line. Tap it
-        and the same line opens full screen, with a picker for duration, bedtime, wakings or energy, and
-        windows of 30 days, 90 days, a year or all time.</p>
+      <div class="note">
+        Nährwerte sind Schätzungen und keine medizinische Beratung. Was die App speichert und wo,
+        steht in der <a href="index.html" data-keep-lang>Datenschutzerklärung</a>.
       </div>
-    </details>
+    </section>
 
-    <details class="faq">
-      <summary>How do I zoom in, and how do I read a single night?</summary>
-      <div class="answer">
-        <p>Pinch the chart to zoom into a stretch of weeks. The vertical scale stays put, so heights still
-        mean what they meant before you zoomed. While you are zoomed in, a thin strip under the plot shows
-        where the visible part sits in the whole window — drag the strip to move it.</p>
-        <p>Press and hold anywhere on the line and the chart picks the nearest night: its date, the value, and
-        the wakings, energy and tags you logged for it. The card stays for a moment after you let go, so you
-        can read the number. Double-tap the chart, or tap <em>Reset zoom</em>, to fit everything again.</p>
+    <!-- ================================================================ FR -->
+    <section class="lang" data-lang="fr" lang="fr">
+      <div class="hero">
+        <p class="eyebrow">Assistance</p>
+        <h1>Comment pouvons-nous aider ?</h1>
+        <p class="lede">
+          Spendly Food Track est développé et maintenu par un seul développeur. Écrivez en français,
+          en anglais ou en allemand : vous recevrez une réponse, généralement sous deux jours ouvrés.
+        </p>
       </div>
-    </details>
 
-    <details class="faq">
-      <summary>Why does the line become weekly points?</summary>
-      <div class="answer">
-        <p>Past roughly three months of nights, one point per night is a thicket instead of a shape, so the
-        chart averages each week into a single point — the mean of the nights you actually logged in that
-        week. Press a weekly point and the card tells you how many nights it covers.</p>
+      <div class="contact">
+        <div class="contact-text">
+          <h2>Assistance par e-mail</h2>
+          <p>
+            Indiquez le modèle de votre iPhone ou iPad, la version d'iOS, la version de l'app
+            (dans « À propos ») et ce que vous faisiez juste avant le problème.
+          </p>
+        </div>
+        <a class="button" href="mailto:vegaodm@outlook.com?subject=Spendly%20Food%20Track%20assistance">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+          </svg>
+          vegaodm@outlook.com
+        </a>
       </div>
-    </details>
 
-    <details class="faq">
-      <summary>Is the trend part of the one-time unlock?</summary>
-      <div class="answer">
-        <p>No. The trend chart is free on both tiers, over every window, because it only redraws nights you
-        already logged. The purchase is about comparing tagged nights against untagged ones — that is the
-        Insights tab. Your history and the trend stay free forever.</p>
-      </div>
-    </details>
-
-    <h2>Insights</h2>
-
-    <details class="faq">
-      <summary>Why don't I see any insights yet?</summary>
-      <div class="answer">
-        <p>Insights only appear when there is enough data on both sides of a comparison and the difference is
-        big enough to be meaningful. If the gap is thin, showing nothing is the honest answer.</p>
+      <div class="card">
+        <h2>Pour commencer</h2>
         <ul>
-          <li><strong>Free:</strong> 14-day window (7-day also available), at least 3 nights with the
-          factor and 3 without, and at least 5 nights logged.</li>
-          <li><strong>Unlocked:</strong> 30 / 90 / 365 days or all time, at least 5 nights with and 5
-          without, and at least 14 nights logged.</li>
-          <li><strong>Effect floor:</strong> 15 minutes of sleep timing, 0.5 night wakings or 0.3 energy
-          points.</li>
+          <li><strong>Enregistrer un repas :</strong> Journal → <strong>+</strong> → Ajouter un repas, choisissez un aliment, saisissez les grammes ou les portions, puis Enregistrer.</li>
+          <li><strong>Ajouter un aliment manquant :</strong> Réglages → Catégories → <strong>+</strong>, ou importez un fichier CSV/JSON.</li>
+          <li><strong>Modifier l'objectif :</strong> Réglages → Objectifs.</li>
+          <li><strong>Sauvegarder :</strong> Réglages → Sauvegarde (adhésion à vie).</li>
         </ul>
-        <p>One structural trap: if you tag the same thing every single night, there is no "without" group
-        to compare it against, so that factor can only ever produce a "how often" fact — and a timing
-        comparison, if you tag it in different time buckets on different nights.</p>
-        <p>Keep logging. The Insights tab tells you which factor is closest to unlocking next.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>What exactly is being compared?</summary>
-      <div class="answer">
-        <p>Averages of your own nights, grouped by whether the factor was present. For example: average time
-        to fall asleep on nights with caffeine within 2h of bed versus nights without it, or versus nights
-        where caffeine happened in the afternoon. The app also counts how often something happens — "you
-        logged alcohol on 12 of 30 nights, and woke at least once on 9 of them."</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Are these results proof that something causes bad sleep?</summary>
-      <div class="answer">
-        <p>No. They are associations in your own data — correlation, not causation. Something that shows up
-        together may share another cause, and small samples move around. SleepHabit is not a medical device
-        and does not diagnose or treat anything; for a real sleep problem, see a clinician.</p>
-      </div>
-    </details>
-
-    <h2>The one-time unlock</h2>
-
-    <details class="faq">
-      <summary>What does the purchase include?</summary>
-      <div class="answer">
-        <p>Logging and your full history are free, forever, and the last 14 days of insights are free too
-        (7 days is also selectable). A single purchase unlocks the long view: insight windows of 30, 90 and
-        365 days plus all-time comparisons, all computed over every night you have logged. Whichever window
-        is open, you can expand it to the full ranked list on either tier — the purchase adds history to
-        compare, not rows per window. It is a one-time purchase: no subscription, nothing renews.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>How much is it?</summary>
-      <div class="answer">
-        <p>US$4.99, or the equivalent in your storefront (¥38 in China mainland). The exact price is always
-        shown on the paywall and on the App Store product page, in your local currency, before you confirm.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>I bought it before. How do I get it back?</summary>
-      <div class="answer">
-        <p>Settings → <em>Restore purchase</em>. The unlock belongs to your Apple Account, so restoring on a
-        new device with the same account works. If nothing happens, check that you are signed in to the App
-        Store with the account you bought it on, then try again with a network connection.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Can I get a refund?</summary>
-      <div class="answer">
-        <p>Refunds are handled by Apple, not by us: visit
-        <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>, sign in, and choose the
-        purchase. We cannot issue or reverse App Store payments.</p>
-      </div>
-    </details>
-
-    <h2>Your data</h2>
-
-    <details class="faq">
-      <summary>Where is my data stored?</summary>
-      <div class="answer">
-        <p>Only on your iPhone, inside the app. There is no account and no server, so nothing is uploaded and
-        we cannot see your log. The Home Screen widget keeps the start and stop times of a night in a small
-        container that the app and the widget share on the same device — nothing more. See the
-        <a href="index.html">privacy policy</a> for the full detail.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>How do I back up or move to a new phone?</summary>
-      <div class="answer">
-        <p>Settings → <em>Export backup</em> creates a JSON file and opens the share sheet; save it to Files,
-        iCloud Drive or anywhere you trust. On the new phone, install SleepHabit, then Settings →
-        <em>Import backup</em> and pick that file.</p>
-        <p>Importing <strong>replaces</strong> everything currently in the app — it is a restore, not a merge —
-        and the app asks you to confirm before it writes anything. A file that fails validation is rejected
-        and your existing data is left untouched.</p>
-        <p>If you use iCloud Backup or a computer backup, the app's data may also be included in that device
-        backup, handled by iOS.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>How do I delete everything?</summary>
-      <div class="answer">
-        <p>Delete individual nights from History, or delete the app to remove all entries and settings at once.
-        Because nothing is stored on a server, deletion is immediate and there is no copy left for us to
-        erase. Export a backup first if you might want the data later.</p>
-      </div>
-    </details>
-
-    <h2>Reminders</h2>
-
-    <details class="faq">
-      <summary>When does the reminder fire?</summary>
-      <div class="answer">
-        <p>By default at 8:30am, and you can change the time or switch it off in Settings. The app schedules a
-        week of one-time reminders that skip any night you have already logged, so it stops nagging once your
-        entry is in.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>I'm not getting notifications.</summary>
-      <div class="answer">
-        <p>Check three things: the toggle is on in SleepHabit's Settings; notifications are allowed for
-        SleepHabit in iOS Settings → Notifications; and a Focus mode or Do Not Disturb is not holding them
-        back. If permission was declined earlier, re-enable it in iOS Settings and the app will pick it up the
-        next time it schedules.</p>
-      </div>
-    </details>
-
-    <h2>Language</h2>
-
-    <details class="faq">
-      <summary>How do I change the language?</summary>
-      <div class="answer">
-        <p>Settings → Language. Choose English, English (UK), Deutsch or Français and the app redraws in
-        place — no relaunch, and you stay on the Settings tab. <em>System</em> keeps whatever language your
-        iPhone uses. English (UK) is a separate choice from English so dates read day-first and times use a
-        24-hour clock. The Home Screen widget draws in the same language as the app.</p>
-        <p>Changing the language is free on both tiers. The one-time unlock buys longer insight windows, not
-        languages — there is nothing to purchase to read the app in German or French.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Which languages does SleepHabit ship in?</summary>
-      <div class="answer">
-        <p>English (United States), English (United Kingdom), German and French. That covers the whole app —
-        labels, insight sentences, validation messages, the reminder notification and the widget. This support
-        page and the privacy policy are published in all three languages too — use the language switch at the
-        top of either page, or Settings → Language in the app, and the link opens in the language you picked.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Does the language choice change my data?</summary>
-      <div class="answer">
-        <p>No. It only changes how the app draws. Your nights, tags and notes are stored unchanged, an
-        exported backup is language-neutral JSON, and nothing about the choice leaves the device.</p>
-      </div>
-    </details>
-
-    <h2>Troubleshooting</h2>
-
-    <details class="faq">
-      <summary>The Save button is greyed out.</summary>
-      <div class="answer">
-        <p>Save stays disabled while the entry is invalid. The usual causes: the wake time is earlier than or
-        too close to bedtime (a night must be at least an hour), or the note is over 280 characters. The form
-        shows which rule is failing.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>I reinstalled the app and my history is gone.</summary>
-      <div class="answer">
-        <p>Deleting an app removes its local data, which is the trade-off of keeping everything on-device. If
-        you exported a backup, import it from Settings. If you had iCloud Backup enabled, restoring the device
-        backup may bring the app's data back.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Does SleepHabit need internet?</summary>
-      <div class="answer">
-        <p>No. Logging, history and insights all work offline. The only network use is StoreKit when you buy or
-        restore the unlock.</p>
-      </div>
-    </details>
-
-    <h2>Devices</h2>
-
-    <details class="faq">
-      <summary>Which devices does SleepHabit run on?</summary>
-      <div class="answer">
-        <p>iPhone, iOS 18 or later, portrait only. On an iPhone Duo the wider inner display is used properly:
-        cards rearrange into two columns instead of a single long column stretched across the screen.</p>
-        <p>It is an iPhone app, so on iPad and on Apple silicon Macs the App Store installs it in
-        compatibility mode, where it runs in a portrait iPhone-sized window.</p>
-      </div>
-    </details>
-
-    <h2>Still stuck?</h2>
-    <p>Email <a href="mailto:vegaodm@outlook.com?subject=SleepHabit%20support">vegaodm@outlook.com</a> with
-    your iOS version, the app version from Settings → About, and a short description of the problem. Bug
-    reports and feature requests are both welcome.</p>
-    <p class="contact">We read everything, and we answer.</p>
-  </main>
-
-  <main data-lang="de" lang="de" hidden>
-    <h1>Hilfe</h1>
-    <p class="meta">SleepHabit für iPhone · Version 1.0.5</p>
-
-    <div class="lede">
-      <p><strong>Brauchst du Hilfe?</strong> Schreib uns — eine echte Person liest jede Nachricht, meist
-      innerhalb von zwei Werktagen.</p>
-      <p class="mail"><a href="mailto:vegaodm@outlook.com?subject=SleepHabit%20Support">vegaodm@outlook.com</a></p>
-      <p class="meta" style="margin:8px 0 0">Damit wir schneller antworten können: iOS-Version, App-Version
-      (Einstellungen → Über) und was du erwartet hast gegenüber dem, was passiert ist.</p>
-    </div>
-
-    <h2>Erste Schritte</h2>
-    <ol class="steps">
-      <li><strong>Erfasse die letzte Nacht.</strong> Tippe im Tab „Heute“ auf <em>Letzte Nacht hinzufügen</em>.
-      Setze die Zeit, zu der du ins Bett gegangen bist, die Zeit, zu der du aufgewacht bist, wie oft du
-      aufgewacht bist und deine Energie von Erledigt bis Top.</li>
-      <li><strong>Markiere den Tag davor.</strong> Tippe auf Koffein, Alkohol, Sport, Stress, Bildschirmzeit
-      oder Mittagsschlaf und wähle dann ungefähr, wann es war — morgens, nachmittags, abends oder kurz vor dem
-      Schlafengehen. Die Uhrzeit zählt: Kaffee um 15 Uhr und Kaffee um 23 Uhr sind nicht dieselbe Nacht.</li>
-      <li><strong>Komm morgen wieder.</strong> Einblicke erscheinen, sobald dein Protokoll auf beiden Seiten
-      eines Vergleichs den Mindestumfang erreicht. Erfasse weiter; die App bleibt still, bis die Daten stark
-      genug sind, um etwas zu bedeuten.</li>
-    </ol>
-
-    <h2>Erfassen</h2>
-
-    <details class="faq">
-      <summary>Kann ich Nächte nachtragen, die ich verpasst habe?</summary>
-      <div class="answer">
-        <p>Ja. Wenn du eine Nacht anlegst, tippe auf <em>Nacht vom</em> und wähle das Datum. Du kannst Nächte
-        Jahre rückwärts nachtragen, und die App nutzt sie sofort für spätere Einblicke.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Wie ändere oder lösche ich eine Nacht?</summary>
-      <div class="answer">
-        <p>Tippe im Tab „Heute“ auf die Karte oder öffne die Nacht im Tab „Verlauf“ und ändere, was du
-        brauchst. Zum Löschen wische die Zeile im Verlauf nach links oder nutze den Abschnitt „Löschen“ unten
-        in der Nacht.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Was bedeutet welcher Faktor?</summary>
-      <div class="answer">
-        <p>Faktoren beschreiben den wachen Tag <em>vor</em> der Nacht, nicht die Nacht selbst.</p>
-        <ul>
-          <li><strong>Koffein</strong> — Kaffee, Tee, Energydrinks, Pre-Workout.</li>
-          <li><strong>Alkohol</strong> — jedes alkoholische Getränk.</li>
-          <li><strong>Sport</strong> — ein Training oder alles, was du Sport nennen würdest.</li>
-          <li><strong>Stress</strong> — ein fordernder oder angespannter Tag, beruflich oder privat.</li>
-          <li><strong>Bildschirmzeit</strong> — Handy, Laptop oder Fernseher am späten Tag.</li>
-          <li><strong>Mittagsschlaf</strong> — Schlaf am Tag.</li>
+        <ul class="req" aria-label="Configuration requise">
+          <li>iOS 26 ou ultérieur</li>
+          <li>iPhone et iPad</li>
+          <li>Aucun compte</li>
+          <li>Fonctionne hors ligne</li>
         </ul>
-        <p>Du kannst denselben Faktor an einem Tag in mehreren Tageszeiten markieren.</p>
       </div>
-    </details>
 
-    <details class="faq">
-      <summary>Warum steht meine Einschlafzeit am Vortag?</summary>
-      <div class="answer">
-        <p>Eine Nacht trägt das Datum des Morgens, an dem du aufgewacht bist. Wenn du am Samstag um 1:20 Uhr ins
-        Bett gegangen bist und um 8 Uhr aufgewacht bist, ist das die Nacht vom Samstag — die Zeit nach
-        Mitternacht rechnet die App für dich.</p>
+      <h2>Questions fréquentes</h2>
+      <div class="faq">
+        <details>
+          <summary>Comment enregistrer ce que j'ai mangé ?</summary>
+          <div class="body">
+            <p>
+              Ouvrez <strong>Journal</strong> et touchez <strong>+</strong> →
+              <strong>Ajouter un repas</strong>. Choisissez un aliment, saisissez la quantité en
+              grammes (ou en portions si l'aliment en a une), choisissez le repas et l'heure, puis
+              ajoutez si besoin une note, une photo ou une note vocale. Enregistrer place l'entrée au
+              jour sélectionné et la compte dans votre objectif.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Un aliment manque. Que faire ?</summary>
+          <div class="body">
+            <p>
+              Créez-le : <strong>Réglages → Catégories → +</strong>. Saisissez les valeurs pour
+              100 g indiquées sur l'emballage ; seul le nom est obligatoire. Vous pouvez aussi
+              toucher <strong>Interroger le modèle local</strong> dans le sélecteur d'aliments puis
+              coller la réponse JSON, ou importer un fichier CSV/JSON depuis
+              <strong>Réglages → Catégories → Importer la bibliothèque</strong>.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Pourquoi mes anciennes entrées changent-elles quand je modifie un aliment ?</summary>
+          <div class="body">
+            <p>
+              Les entrées lisent les valeurs nutritionnelles actuelles de l'aliment : corriger un
+              aliment corrige donc aussi l'historique. C'est voulu — une valeur fausse ne doit pas
+              rester fausse dans les anciennes lignes. Pour conserver les anciens chiffres, dupliquez
+              l'aliment avant de le modifier. Un aliment inutilisé peut être archivé plutôt que
+              supprimé ; les entrées gardent alors leur nom et leurs valeurs.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Grammes, portions, ou les deux ?</summary>
+          <div class="body">
+            <p>
+              Tout est stocké pour 100 g. Si un aliment a une taille de portion (par exemple une
+              tranche = 43 g), le formulaire propose un basculement de portion. La portion est
+              multipliée par les grammes de la portion avant le calcul des valeurs nutritionnelles.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Comment mon objectif calorique est-il calculé ?</summary>
+          <div class="body">
+            <p>
+              À partir du profil dans <strong>Réglages → Objectifs</strong> : Mifflin-St Jeor pour le
+              métabolisme de base, multiplié par votre niveau d'activité. Vous pouvez remplacer le
+              résultat par votre propre objectif. Les objectifs de macros sont en grammes par jour, et
+              la répartition par repas décide de la part de chaque macro au petit-déjeuner, déjeuner,
+              dîner et collation.
+            </p>
+            <p>
+              Calories restantes = objectif − consommé + activité saisie. L'activité est saisie à la
+              main ; l'app ne lit pas HealthKit.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Qu'est-ce qui est gratuit, et qu'est-ce qui nécessite l'adhésion à vie ?</summary>
+          <div class="body">
+            <p>
+              Gratuit : repas, photos et notes vocales, bibliothèque d'aliments, objectifs, activité,
+              statistiques du jour et import/export de la bibliothèque. L'adhésion à vie (4,99 $
+              une fois) débloque les statistiques semaine, mois et année ainsi que la sauvegarde et
+              l'import/export de la base.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Comment restaurer mon achat sur un nouvel appareil ?</summary>
+          <div class="body">
+            <p>
+              Installez l'app, ouvrez <strong>Réglages → Adhésion → Restaurer les achats</strong> et
+              connectez-vous avec l'identifiant Apple utilisé lors de l'achat. Si rien n'est trouvé,
+              vérifiez l'identifiant utilisé. Le partage familial n'est pas activé pour ce produit.
+            </p>
+            <p>
+              Les remboursements sont gérés par Apple :
+              <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Comment fonctionnent les sauvegardes ?</summary>
+          <div class="body">
+            <p>
+              <strong>Réglages → Sauvegarde → Exporter la base</strong> crée le fichier SQLite et
+              ouvre la feuille de partage. Conservez-le dans Fichiers ou iCloud Drive. À l'import, le
+              fichier est validé puis confirmé, car il remplace tout sur l'appareil. La base
+              précédente est conservée dans <code>FoodTrack/Backups</code> via Fichiers.
+            </p>
+            <p>
+              Une sauvegarde contient uniquement la base. Les photos et enregistrements restent dans
+              <code>FoodTrack/Photos</code> et <code>FoodTrack/Audio</code> ; copiez-les séparément
+              pour les emporter sur un autre appareil.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Où sont mes photos et enregistrements ?</summary>
+          <div class="body">
+            <p>
+              Dans le dossier Documents de l'app, visible dans <strong>Fichiers → Sur mon iPhone →
+              Spendly Food → FoodTrack</strong>. Les photos sont des JPEG sous
+              <code>Photos/AAAA/MM</code> ; les notes vocales sont des M4A horodatés sous
+              <code>Audio</code>. Supprimer une entrée supprime ses fichiers.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>La recherche par modèle local ne fait rien. Comment la configurer ?</summary>
+          <div class="body">
+            <p>
+              Ouvrez <strong>Réglages → Modèle local</strong> et saisissez l'URL acceptée par votre
+              app de modèle, en gardant <code>{prompt}</code> à la place de la question. La valeur par
+              défaut est <code>localgemma://ask?q={prompt}</code>. Si l'app n'est pas installée, iOS
+              ne peut pas ouvrir l'URL et Spendly Food Track vous le signale. Vous pouvez toujours
+              saisir les valeurs manuellement ou coller une réponse.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>L'appareil photo ou le microphone n'est pas disponible.</summary>
+          <div class="body">
+            <p>
+              Spendly Food Track demande chaque autorisation seulement au moment de l'utiliser. Si
+              vous l'avez refusée, activez-la dans <strong>Réglages iOS → Spendly Food</strong>. Le
+              choix d'une photo dans la photothèque passe par le sélecteur système et ne nécessite
+              aucune autorisation.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Comment repartir de zéro ou tout supprimer ?</summary>
+          <div class="body">
+            <p>
+              <strong>Réglages → Supprimer toutes les données</strong> retire repas, activité,
+              photos, enregistrements et aliments personnels, en conservant la bibliothèque de
+              référence et vos objectifs. Supprimer l'app retire tout son conteneur. Une sauvegarde
+              exportée est un fichier qui vous appartient : supprimez-la vous-même dans Fichiers.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Que signifie « Récupération de la base » ?</summary>
+          <div class="body">
+            <p>
+              La base enregistrée n'a pas pu être ouverte : l'app démarre donc vide pour cette
+              session. Les enregistrements existants n'ont pas été supprimés. Exportez une sauvegarde
+              si possible, réinstallez l'app ou contactez l'assistance avec la version et le message
+              affiché.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Comment changer la langue ?</summary>
+          <div class="body">
+            <p>
+              <strong>Réglages → Langue</strong> : suivez l'appareil ou fixez anglais, allemand,
+              français ou espagnol. Le choix s'applique immédiatement à toute l'app.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Quelque chose a échoué. Comment vous aider à diagnostiquer ?</summary>
+          <div class="body">
+            <p>
+              <strong>Réglages → Données → Partager les diagnostics</strong> partage le journal
+              local. Il contient les erreurs et opérations d'entretien de l'app, pas vos notes ni vos
+              valeurs nutritionnelles. Décrivez ce que vous faisiez au moment du problème.
+            </p>
+          </div>
+        </details>
       </div>
-    </details>
 
-    <h2>Widget</h2>
-
-    <details class="faq">
-      <summary>Wie funktioniert das Widget?</summary>
-      <div class="answer">
-        <p>Lege das SleepHabit-Widget auf den Home-Bildschirm, tippe auf <em>Start</em>, wenn du ins Bett gehst,
-        und auf <em>Stopp</em>, wenn du aufwachst. Das Widget merkt sich nur diese beiden Zeiten; beim nächsten
-        Öffnen macht die App daraus eine Nacht für dich.</p>
-        <p>Die kleine und die mittlere Größe werden unterstützt. Wenn du die Nacht laufen lässt, wechselt das
-        Widget nach 16 Stunden auf <em>Noch im Bett?</em>, statt endlos weiterzuzählen.</p>
+      <div class="note">
+        Les valeurs nutritionnelles sont des estimations et ne constituent pas un avis médical. La
+        <a href="index.html" data-keep-lang>politique de confidentialité</a> décrit ce que l'app
+        stocke et où.
       </div>
-    </details>
-
-    <details class="faq">
-      <summary>Das Widget hat eine Nacht aufgezeichnet, aber ich sehe sie nicht</summary>
-      <div class="answer">
-        <p>Die App verwirft eine Widget-Nacht in vier Fällen, statt etwas zu schreiben, für das sie nicht
-        geradestehen kann:</p>
-        <ul>
-          <li>du hast diese Nacht schon von Hand erfasst — deine Nacht wird nie vom Widget überschrieben;</li>
-          <li>die Sitzung war kürzer als eine Stunde;</li>
-          <li><em>Start</em> wurde nach 6 Uhr getippt, das ist ein Aufwachen und keine Einschlafzeit;</li>
-          <li>du hast zwei Nächte über das Widget aufgezeichnet, ohne die App dazwischen zu öffnen — nur die
-          spätere bleibt erhalten.</li>
-        </ul>
-        <p>Eine Sitzung, die länger als 16 Stunden lief, wird als 16-Stunden-Nacht abgelegt und als gekappt
-        gekennzeichnet — prüfe danach die Zeiten auf der Karte. Wenn eine gesicherte Nacht noch auf Bestätigung
-        wartet, zeigt „Heute“ eine Karte <em>Noch nicht gesichert</em> mit einer Schaltfläche zum
-        Wiederholen.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Warum hat die Widget-Nacht Energie 3 und 0 Aufwachen?</summary>
-      <div class="answer">
-        <p>Das Widget weiß nur, wann du ins Bett gegangen bist und wann du aufgewacht bist — deshalb setzt es
-        die Mitte der Skala und bittet dich um Korrektur. Tippe im Widget auf <em>Details ergänzen</em>, und die
-        App öffnet direkt das Formular dieser Nacht — oder tippe die Nacht im Tab „Heute“ an, wo die Karte
-        <em>Aus dem Widget – Energie und Tags bestätigen</em> sagt, und trage ein, wie du dich wirklich gefühlt
-        hast und was du am Tag davor gemacht hast.</p>
-      </div>
-    </details>
-
-    <h2>Verlauf und Schlaftrend</h2>
-
-    <details class="faq">
-      <summary>Wo ist das Trend-Diagramm?</summary>
-      <div class="answer">
-        <p>Der Tab „Verlauf“ beginnt mit einer Zeile <em>Letzte 30 Nächte</em>, die deine Schlafdauer als kleine
-        Linie zeigt. Tippe darauf, und dieselbe Linie öffnet sich im Vollbild, mit einer Auswahl für Dauer,
-        Einschlafzeit, Aufwachen oder Energie und Zeiträumen von 30 Tagen, 90 Tagen, einem Jahr oder der
-        gesamten Zeit.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Wie zoome ich hinein, und wie lese ich eine einzelne Nacht?</summary>
-      <div class="answer">
-        <p>Kneife im Diagramm, um in einen Abschnitt von Wochen zu zoomen. Die senkrechte Skala bleibt, wo sie
-        ist — Höhen bedeuten also weiter dasselbe wie vorher. Solange du gezoomt hast, zeigt ein schmaler
-        Streifen unter der Zeichnung, wo der sichtbare Teil im gesamten Zeitraum liegt; ziehe den Streifen, um
-        ihn zu verschieben.</p>
-        <p>Halte irgendwo auf der Linie gedrückt, und das Diagramm wählt die nächste Nacht: Datum, Wert und die
-        Aufwachen, Energie und Faktoren, die du dafür erfasst hast. Die Karte bleibt einen Moment stehen,
-        nachdem du losgelassen hast, damit du die Zahl lesen kannst. Doppeltippe das Diagramm oder tippe auf
-        <em>Zoom zurücksetzen</em>, um wieder alles einzupassen.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Warum wird die Linie zu Wochenpunkten?</summary>
-      <div class="answer">
-        <p>Ab etwa drei Monaten Nächten wäre ein Punkt pro Nacht ein Dickicht statt einer Form, deshalb mittelt
-        das Diagramm jede Woche zu einem Punkt — den Mittelwert der Nächte, die du in dieser Woche tatsächlich
-        erfasst hast. Drücke auf einen Wochenpunkt, und die Karte sagt dir, wie viele Nächte er abdeckt.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Gehört der Trend zum einmaligen Kauf?</summary>
-      <div class="answer">
-        <p>Nein. Das Trend-Diagramm ist in beiden Stufen kostenlos, über jeden Zeitraum, weil es nur Nächte neu
-        zeichnet, die du schon erfasst hast. Beim Kauf geht es um den Vergleich markierter gegen nicht
-        markierte Nächte — das ist der Tab „Einblicke“. Dein Verlauf und der Trend bleiben für immer
-        kostenlos.</p>
-      </div>
-    </details>
-
-    <h2>Einblicke</h2>
-
-    <details class="faq">
-      <summary>Warum sehe ich noch keine Einblicke?</summary>
-      <div class="answer">
-        <p>Einblicke erscheinen erst, wenn auf beiden Seiten eines Vergleichs genug Daten liegen und der
-        Unterschied groß genug ist, um etwas zu bedeuten. Ist der Abstand dünn, ist „nichts zeigen“ die
-        ehrliche Antwort.</p>
-        <ul>
-          <li><strong>Kostenlos:</strong> Zeitraum von 14 Tagen (7 Tage sind auch möglich), mindestens 3 Nächte
-          mit dem Faktor und 3 ohne und mindestens 5 erfasste Nächte.</li>
-          <li><strong>Freigeschaltet:</strong> 30 / 90 / 365 Tage oder die gesamte Zeit, mindestens 5 Nächte mit
-          und 5 ohne und mindestens 14 erfasste Nächte.</li>
-          <li><strong>Wirkungsgrenze:</strong> 15 Minuten Schlafzeit, 0,5 nächtliches Aufwachen oder 0,3
-          Energiepunkte.</li>
-        </ul>
-        <p>Eine strukturelle Falle: Wenn du dasselbe jeden Abend markierst, gibt es keine „ohne“-Gruppe zum
-        Vergleichen, also kann dieser Faktor nur eine „wie oft“-Tatsache liefern — und einen Zeitvergleich,
-        wenn du ihn an verschiedenen Nächten zu verschiedenen Tageszeiten markierst.</p>
-        <p>Erfasse weiter. Der Tab „Einblicke“ sagt dir, welcher Faktor als Nächstes freigeschaltet wird.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Was genau wird da verglichen?</summary>
-      <div class="answer">
-        <p>Mittelwerte deiner eigenen Nächte, gruppiert danach, ob der Faktor vorhanden war. Zum Beispiel: die
-        durchschnittliche Einschlafzeit an Nächten mit Koffein kurz vor dem Schlafengehen gegenüber Nächten
-        ohne — oder gegenüber Nächten, an denen Koffein am Nachmittag war. Die App zählt auch, wie oft etwas
-        passiert: „Du hast an 12 von 30 Nächten Alkohol erfasst und bist in 9 davon mindestens einmal
-        aufgewacht."</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Sind diese Ergebnisse ein Beweis, dass etwas schlechten Schlaf verursacht?</summary>
-      <div class="answer">
-        <p>Nein. Es sind Zusammenhänge in deinen eigenen Daten — Korrelation, nicht Kausalität. Was gemeinsam
-        auftritt, kann eine andere Ursache haben, und kleine Stichproben schwanken. SleepHabit ist kein
-        Medizinprodukt und diagnostiziert oder behandelt nichts; bei einem echten Schlafproblem wende dich an
-        eine Ärztin oder einen Arzt.</p>
-      </div>
-    </details>
-
-    <h2>Der einmalige Kauf</h2>
-
-    <details class="faq">
-      <summary>Was bekomme ich mit dem Kauf?</summary>
-      <div class="answer">
-        <p>Erfassen und dein gesamter Verlauf sind für immer kostenlos, und die Einblicke der letzten 14 Tage
-        sind es auch (7 Tage sind ebenfalls wählbar). Ein einmaliger Kauf schaltet den weiten Blick frei:
-        Einblicke über 30, 90 und 365 Tage sowie die gesamte Zeit, alles gerechnet über jede Nacht, die du
-        erfasst hast. Welcher Zeitraum auch offen ist — du kannst ihn in beiden Stufen zur vollständigen Liste
-        aufklappen: der Kauf fügt Verlauf zum Vergleichen hinzu, keine Zeilen pro Zeitraum. Es ist ein
-        einmaliger Kauf: kein Abo, nichts verlängert sich.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Was kostet es?</summary>
-      <div class="answer">
-        <p>4,99 US-Dollar oder den entsprechenden Betrag in deinem Storefront (38 ¥ in China). Der genaue Preis
-        steht immer auf dem Kaufbildschirm und auf der App-Store-Produktseite, in deiner Währung und bevor du
-        bestätigst.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Ich habe es früher gekauft. Wie bekomme ich es zurück?</summary>
-      <div class="answer">
-        <p>Einstellungen → <em>Kauf wiederherstellen</em>. Die Freischaltung gehört zu deinem Apple-Account;
-        auf einem neuen Gerät mit demselben Account funktioniert das Wiederherstellen. Wenn nichts passiert:
-        prüfe, ob du im App Store mit dem Account angemeldet bist, mit dem du gekauft hast, und versuche es
-        dann mit Netzwerkverbindung erneut.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Bekomme ich eine Rückerstattung?</summary>
-      <div class="answer">
-        <p>Rückerstattungen wickelt Apple ab, nicht wir: gehe auf
-        <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>, melde dich an und wähle den
-        Kauf. Wir können App-Store-Zahlungen weder auszahlen noch rückgängig machen.</p>
-      </div>
-    </details>
-
-    <h2>Deine Daten</h2>
-
-    <details class="faq">
-      <summary>Wo liegen meine Daten?</summary>
-      <div class="answer">
-        <p>Nur auf deinem iPhone, in der App. Es gibt kein Konto und keinen Server, also wird nichts hochgeladen
-        und wir können dein Protokoll nicht sehen. Das Widget für den Home-Bildschirm speichert Start- und
-        Stoppzeit einer Nacht in einem kleinen Speicher, den sich App und Widget auf demselben Gerät teilen —
-        mehr nicht. Alle Details stehen in der <a href="index.html">Datenschutzerklärung</a>.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Wie sichere ich und wie wechsle ich auf ein neues Telefon?</summary>
-      <div class="answer">
-        <p>Einstellungen → <em>Backup exportieren (JSON)</em> erzeugt eine JSON-Datei und öffnet das
-        Teilen-Menü; speichere sie in „Dateien“, in iCloud Drive oder an einem Ort, dem du vertraust. Auf dem
-        neuen Telefon installierst du SleepHabit und wählst dann Einstellungen → <em>Backup importieren</em> und
-        diese Datei.</p>
-        <p>Der Import <strong>ersetzt</strong> alles, was gerade in der App ist — es ist eine
-        Wiederherstellung, keine Zusammenführung —, und die App fragt vorher nach. Eine Datei, die die Prüfung
-        nicht besteht, wird abgelehnt, und deine vorhandenen Daten bleiben unverändert.</p>
-        <p>Wenn du iCloud-Backup oder eine Sicherung am Computer nutzt, können die Daten der App auch in dieser
-        Gerätesicherung stecken, verwaltet von iOS.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Wie lösche ich alles?</summary>
-      <div class="answer">
-        <p>Lösche einzelne Nächte im Verlauf, oder lösche die App, um alle Nächte und Einstellungen auf einmal zu
-        entfernen. Weil nichts auf einem Server liegt, ist das Löschen sofort wirksam und es bleibt keine Kopie,
-        die wir löschen müssten. Exportiere vorher eine Sicherung, wenn du die Daten später vielleicht brauchst.</p>
-      </div>
-    </details>
-
-    <h2>Erinnerungen</h2>
-
-    <details class="faq">
-      <summary>Wann kommt die Erinnerung?</summary>
-      <div class="answer">
-        <p>Standardmäßig um 8:30 Uhr; die Uhrzeit kannst du ändern oder die Erinnerung in den Einstellungen
-        abschalten. Die App plant eine Woche einzelner Erinnerungen ein, die jede schon erfasste Nacht
-        überspringen — sie hört also auf zu nerven, sobald dein Eintrag da ist.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Ich bekomme keine Mitteilungen.</summary>
-      <div class="answer">
-        <p>Prüfe drei Dinge: Der Schalter ist in den Einstellungen von SleepHabit an; Mitteilungen sind für
-        SleepHabit in den iOS-Einstellungen → Mitteilungen erlaubt; und kein Fokus-Modus oder „Nicht stören“
-        hält sie zurück. Wenn die Erlaubnis früher abgelehnt wurde, aktiviere sie in den iOS-Einstellungen —
-        die App übernimmt es beim nächsten Einplanen.</p>
-      </div>
-    </details>
-
-    <h2>Sprache</h2>
-
-    <details class="faq">
-      <summary>Wie ändere ich die Sprache?</summary>
-      <div class="answer">
-        <p>Einstellungen → Sprache. Wähle Deutsch, Englisch, Englisch (UK) oder Französisch, und die App
-        zeichnet sich sofort neu — ohne Neustart, und du bleibst im Tab „Einstellungen“. <em>System</em> behält
-        die Sprache deines iPhones bei. Englisch (UK) ist eine eigene Wahl neben Englisch, damit das Datum den
-        Tag zuerst zeigt und die Uhrzeit im 24-Stunden-Format läuft. Das Widget für den Home-Bildschirm zeichnet
-        in derselben Sprache wie die App.</p>
-        <p>Die Sprachwahl ist in beiden Stufen kostenlos. Der einmalige Kauf schaltet längere Zeiträume für die
-        Einblicke frei, keine Sprachen — für Deutsch oder Französisch musst du nichts kaufen.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>In welchen Sprachen gibt es SleepHabit?</summary>
-      <div class="answer">
-        <p>Deutsch, Englisch (USA), Englisch (UK) und Französisch. Das umfasst die ganze App — Beschriftungen,
-        Einblick-Sätze, Hinweise im Formular, die Erinnerungs-Mitteilung und das Widget. Diese Hilfeseite und
-        die Datenschutzerklärung gibt es ebenfalls auf Deutsch, Englisch und Französisch.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Ändert die Sprachwahl meine Daten?</summary>
-      <div class="answer">
-        <p>Nein. Sie ändert nur, wie die App zeichnet. Deine Nächte, Faktoren und Notizen bleiben unverändert,
-        eine exportierte Sicherung ist sprachneutrales JSON, und nichts über die Wahl verlässt das Gerät.</p>
-      </div>
-    </details>
-
-    <h2>Problemlösung</h2>
-
-    <details class="faq">
-      <summary>Die Schaltfläche „Sichern“ ist ausgegraut.</summary>
-      <div class="answer">
-        <p>„Sichern“ bleibt deaktiviert, solange die Nacht ungültig ist. Die üblichen Ursachen: die Aufwachzeit
-        liegt vor der Einschlafzeit oder zu nah daran (eine Nacht muss mindestens eine Stunde sein), oder die
-        Notiz ist länger als 280 Zeichen. Das Formular zeigt, welche Regel verletzt ist.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Ich habe die App neu installiert und mein Verlauf ist weg.</summary>
-      <div class="answer">
-        <p>Das Löschen einer App entfernt ihre lokalen Daten — das ist der Preis dafür, dass alles auf dem
-        Gerät bleibt. Wenn du eine Sicherung exportiert hast, importiere sie in den Einstellungen. Wenn
-        iCloud-Backup aktiv war, kann das Wiederherstellen der Gerätesicherung die Daten der App zurückbringen.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Braucht SleepHabit Internet?</summary>
-      <div class="answer">
-        <p>Nein. Erfassen, Verlauf und Einblicke funktionieren offline. Das Netzwerk wird nur von StoreKit
-        genutzt, wenn du freischaltest oder wiederherstellst.</p>
-      </div>
-    </details>
-
-    <h2>Geräte</h2>
-
-    <details class="faq">
-      <summary>Auf welchen Geräten läuft SleepHabit?</summary>
-      <div class="answer">
-        <p>iPhone, iOS 18 oder neuer, nur im Hochformat. Auf einem iPhone Duo wird das breitere Innendisplay
-        richtig genutzt: Karten ordnen sich in zwei Spalten, statt sich als eine lange Spalte über den
-        Bildschirm zu strecken.</p>
-        <p>Es ist eine iPhone-App, deshalb installiert der App Store sie auf iPad und auf Macs mit Apple Silicon
-        im Kompatibilitätsmodus, wo sie in einem iPhone-großen Hochformatfenster läuft.</p>
-      </div>
-    </details>
-
-    <h2>Immer noch festgefahren?</h2>
-    <p>Schreib an <a href="mailto:vegaodm@outlook.com?subject=SleepHabit%20Support">vegaodm@outlook.com</a> mit
-    deiner iOS-Version, der App-Version aus Einstellungen → Über und einer kurzen Beschreibung des Problems.
-    Fehlerberichte und Wünsche sind beide willkommen.</p>
-    <p class="contact">Wir lesen alles, und wir antworten.</p>
-  </main>
-
-  <main data-lang="fr" lang="fr" hidden>
-    <h1>Assistance</h1>
-    <p class="meta">SleepHabit pour iPhone · Version 1.0.5</p>
-
-    <div class="lede">
-      <p><strong>Besoin d'un coup de main ?</strong> Écrivez-nous : une vraie personne lit chaque message,
-      généralement sous deux jours ouvrés.</p>
-      <p class="mail"><a href="mailto:vegaodm@outlook.com?subject=SleepHabit%20support">vegaodm@outlook.com</a></p>
-      <p class="meta" style="margin:8px 0 0">Pour nous aider à répondre plus vite : votre version d'iOS, la
-      version de l'app (Réglages → À propos) et ce que vous attendiez par rapport à ce qui s'est passé.</p>
-    </div>
-
-    <h2>Premiers pas</h2>
-    <ol class="steps">
-      <li><strong>Saisissez la nuit dernière.</strong> Dans l'onglet « Aujourd'hui », touchez <em>Ajouter la
-      nuit dernière</em>. Indiquez l'heure du coucher, l'heure du lever, le nombre de réveils et votre énergie,
-      d'Épuisé à Excellent.</li>
-      <li><strong>Marquez la journée d'avant.</strong> Touchez caféine, alcool, sport, stress, écrans ou sieste,
-      puis choisissez à peu près le moment — matin, après-midi, soir ou juste avant le coucher. L'heure
-      compte : un café à 15 h et un café à 23 h ne font pas la même nuit.</li>
-      <li><strong>Revenez demain.</strong> Les analyses apparaissent quand votre journal atteint le seuil des
-      deux côtés d'une comparaison. Continuez à saisir : l'app reste muette tant que les données ne sont pas
-      assez solides pour signifier quelque chose.</li>
-    </ol>
-
-    <h2>Saisie</h2>
-
-    <details class="faq">
-      <summary>Puis-je saisir des nuits que j'ai oubliées ?</summary>
-      <div class="answer">
-        <p>Oui. Quand vous créez une nuit, touchez <em>Nuit du</em> et choisissez la date. Vous pouvez remonter
-        des années en arrière, et l'app les utilisera aussitôt dans les analyses suivantes.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Comment modifier ou supprimer une nuit ?</summary>
-      <div class="answer">
-        <p>Touchez la carte dans l'onglet « Aujourd'hui », ou ouvrez la nuit depuis l'onglet « Historique », et
-        changez ce qu'il faut. Pour supprimer, balayez la ligne vers la gauche dans l'historique, ou utilisez la
-        section « Supprimer » en bas de la nuit.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Que signifie chaque facteur ?</summary>
-      <div class="answer">
-        <p>Les facteurs décrivent la journée éveillée <em>avant</em> la nuit, pas la nuit elle-même.</p>
-        <ul>
-          <li><strong>Caféine</strong> — café, thé, boissons énergisantes, pré-entraînement.</li>
-          <li><strong>Alcool</strong> — toute boisson alcoolisée.</li>
-          <li><strong>Sport</strong> — une séance ou tout ce que vous appelleriez du sport.</li>
-          <li><strong>Stress</strong> — une journée exigeante ou tendue, au travail ou à la maison.</li>
-          <li><strong>Écrans</strong> — téléphone, ordinateur ou télévision tard dans la journée.</li>
-          <li><strong>Sieste</strong> — le sommeil de jour.</li>
-        </ul>
-        <p>Vous pouvez marquer le même facteur à plusieurs moments de la journée le même jour.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Pourquoi mon heure de coucher est-elle datée de la veille ?</summary>
-      <div class="answer">
-        <p>Une nuit porte la date du matin où vous vous êtes réveillé. Si vous vous êtes couché à 1 h 20 le
-        samedi et réveillé à 8 h, c'est la nuit du samedi — l'app gère pour vous le coucher après minuit.</p>
-      </div>
-    </details>
-
-    <h2>Widget</h2>
-
-    <details class="faq">
-      <summary>Comment fonctionne le widget ?</summary>
-      <div class="answer">
-        <p>Ajoutez le widget SleepHabit à l'écran d'accueil, touchez <em>Démarrer</em> au coucher et
-        <em>Arrêter</em> au réveil. Le widget ne retient que ces deux heures ; à la prochaine ouverture, l'app
-        en fait une nuit pour vous.</p>
-        <p>Les tailles petite et moyenne sont prises en charge. Si vous laissez la nuit tourner, le widget passe
-        à <em>Toujours au lit ?</em> au bout de 16 heures plutôt que de compter indéfiniment.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Le widget a enregistré une nuit mais je ne la vois pas</summary>
-      <div class="answer">
-        <p>L'app écarte une nuit du widget dans quatre cas, plutôt que d'écrire quelque chose qu'elle ne peut pas
-        garantir :</p>
-        <ul>
-          <li>vous aviez déjà noté cette nuit à la main — votre nuit n'est jamais écrasée par le widget ;</li>
-          <li>la session a duré moins d'une heure ;</li>
-          <li><em>Démarrer</em> a été touché après 6 h, ce qui est un réveil et non un coucher ;</li>
-          <li>vous avez enregistré deux nuits depuis le widget sans ouvrir l'app entre les deux — seule la plus
-          récente est conservée.</li>
-        </ul>
-        <p>Une session laissée plus de 16 heures est classée comme nuit de 16 heures et signalée comme tronquée :
-        vérifiez les heures sur la carte ensuite. Si une nuit enregistrée attend encore d'être confirmée,
-        « Aujourd'hui » affiche une carte <em>Pas encore enregistrée</em> avec un bouton pour réessayer.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Pourquoi la nuit du widget indique-t-elle énergie 3 et 0 réveil ?</summary>
-      <div class="answer">
-        <p>Le widget ne peut savoir que l'heure du coucher et celle du réveil : il remplit donc le milieu de
-        l'échelle et vous demande de corriger. Touchez <em>Ajouter des détails</em> sur le widget et l'app
-        s'ouvre directement sur le formulaire de cette nuit — ou touchez la nuit dans l'onglet « Aujourd'hui »,
-        où la carte indique <em>Depuis le widget — confirmez l'énergie et les tags</em>, et indiquez ce que vous
-        avez réellement ressenti et ce que vous avez fait la veille.</p>
-      </div>
-    </details>
-
-    <h2>Historique et tendance du sommeil</h2>
-
-    <details class="faq">
-      <summary>Où est le graphique de tendance ?</summary>
-      <div class="answer">
-        <p>L'onglet « Historique » commence par une ligne <em>30 dernières nuits</em> qui montre votre durée de
-        sommeil sous forme de petite courbe. Touchez-la : la même courbe s'ouvre en plein écran, avec un
-        sélecteur pour la durée, l'heure du coucher, les réveils ou l'énergie, et des périodes de 30 jours,
-        90 jours, un an ou toute la période.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Comment zoomer, et comment lire une seule nuit ?</summary>
-      <div class="answer">
-        <p>Pincez le graphique pour zoomer sur quelques semaines. L'échelle verticale ne bouge pas : les hauteurs
-        gardent donc leur sens après le zoom. Pendant que vous êtes zoomé, une fine bande sous le tracé montre
-        où se situe la partie visible dans la période entière ; faites glisser la bande pour la déplacer.</p>
-        <p>Appuyez longuement n'importe où sur la courbe : le graphique choisit la nuit la plus proche avec sa
-        date, sa valeur, et les réveils, l'énergie et les facteurs que vous avez notés. La carte reste un instant
-        après que vous relâchez, le temps de lire le chiffre. Double-touchez le graphique, ou touchez
-        <em>Réinitialiser le zoom</em>, pour tout réafficher.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Pourquoi la courbe devient-elle des points hebdomadaires ?</summary>
-      <div class="answer">
-        <p>Au-delà d'environ trois mois de nuits, un point par nuit devient un fouillis plutôt qu'une forme :
-        le graphique moyenne donc chaque semaine en un seul point — la moyenne des nuits que vous avez
-        réellement notées cette semaine-là. Appuyez sur un point hebdomadaire et la carte indique combien de
-        nuits il couvre.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>La tendance fait-elle partie du déblocage ?</summary>
-      <div class="answer">
-        <p>Non. Le graphique de tendance est gratuit sur les deux niveaux, sur toutes les périodes, car il ne
-        redessine que des nuits que vous avez déjà notées. L'achat porte sur la comparaison entre nuits
-        marquées et nuits sans facteur — c'est l'onglet « Analyses ». Votre historique et la tendance restent
-        gratuits pour toujours.</p>
-      </div>
-    </details>
-
-    <h2>Analyses</h2>
-
-    <details class="faq">
-      <summary>Pourquoi je ne vois encore aucune analyse ?</summary>
-      <div class="answer">
-        <p>Les analyses n'apparaissent que s'il y a assez de données des deux côtés d'une comparaison et si
-        l'écart est assez grand pour compter. Si l'écart est mince, ne rien afficher est la réponse honnête.</p>
-        <ul>
-          <li><strong>Gratuit :</strong> période de 14 jours (7 jours aussi possible), au moins 3 nuits avec le
-          facteur et 3 sans, et au moins 5 nuits notées.</li>
-          <li><strong>Débloqué :</strong> 30 / 90 / 365 jours ou toute la période, au moins 5 nuits avec et 5
-          sans, et au moins 14 nuits notées.</li>
-          <li><strong>Seuil d'effet :</strong> 15 minutes de décalage, 0,5 réveil nocturne ou 0,3 point
-          d'énergie.</li>
-        </ul>
-        <p>Un piège structurel : si vous marquez la même chose chaque soir, il n'existe pas de groupe « sans »
-        auquel comparer, donc ce facteur ne peut produire qu'une information de fréquence — et une comparaison
-        horaire, si vous le marquez à des moments différents selon les nuits.</p>
-        <p>Continuez à saisir. L'onglet « Analyses » vous dit quel facteur est le plus proche du déblocage.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Qu'est-ce qui est comparé exactement ?</summary>
-      <div class="answer">
-        <p>Des moyennes de vos propres nuits, groupées selon la présence du facteur. Par exemple : l'heure
-        d'endormissement moyenne les nuits avec caféine juste avant le coucher, contre les nuits sans — ou
-        contre les nuits où la caféine était l'après-midi. L'app compte aussi la fréquence : « vous avez noté de
-        l'alcool 12 nuits sur 30, et vous vous êtes réveillé au moins une fois lors de 9 d'entre elles ».</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Ces résultats prouvent-ils que quelque chose cause un mauvais sommeil ?</summary>
-      <div class="answer">
-        <p>Non. Ce sont des associations dans vos propres données — corrélation, pas causalité. Deux choses qui
-        vont ensemble peuvent partager une autre cause, et de petits échantillons varient. SleepHabit n'est pas
-        un dispositif médical et ne diagnostique ni ne traite quoi que ce soit ; pour un vrai problème de
-        sommeil, voyez un professionnel de santé.</p>
-      </div>
-    </details>
-
-    <h2>L'achat unique</h2>
-
-    <details class="faq">
-      <summary>Que comprend l'achat ?</summary>
-      <div class="answer">
-        <p>La saisie et votre historique complet sont gratuits, pour toujours, et les analyses des 14 derniers
-        jours le sont aussi (7 jours est également possible). Un paiement unique ouvre la vue longue : des
-        fenêtres de 30, 90 et 365 jours plus toute la période, calculées sur toutes les nuits que vous avez
-        notées. Quelle que soit la fenêtre ouverte, vous pouvez la déplier en liste complète sur les deux
-        niveaux — l'achat ajoute de l'historique à comparer, pas des lignes par fenêtre. C'est un paiement
-        unique : pas d'abonnement, rien ne se renouvelle.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Combien ça coûte ?</summary>
-      <div class="answer">
-        <p>4,99 $ US, ou l'équivalent dans votre boutique (38 ¥ en Chine continentale). Le prix exact s'affiche
-        toujours sur l'écran d'achat et sur la fiche App Store, dans votre devise, avant que vous confirmiez.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Je l'ai acheté avant. Comment le récupérer ?</summary>
-      <div class="answer">
-        <p>Réglages → <em>Restaurer l'achat</em>. Le déblocage appartient à votre identifiant Apple : le
-        restaurer sur un nouvel appareil avec le même identifiant fonctionne. Si rien ne se passe, vérifiez que
-        vous êtes connecté à l'App Store avec le compte utilisé pour l'achat, puis réessayez avec une connexion
-        réseau.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Puis-je obtenir un remboursement ?</summary>
-      <div class="answer">
-        <p>Les remboursements sont gérés par Apple, pas par nous : rendez-vous sur
-        <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>, connectez-vous et choisissez
-        l'achat. Nous ne pouvons ni émettre ni annuler un paiement App Store.</p>
-      </div>
-    </details>
-
-    <h2>Vos données</h2>
-
-    <details class="faq">
-      <summary>Où sont stockées mes données ?</summary>
-      <div class="answer">
-        <p>Uniquement sur votre iPhone, dans l'app. Il n'y a ni compte ni serveur : rien n'est envoyé et nous ne
-        pouvons pas voir votre journal. Le widget de l'écran d'accueil garde les heures de début et de fin d'une
-        nuit dans un petit espace partagé par l'app et le widget sur le même appareil — rien de plus. Tous les
-        détails sont dans la <a href="index.html">politique de confidentialité</a>.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Comment sauvegarder et passer à un nouveau téléphone ?</summary>
-      <div class="answer">
-        <p>Réglages → <em>Exporter une sauvegarde (JSON)</em> crée un fichier JSON et ouvre la feuille de
-        partage ; enregistrez-le dans Fichiers, iCloud Drive ou un endroit de confiance. Sur le nouveau
-        téléphone, installez SleepHabit, puis Réglages → <em>Importer une sauvegarde</em> et choisissez ce
-        fichier.</p>
-        <p>L'import <strong>remplace</strong> tout ce qui est actuellement dans l'app — c'est une restauration,
-        pas une fusion — et l'app demande confirmation avant d'écrire. Un fichier qui échoue à la validation est
-        refusé et vos données existantes restent intactes.</p>
-        <p>Si vous utilisez la sauvegarde iCloud ou une sauvegarde sur ordinateur, les données de l'app peuvent
-        aussi y figurer, gérées par iOS.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Comment tout supprimer ?</summary>
-      <div class="answer">
-        <p>Supprimez les nuits une à une depuis l'historique, ou supprimez l'app pour retirer toutes les nuits et
-        réglages d'un coup. Comme rien n'est stocké sur un serveur, la suppression est immédiate et il ne reste
-        aucune copie à effacer de notre côté. Exportez une sauvegarde avant, si vous pourriez vouloir ces
-        données plus tard.</p>
-      </div>
-    </details>
-
-    <h2>Rappels</h2>
-
-    <details class="faq">
-      <summary>Quand le rappel arrive-t-il ?</summary>
-      <div class="answer">
-        <p>Par défaut à 8 h 30, et vous pouvez changer l'heure ou le désactiver dans les réglages. L'app
-        programme une semaine de rappels ponctuels qui ignorent toute nuit déjà saisie : il cesse donc
-        d'insister dès que votre nuit est enregistrée.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Je ne reçois pas de notifications.</summary>
-      <div class="answer">
-        <p>Vérifiez trois choses : l'interrupteur est actif dans les réglages de SleepHabit ; les notifications
-        sont autorisées pour SleepHabit dans Réglages iOS → Notifications ; et aucun mode Concentration ni
-        « Ne pas déranger » ne les retient. Si l'autorisation a été refusée plus tôt, réactivez-la dans les
-        réglages iOS et l'app la prendra en compte à la prochaine programmation.</p>
-      </div>
-    </details>
-
-    <h2>Langue</h2>
-
-    <details class="faq">
-      <summary>Comment changer la langue ?</summary>
-      <div class="answer">
-        <p>Réglages → Langue. Choisissez Français, English, English (UK) ou Deutsch : l'app se redessine
-        aussitôt — sans redémarrage, et vous restez dans l'onglet « Réglages ». <em>Système</em> conserve la
-        langue de votre iPhone. L'anglais (Royaume-Uni) est un choix distinct de l'anglais, pour que les dates
-        aient le jour en premier et les heures sur 24. Le widget de l'écran d'accueil se dessine dans la même
-        langue que l'app.</p>
-        <p>Le changement de langue est gratuit sur les deux niveaux. L'achat unique ouvre des fenêtres d'analyse
-        plus longues, pas des langues — il n'y a rien à acheter pour lire l'app en français ou en allemand.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>En quelles langues SleepHabit existe-t-il ?</summary>
-      <div class="answer">
-        <p>Français, anglais (États-Unis), anglais (Royaume-Uni) et allemand. Cela couvre toute l'app —
-        libellés, phrases d'analyse, messages de saisie, la notification de rappel et le widget. Cette page
-        d'assistance et la politique de confidentialité existent elles aussi en français, en anglais et en
-        allemand.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>Le choix de la langue modifie-t-il mes données ?</summary>
-      <div class="answer">
-        <p>Non. Il change seulement l'affichage. Vos nuits, facteurs et notes restent inchangés, une sauvegarde
-        exportée est du JSON neutre, et rien à propos de ce choix ne quitte l'appareil.</p>
-      </div>
-    </details>
-
-    <h2>Résolution de problèmes</h2>
-
-    <details class="faq">
-      <summary>Le bouton « Enregistrer » est grisé.</summary>
-      <div class="answer">
-        <p>« Enregistrer » reste désactivé tant que la nuit est invalide. Causes habituelles : l'heure du lever
-        est antérieure à celle du coucher ou trop proche (une nuit doit durer au moins une heure), ou la note
-        dépasse 280 caractères. Le formulaire indique la règle qui bloque.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>J'ai réinstallé l'app et mon historique a disparu.</summary>
-      <div class="answer">
-        <p>Supprimer une app efface ses données locales : c'est le revers de tout garder sur l'appareil. Si vous
-        aviez exporté une sauvegarde, importez-la depuis les réglages. Si la sauvegarde iCloud était active,
-        restaurer la sauvegarde de l'appareil peut ramener les données de l'app.</p>
-      </div>
-    </details>
-
-    <details class="faq">
-      <summary>SleepHabit a-t-il besoin d'Internet ?</summary>
-      <div class="answer">
-        <p>Non. La saisie, l'historique et les analyses fonctionnent hors ligne. Le réseau ne sert qu'à StoreKit,
-        quand vous débloquez ou restaurez l'achat.</p>
-      </div>
-    </details>
-
-    <h2>Appareils</h2>
-
-    <details class="faq">
-      <summary>Sur quels appareils fonctionne SleepHabit ?</summary>
-      <div class="answer">
-        <p>iPhone, iOS 18 ou ultérieur, en portrait uniquement. Sur un iPhone Duo, l'écran intérieur plus large
-        est vraiment utilisé : les cartes se répartissent en deux colonnes au lieu d'une seule longue colonne
-        étirée sur toute la largeur.</p>
-        <p>C'est une app iPhone : sur iPad et sur Mac à puce Apple, l'App Store l'installe en mode de
-        compatibilité, où elle tourne dans une fenêtre au format iPhone, en portrait.</p>
-      </div>
-    </details>
-
-    <h2>Toujours bloqué ?</h2>
-    <p>Écrivez à <a href="mailto:vegaodm@outlook.com?subject=SleepHabit%20support">vegaodm@outlook.com</a> avec
-    votre version d'iOS, la version de l'app (Réglages → À propos) et une brève description du problème. Les
-    rapports de bug comme les suggestions sont bienvenus.</p>
-    <p class="contact">Nous lisons tout, et nous répondons.</p>
+    </section>
   </main>
 
   <footer>
-    <span id="foot-tag">SleepHabit · Find what's wrecking your sleep.</span>
-    <span><a href="index.html" id="foot-a">Privacy Policy</a> · <a href="mailto:vegaodm@outlook.com" id="foot-b">Contact</a></span>
+    <div class="footer-inner">
+      <span>© 2026 Spendly Food Track</span>
+      <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a>
+      <span class="sep"></span>
+      <a href="index.html" data-keep-lang>
+        <span data-lang="en">Privacy</span><span data-lang="de">Datenschutz</span><span data-lang="fr">Confidentialité</span>
+      </a>
+      <a href="support.html" data-keep-lang aria-current="page">
+        <span data-lang="en">Support</span><span data-lang="de">Support</span><span data-lang="fr">Assistance</span>
+      </a>
+    </div>
   </footer>
-</div>
-<script>
-(function () {
-  "use strict";
-  // One page, three languages: the switch is a data attribute on <main> plus a
-  // localStorage value, so the URL, the selection and a shared link all agree.
-  var META = {
-    en: { title: "Support · SleepHabit", desc: "Help with SleepHabit: logging nights, understanding insights, the one-time unlock, backups, reminders and how to reach us.", navPrivacy: "Privacy", navSupport: "Support", navSite: "Site", navLang: "Language", tag: "SleepHabit · Find what's wrecking your sleep.", footA: "Privacy Policy", footB: "Contact" },
-    de: { title: "Hilfe · SleepHabit", desc: "Hilfe zu SleepHabit: Nächte erfassen, Einblicke verstehen, der einmalige Kauf, Backups, Erinnerungen und wie du uns erreichst.", navPrivacy: "Datenschutz", navSupport: "Hilfe", navSite: "Website", navLang: "Sprache", tag: "SleepHabit · Finde, was deinen Schlaf kaputtmacht.", footA: "Datenschutzerklärung", footB: "Kontakt" },
-    fr: { title: "Assistance · SleepHabit", desc: "Aide pour SleepHabit : saisir les nuits, comprendre les analyses, l'achat unique, les sauvegardes, les rappels et comment nous joindre.", navPrivacy: "Confidentialité", navSupport: "Assistance", navSite: "Site", navLang: "Langue", tag: "SleepHabit · Trouvez ce qui gâche votre sommeil.", footA: "Politique de confidentialité", footB: "Contact" }
-  };
-  var KEY = "sleephabit.lang";
-  var LANGS = ["en", "de", "fr"];
 
-  function normalize(tag) {
-    tag = String(tag || "").toLowerCase();
-    if (tag.indexOf("de") === 0) return "de";
-    if (tag.indexOf("fr") === 0) return "fr";
-    return "en";
-  }
+  <script>
+    (function () {
+      var languages = ["en", "de", "fr"];
+      var titles = {
+        en: "Support — Spendly Food Track",
+        de: "Support — Spendly Food Track",
+        fr: "Assistance — Spendly Food Track"
+      };
+      var descriptions = {
+        en: "Support for Spendly Food Track: how to record a meal, add foods, manage goals and backups, restore a purchase, and reach the developer.",
+        de: "Support für Spendly Food Track: Mahlzeiten erfassen, Lebensmittel anlegen, Ziele und Sicherungen verwalten, Käufe wiederherstellen und den Entwickler erreichen.",
+        fr: "Assistance pour Spendly Food Track : enregistrer un repas, ajouter des aliments, gérer objectifs et sauvegardes, restaurer un achat et contacter le développeur."
+      };
+      var storageKey = "spendly-food-language";
+      var root = document.documentElement;
+      var description = document.querySelector('meta[name="description"]');
+      var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-set-lang]"));
+      var links = Array.prototype.slice.call(document.querySelectorAll("a[data-keep-lang]"));
+      var current = "en";
 
-  function preferred() {
-    var fromUrl = "";
-    try { fromUrl = new URLSearchParams(location.search).get("lang") || ""; } catch (e) {}
-    if (fromUrl) return normalize(fromUrl);
-    try {
-      var saved = localStorage.getItem(KEY);
-      if (saved && LANGS.indexOf(saved) >= 0) return saved;
-    } catch (e) {}
-    var list = navigator.languages && navigator.languages.length
-      ? navigator.languages : [navigator.language || "en"];
-    for (var i = 0; i < list.length; i++) {
-      var guess = normalize(list[i]);
-      if (guess !== "en") return guess;
-    }
-    return "en";
-  }
+      function apply(language, remember) {
+        if (languages.indexOf(language) < 0) { language = "en"; }
+        current = language;
+        root.setAttribute("data-lang", language);
+        root.setAttribute("lang", language);
+        document.title = titles[language];
+        if (description) { description.setAttribute("content", descriptions[language]); }
+        buttons.forEach(function (button) {
+          button.setAttribute("aria-pressed", String(button.getAttribute("data-set-lang") === language));
+        });
+        links.forEach(function (link) {
+          var base = link.getAttribute("data-href") || link.getAttribute("href");
+          link.setAttribute("data-href", base);
+          link.setAttribute("href", base + (base.indexOf("?") >= 0 ? "&" : "?") + "lang=" + language);
+        });
+        if (remember) {
+          try { localStorage.setItem(storageKey, language); } catch (error) {}
+        }
+      }
 
-  function text(id, value) {
-    var node = document.getElementById(id);
-    if (node && node.textContent !== value) node.textContent = value;
-  }
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          apply(button.getAttribute("data-set-lang"), true);
+        });
+      });
 
-  function apply(lang, remember) {
-    var meta = META[lang] || META.en;
-    document.documentElement.lang = lang;
-    document.title = meta.title;
-    var desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.setAttribute("content", meta.desc);
-
-    var mains = document.querySelectorAll("main[data-lang]");
-    for (var i = 0; i < mains.length; i++) {
-      mains[i].hidden = mains[i].getAttribute("data-lang") !== lang;
-    }
-
-    text("nav-privacy", meta.navPrivacy);
-    text("nav-support", meta.navSupport);
-    text("foot-tag", meta.tag);
-    text("foot-a", meta.footA);
-    text("foot-b", meta.footB);
-    var siteNav = document.getElementById("sitenav");
-    if (siteNav) siteNav.setAttribute("aria-label", meta.navSite);
-    var langGroup = document.getElementById("langswitch");
-    if (langGroup) langGroup.setAttribute("aria-label", meta.navLang);
-
-    var buttons = document.querySelectorAll("#langswitch button[data-lang]");
-    for (var j = 0; j < buttons.length; j++) {
-      buttons[j].setAttribute("aria-pressed", buttons[j].getAttribute("data-lang") === lang ? "true" : "false");
-    }
-
-    // Keep the language when moving between the two pages, by click or by copy.
-    var links = document.querySelectorAll('a[href^="index.html"], a[href^="support.html"]');
-    for (var k = 0; k < links.length; k++) {
-      var page = links[k].getAttribute("href").split("?")[0];
-      links[k].setAttribute("href", lang === "en" ? page : page + "?lang=" + lang);
-    }
-
-    if (remember) {
-      try { localStorage.setItem(KEY, lang); } catch (e) {}
-      try {
-        var url = location.pathname + (lang === "en" ? "" : "?lang=" + lang);
-        history.replaceState(null, "", url);
-      } catch (e) {}
-    }
-  }
-
-  var switcher = document.getElementById("langswitch");
-  if (switcher) {
-    switcher.addEventListener("click", function (event) {
-      var button = event.target.closest ? event.target.closest("button[data-lang]") : null;
-      if (!button) return;
-      apply(button.getAttribute("data-lang"), true);
-    });
-  }
-
-  apply(preferred(), false);
-}());
-</script>
+      var query = new URLSearchParams(window.location.search).get("lang");
+      var saved = null;
+      try { saved = localStorage.getItem(storageKey); } catch (error) {}
+      var device = (navigator.language || "en").slice(0, 2).toLowerCase();
+      var initial = (query || saved || (languages.indexOf(device) >= 0 ? device : "en")).toLowerCase();
+      apply(initial, false);
+    })();
+  </script>
 </body>
 </html>

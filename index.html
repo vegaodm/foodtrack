@@ -1,760 +1,777 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="index">
-<meta name="theme-color" content="#4f46e5">
-<title>Privacy Policy · SleepHabit</title>
-<meta name="description" content="SleepHabit keeps your sleep log on your iPhone. No account, no server, no analytics, no tracking. Read the full privacy policy.">
-<style>
-  :root {
-    color-scheme: light dark;
-    --bg: #f7f7fb;
-    --card: #ffffff;
-    --ink: #16161d;
-    --muted: #5c5c6e;
-    --line: #e4e4ee;
-    --accent: #4f46e5;
-    --accent-soft: #eef0ff;
-    --code: #f2f2f7;
-  }
-  @media (prefers-color-scheme: dark) {
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Spendly Food Track</title>
+  <meta name="description" content="Spendly Food Track privacy policy: meals, photos, voice notes and goals stay on your device. No account, no analytics, no advertising, no tracking.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F08A3C">
+  <link rel="canonical" href="https://vegaodm.github.io/foodtrack/index.html">
+  <style>
     :root {
-      --bg: #0f0f14;
-      --card: #17171f;
-      --ink: #f2f2f7;
-      --muted: #a1a1b3;
-      --line: #2a2a36;
-      --accent: #a5b4fc;
-      --accent-soft: #1e1e2e;
-      --code: #20202b;
+      --accent: #e07a2b;
+      --accent-soft: rgba(240, 138, 60, 0.14);
+      --bg: #f6f5f2;
+      --surface: #ffffff;
+      --surface-2: #fbfaf8;
+      --text: #1c1b19;
+      --muted: #6b675f;
+      --line: rgba(28, 27, 25, 0.10);
+      --radius: 18px;
+      --max: 820px;
+      --shadow: 0 1px 2px rgba(28, 27, 25, 0.04), 0 12px 32px rgba(28, 27, 25, 0.06);
     }
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    padding: 0 20px 64px;
-  }
-  .wrap { max-width: 780px; margin: 0 auto; }
-  header.site {
-    display: flex; flex-wrap: wrap; gap: 12px;
-    align-items: center; justify-content: space-between;
-    padding: 22px 0 18px; border-bottom: 1px solid var(--line); margin-bottom: 28px;
-  }
-  .brand { display: flex; align-items: center; gap: 10px; font-weight: 650; letter-spacing: -0.01em; }
-  .brand svg { width: 22px; height: 22px; color: var(--accent); }
-  nav.top { display: flex; gap: 6px; flex-wrap: wrap; }
-  nav.top a {
-    color: var(--muted); text-decoration: none; font-size: 14px;
-    padding: 6px 11px; border-radius: 999px; border: 1px solid var(--line);
-  }
-  nav.top a:hover, nav.top a:focus-visible { color: var(--ink); border-color: var(--accent); }
-  nav.top a[aria-current="page"] { color: var(--accent); border-color: var(--accent); }
-  .navrow { display: flex; gap: 6px 8px; flex-wrap: wrap; align-items: center; }
-  .langs { display: flex; gap: 6px; flex-wrap: wrap; }
-  .langs button {
-    font: inherit; font-size: 13px; color: var(--muted); background: transparent;
-    padding: 6px 11px; border-radius: 999px; border: 1px solid var(--line);
-    cursor: pointer; -webkit-appearance: none; appearance: none;
-  }
-  .langs button:hover, .langs button:focus-visible { color: var(--ink); border-color: var(--accent); }
-  .langs button[aria-pressed="true"] {
-    color: var(--accent); border-color: var(--accent); background: var(--accent-soft);
-  }
-  [hidden] { display: none !important; }
-  h1 { font-size: 1.9rem; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 10px; }
-  .meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 26px; }
-  h2 { font-size: 1.18rem; letter-spacing: -0.01em; margin: 38px 0 10px; }
-  h3 { font-size: 1rem; margin: 22px 0 6px; }
-  p, li { color: var(--ink); }
-  ul { padding-left: 22px; }
-  li { margin: 5px 0; }
-  a { color: var(--accent); }
-  .lede {
-    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
-    padding: 18px 20px; margin: 0 0 8px;
-  }
-  .lede p { margin: 0; }
-  .lede strong { color: var(--ink); }
-  table { width: 100%; border-collapse: collapse; margin: 14px 0 6px; font-size: 0.94rem; }
-  caption { text-align: left; color: var(--muted); font-size: 0.86rem; padding-bottom: 6px; }
-  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
-  th { color: var(--muted); font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; }
-  tbody tr:last-child td { border-bottom: none; }
-  .tablecard { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
-  code {
-    background: var(--code); border-radius: 6px; padding: 1px 6px;
-    font-size: 0.88em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  }
-  .pill {
-    display: inline-block; background: var(--accent-soft); color: var(--accent);
-    border-radius: 999px; padding: 2px 10px; font-size: 0.8rem; font-weight: 600;
-  }
-  .contact { font-weight: 600; }
-  footer {
-    max-width: 780px; margin: 56px auto 0; padding-top: 20px;
-    border-top: 1px solid var(--line); color: var(--muted); font-size: 0.86rem;
-    display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between;
-  }
-  footer a { color: var(--muted); }
-  footer a:hover { color: var(--ink); }
-  @media (max-width: 520px) {
-    th, td { padding: 9px 8px; }
-    h1 { font-size: 1.6rem; }
-  }
-</style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --accent: #ffab5e;
+        --accent-soft: rgba(255, 171, 94, 0.16);
+        --bg: #121110;
+        --surface: #1c1b19;
+        --surface-2: #232120;
+        --text: #f4f1ec;
+        --muted: #a8a29a;
+        --line: rgba(244, 241, 236, 0.12);
+        --shadow: none;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+    .skip-link {
+      position: absolute; left: -9999px; top: 0; padding: 10px 14px;
+      background: var(--surface); color: var(--text); z-index: 100; border-radius: 0 0 10px 0;
+    }
+    .skip-link:focus { left: 0; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: saturate(180%) blur(18px);
+      -webkit-backdrop-filter: saturate(180%) blur(18px);
+      background: var(--bg);
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      max-width: var(--max); margin: 0 auto; padding: 12px 20px;
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 650; letter-spacing: -0.01em; color: var(--text); text-decoration: none;
+    }
+    .brand svg { width: 34px; height: 34px; border-radius: 9px; box-shadow: 0 1px 3px rgba(0,0,0,0.18); }
+    .site-nav { display: flex; gap: 4px; margin-left: auto; }
+    .site-nav a {
+      color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 550;
+      padding: 7px 10px; border-radius: 999px;
+    }
+    .site-nav a:hover { color: var(--text); background: var(--accent-soft); }
+    .site-nav a[aria-current="page"] { color: var(--accent); background: var(--accent-soft); }
+    .lang-switch {
+      display: flex; gap: 2px; padding: 3px; border-radius: 999px;
+      background: var(--surface-2); border: 1px solid var(--line);
+    }
+    .lang-switch button {
+      appearance: none; border: 0; background: transparent; color: var(--muted);
+      font: inherit; font-size: 0.78rem; font-weight: 650; letter-spacing: 0.03em;
+      padding: 5px 9px; border-radius: 999px; cursor: pointer;
+    }
+    .lang-switch button[aria-pressed="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 2px rgba(0,0,0,0.10); }
+
+    main { max-width: var(--max); margin: 0 auto; padding: 36px 20px 72px; }
+    .lang { display: none; }
+    html[data-lang="en"] .lang[data-lang="en"],
+    html[data-lang="de"] .lang[data-lang="de"],
+    html[data-lang="fr"] .lang[data-lang="fr"] { display: block; }
+
+    .hero { padding: 6px 0 22px; }
+    .eyebrow {
+      margin: 0 0 8px; color: var(--accent); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    h1 { margin: 0 0 14px; font-size: clamp(1.9rem, 5vw, 2.6rem); line-height: 1.15; letter-spacing: -0.025em; }
+    .lede { margin: 0; font-size: 1.06rem; color: var(--text); max-width: 68ch; }
+    .meta { margin: 14px 0 0; font-size: 0.85rem; color: var(--muted); }
+    h2 { margin: 38px 0 10px; font-size: 1.28rem; letter-spacing: -0.015em; }
+    h3 { margin: 22px 0 6px; font-size: 1.02rem; letter-spacing: -0.005em; }
+    p, li { max-width: 72ch; }
+    ul, ol { padding-left: 1.25em; }
+    li { margin: 4px 0; }
+    strong { font-weight: 650; }
+    .card {
+      margin: 20px 0 8px; padding: 20px 22px;
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .card h2 { margin-top: 0; }
+    .card > :last-child { margin-bottom: 0; }
+    .note {
+      margin: 18px 0; padding: 14px 16px;
+      background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 10px;
+      font-size: 0.94rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.93rem; }
+    th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+    th { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+    tr:last-child td { border-bottom: 0; }
+    .table-wrap {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      overflow-x: auto; padding: 0 6px; box-shadow: var(--shadow);
+    }
+    footer {
+      border-top: 1px solid var(--line); margin-top: 24px;
+    }
+    .footer-inner {
+      max-width: var(--max); margin: 0 auto; padding: 22px 20px 40px;
+      display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center;
+      font-size: 0.85rem; color: var(--muted);
+    }
+    .footer-inner a { color: var(--muted); }
+    .footer-inner .sep { flex: 1; }
+    @media (max-width: 560px) {
+      .site-nav { order: 3; margin-left: 0; width: 100%; justify-content: flex-start; }
+      .lang-switch { margin-left: auto; }
+      main { padding-top: 24px; }
+    }
+    @media print {
+      .site-header, .lang-switch, .skip-link { display: none; }
+      body { background: #fff; }
+      .lang { display: block !important; }
+    }
+  </style>
+  <noscript><style>.lang-switch { display: none; } .lang { display: block; } .lang + .lang { border-top: 1px solid var(--line); margin-top: 32px; padding-top: 8px; }</style></noscript>
 </head>
 <body>
-<div class="wrap">
-  <header class="site">
-    <div class="brand">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" stroke-linejoin="round"/>
-      </svg>
-      <span>SleepHabit</span>
-    </div>
-    <div class="navrow">
-      <nav class="top" aria-label="Site" id="sitenav">
-        <a href="index.html" id="nav-privacy" aria-current="page">Privacy</a>
-        <a href="support.html" id="nav-support">Support</a>
+  <a class="skip-link" href="#main">
+    <span data-lang="en">Skip to content</span>
+    <span data-lang="de">Zum Inhalt springen</span>
+    <span data-lang="fr">Aller au contenu</span>
+  </a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" data-keep-lang>
+        <svg viewBox="0 0 64 64" role="img" aria-label="Spendly Food Track">
+          <defs>
+            <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFF4DC"/><stop offset="1" stop-color="#F0A244"/>
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+          <path d="M14 32h36a18 18 0 0 1-36 0z" fill="#fff"/>
+          <ellipse cx="32" cy="32" rx="18" ry="2.6" fill="#F6C98A"/>
+          <path d="M28.4 29.4c-3.7-1.6-5.3-6.1-2.8-9.6 1.9 2.5 4.7 3.5 7.1 2.6-1 2.8-1.8 5.2-4.3 7z" fill="#4E9E63"/>
+          <circle cx="38" cy="25.4" r="2.2" fill="#F28A3C"/>
+          <circle cx="41.8" cy="28.4" r="1.3" fill="#F7B267"/>
+        </svg>
+        Spendly Food Track
+      </a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="index.html" data-keep-lang aria-current="page">
+          <span data-lang="en">Privacy</span><span data-lang="de">Datenschutz</span><span data-lang="fr">Confidentialité</span>
+        </a>
+        <a href="support.html" data-keep-lang>
+          <span data-lang="en">Support</span><span data-lang="de">Support</span><span data-lang="fr">Assistance</span>
+        </a>
       </nav>
-      <div class="top langs" role="group" aria-label="Language" id="langswitch">
-        <button type="button" data-lang="en" aria-pressed="true">English</button>
-        <button type="button" data-lang="de" lang="de" aria-pressed="false">Deutsch</button>
-        <button type="button" data-lang="fr" lang="fr" aria-pressed="false">Français</button>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-set-lang="en" lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="de" lang="de" aria-pressed="false">DE</button>
+        <button type="button" data-set-lang="fr" lang="fr" aria-pressed="false">FR</button>
       </div>
     </div>
   </header>
 
-  <main data-lang="en" lang="en">
-    <h1>Privacy Policy</h1>
-    <p class="meta">SleepHabit for iPhone · Last updated November 2, 2026</p>
+  <main id="main">
+    <!-- ================================================================ EN -->
+    <section class="lang" data-lang="en" lang="en">
+      <div class="hero">
+        <p class="eyebrow">Privacy Policy</p>
+        <h1>Your food diary stays on your device.</h1>
+        <p class="lede">
+          Spendly Food Track is a local-first food diary. There is no account to create, no
+          analytics, no advertising and no third-party SDKs. Your meals, photos, voice notes,
+          goals and food library are stored on your iPhone or iPad, and the developer never
+          receives them.
+        </p>
+        <p class="meta">Effective 3 November 2026 · Version 1.0.0 · iPhone and iPad</p>
+      </div>
 
-    <div class="lede">
-      <p><strong>In short:</strong> SleepHabit keeps your sleep log on your iPhone. There is no account,
-      no server of ours, no analytics, no advertising and no tracking. What you log never reaches us —
-      we have no way to read it.</p>
-    </div>
+      <div class="card">
+        <h2>At a glance</h2>
+        <ul>
+          <li><strong>No account.</strong> The app works fully offline and never asks for an email address.</li>
+          <li><strong>No tracking.</strong> No analytics, advertising identifiers, crash-reporting SDKs or cross-app tracking.</li>
+          <li><strong>No collection.</strong> The developer does not receive or store any of your data on a server.</li>
+          <li><strong>No sharing.</strong> Nothing leaves the device unless you export a file yourself.</li>
+          <li><strong>Purchases through Apple.</strong> The app learns only whether Lifetime Membership is owned; it never sees payment details.</li>
+        </ul>
+      </div>
 
-    <h2>1. What SleepHabit is</h2>
-    <p>SleepHabit is a sleep journal. Each night you record when you went to bed, when you woke up, how many
-    times you woke, and how you felt (1–5). For the day before that night you can tag caffeine, alcohol,
-    exercise, stress, screen time or a nap, together with a rough time of day. The app then compares your
-    own nights and describes the patterns it finds.</p>
-    <p>There is also a Home Screen widget: tapping <em>Start</em> when you get into bed and <em>Stop</em> when
-    you wake up records those two times so you do not have to hold them in your head. The app turns them into
-    a normal night the next time you open it — same data, same place.</p>
-    <p>All of that calculation happens on your device. This policy explains what the app stores, what leaves
-    the device, and what we do with it — which is nothing, because we never receive your data.</p>
-    <p>The app ships in English (United States and United Kingdom), German and French, and Settings lets you
-    switch between them without leaving the app. The choice is stored on the device and nothing about it is
-    sent anywhere. This policy is published in English, German and French — the links are in the header.</p>
+      <h2>What the app stores on your device</h2>
+      <p>
+        Everything below is kept inside the app's sandbox on your device. It is not uploaded
+        anywhere by the app.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Data</th><th>What it contains</th><th>Where it lives</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Diary records</td>
+              <td>Food, portion in grams, meal, date and time, optional note, and the calories and nutrients derived from that food.</td>
+              <td>SQLite database in Application Support</td>
+            </tr>
+            <tr>
+              <td>Food library</td>
+              <td>Names, categories, serving sizes and per-100 g nutrition, including foods you create or import.</td>
+              <td>SQLite database</td>
+            </tr>
+            <tr>
+              <td>Goals and profile</td>
+              <td>Sex, birth year, height, weight, activity level, calorie target, macro goals and the split across meals.</td>
+              <td>SQLite database</td>
+            </tr>
+            <tr>
+              <td>Exercise</td>
+              <td>Name, duration and the calories you type in. The app does not read HealthKit.</td>
+              <td>SQLite database</td>
+            </tr>
+            <tr>
+              <td>Photos and voice notes</td>
+              <td>Only the photos you pick or take and the recordings you make, saved as JPEG and M4A files and referenced by an entry.</td>
+              <td>Documents/FoodTrack/{Photos,Audio}</td>
+            </tr>
+            <tr>
+              <td>Diagnostics</td>
+              <td>A local text log of app errors and maintenance events, such as a failed import. It never contains your notes or nutrition values.</td>
+              <td>Documents/FoodTrack/Diagnostics</td>
+            </tr>
+            <tr>
+              <td>Preferences</td>
+              <td>Interface language, the local-model URL template, and a cached membership flag used to draw the right screen before StoreKit answers.</td>
+              <td>UserDefaults</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-    <h2>2. Data we collect</h2>
-    <p><span class="pill">Data Not Collected</span></p>
-    <p>We do not collect personal data. There is no sign-up, no iCloud sync in this version, no backend and
-    no user database, so there is nowhere on our side for your information to be held.</p>
-    <ul>
-      <li>No analytics, telemetry, crash reporting or advertising SDKs.</li>
-      <li>No advertising identifier (IDFA) and no cross-app or cross-site tracking.</li>
-      <li>No access to HealthKit, location, contacts, photos, microphone or camera.</li>
-      <li>No third-party libraries of any kind are bundled with the app.</li>
-    </ul>
+      <div class="note">
+        If you have iCloud Backup enabled in iOS, your device backup may include the app's data,
+        including photos and recordings. That backup is created and encrypted by Apple under your
+        Apple Account; the developer has no access to it. You can exclude the app in
+        Settings › Apple Account › iCloud › Manage Account Storage › Backups.
+      </div>
 
-    <h2>3. What the app stores on your device</h2>
-    <p>Everything below lives inside the app's sandboxed storage on your iPhone. None of it is uploaded by
-    the app.</p>
-    <div class="tablecard">
-      <table>
-        <caption>Stored locally; only SleepHabit and its widget on your device can read it</caption>
-        <thead>
-          <tr><th scope="col">What</th><th scope="col">Contents</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Night entries</td>
-            <td>Night date, bedtime, wake time, number of night wakings, energy score 1–5, an optional
-            free-text note (up to 280 characters), and the factor tags you selected with their time
-            buckets.</td>
-          </tr>
-          <tr>
-            <td>App settings</td>
-            <td>Whether you finished onboarding, whether the daily reminder is on and at what time, the
-            language you picked in Settings, and a cached flag recording that you unlocked the paid
-            features, so the unlock keeps working offline.</td>
-          </tr>
-          <tr>
-            <td>Widget hand-off</td>
-            <td>If you use the Home Screen widget, the time you tapped <em>Start</em> and the time you tapped
-            <em>Stop</em>. Nothing else: no tag, no energy score, no note. It lives in a small container that
-            the app and its own widget share on the same device, and it is replaced by the next night you
-            record.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Night entries stay until you delete them or delete the app. Notes are optional and entirely up to
-    you — please avoid writing anything there you would not want in a plain text file, because an export
-    <em>is</em> a plain text file.</p>
+      <h2>Permissions</h2>
+      <ul>
+        <li><strong>Camera</strong> — requested only when you choose to photograph a meal; the picture is saved inside the app.</li>
+        <li><strong>Microphone</strong> — requested only when you record a voice note; the recording is saved inside the app.</li>
+        <li><strong>Photo library</strong> — the system photo picker is used, so the app receives only the photo you select. It has no access to your library.</li>
+        <li>No location, contacts, calendars, health, motion or notification permissions are requested.</li>
+      </ul>
 
-    <h2>4. What leaves your device</h2>
-    <p>The app has no server to talk to. Data moves in exactly two situations, and both are started by
-    you.</p>
-    <div class="tablecard">
-      <table>
-        <caption>Complete list of outbound data flows</caption>
-        <thead>
-          <tr><th scope="col">Situation</th><th scope="col">What is sent</th><th scope="col">To whom</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>You tap <em>Unlock</em> or <em>Restore purchase</em></td>
-            <td>The purchase request and your App Store account session, handled by StoreKit. No sleep
-            data is included.</td>
-            <td>Apple, under your Apple Account and Apple's privacy policy.</td>
-          </tr>
-          <tr>
-            <td>You tap <em>Export backup</em></td>
-            <td>A JSON file containing all of your night entries, which the system share sheet hands to
-            whichever destination you pick (Files, AirDrop, Mail, and so on).</td>
-            <td>Whichever app or service you choose. We are not involved and receive nothing.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p>That is the entire list. The app makes no other network request: no configuration fetch, no remote
-    flags, no remote content, and no update check of its own.</p>
-    <p><strong>About the export file.</strong> The backup is unencrypted JSON so that it stays readable and
-    portable. Treat it like any other document containing personal notes, and keep it somewhere you trust.
-    Importing a backup replaces every entry currently in the app; the app asks you to confirm first.</p>
+      <h2>Local model handoff</h2>
+      <p>
+        Settings contains a configurable URL template (by default <code>localgemma://ask?q={prompt}</code>).
+        When you tap “Ask the local model”, the app opens that URL in the app you configured with a
+        question about the food you are entering. The question contains the food name and the list
+        of nutrient fields being requested. Nothing is sent to a server by Spendly Food Track, and
+        no reply is received automatically: you copy the answer back yourself.
+      </p>
+      <p>
+        What the other app does with that question is governed by its own privacy policy. If it is
+        a local model running on your device, the question does not leave the device either.
+      </p>
 
-    <h2>5. Notifications</h2>
-    <p>The daily reminder is a local notification scheduled by iOS on your device. There is no push server
-    and no notification content leaves your phone. If you enable reminders, the app asks iOS for permission
-    once; you can turn reminders off in the app's settings or in iOS Settings at any time.</p>
+      <h2>Purchases</h2>
+      <p>
+        Lifetime Membership is a one-time, non-consumable purchase processed entirely by Apple
+        through StoreKit. Spendly Food Track receives only whether the product is owned. It never
+        sees your name, payment card or Apple Account. Apple's privacy policy applies to the
+        transaction.
+      </p>
 
-    <h2>6. Device backups</h2>
-    <p>SleepHabit does not upload your data, but if you use iCloud Backup or a computer backup, iOS may
-    include the app's data in that backup. That transfer is performed by Apple under your Apple Account and
-    your backup settings, and is governed by Apple's privacy policy — not by this app. You can review or
-    disable device backups in iOS Settings.</p>
+      <h2>What the app does not do</h2>
+      <ul>
+        <li>No account, sign-in, cloud sync or server of any kind.</li>
+        <li>No analytics, advertising, attribution, crash-reporting or tracking SDKs.</li>
+        <li>No selling, renting or sharing of data with third parties.</li>
+        <li>No background uploads and no network requests for your diary content.</li>
+        <li>No reading of your photo library, contacts, location or health data.</li>
+      </ul>
 
-    <h2>7. Your control and deletion</h2>
-    <ul>
-      <li><strong>Edit a night:</strong> open it from Today or History and change any value.</li>
-      <li><strong>Delete a night:</strong> swipe left on it in History, or use Delete inside the entry.</li>
-      <li><strong>Delete everything:</strong> uninstalling the app removes its whole container — entries,
-      settings and the cached unlock flag.</li>
-      <li><strong>Keep a copy:</strong> Settings → Export backup, before you delete anything.</li>
-    </ul>
-    <p>Because we never receive your data, there is no server-side copy to request, correct or erase, and
-    no data of yours that we could hand over. Deletion in the app is immediate and final; the only copies
-    that survive are ones you exported yourself or a device backup made by iOS.</p>
+      <h2>Your control and deletion</h2>
+      <ul>
+        <li>Edit or delete any entry, photo or recording from the diary.</li>
+        <li>Delete or archive foods in the food library. A food used by past entries is archived instead of deleted, so history keeps its numbers.</li>
+        <li>Use <strong>Settings › Delete all data</strong> to remove meals, exercise, photos, recordings and custom foods while keeping the reference library and your goals.</li>
+        <li>Deleting the app removes its sandbox, including the database and media, subject to iOS behaviour.</li>
+        <li>Backups you exported are your files: delete them from Files or iCloud Drive when you no longer need them.</li>
+      </ul>
+      <p>
+        Because the developer holds no personal data, there is nothing on a server to access,
+        correct or erase on your behalf. If you are in the EEA, the UK, California or another
+        region with data-protection rights, those rights are satisfied by the on-device controls
+        above; you can still write to the address below with any question.
+      </p>
 
-    <h2>8. How insights are calculated</h2>
-    <p>Insights are simple statistics run over your own log, on your device. To keep them honest the app
-    only shows a finding when there is enough data and the difference is large enough to matter.</p>
-    <ul>
-      <li><strong>Free:</strong> a 14-day window (a 7-day window is also available), at least 3 nights
-      with and 3 without the factor, and at least 5 nights logged in total.</li>
-      <li><strong>Paid:</strong> 14, 30, 90, 365 days or all time, at least 5 nights with and 5 without,
-      and at least 14 nights logged in total.</li>
-      <li><strong>Noise floor:</strong> 15 minutes of sleep timing, 0.5 night wakings, or 0.3 energy
-      points. Below that the app stays quiet rather than invent a pattern.</li>
-    </ul>
-    <p><strong>Results are associations, not causes.</strong> SleepHabit is not a medical device and does
-    not diagnose, treat, cure or prevent any condition. If you have a sleep problem, talk to a clinician.</p>
+      <h2>Security</h2>
+      <p>
+        App data is protected by the iOS app sandbox and by your device passcode and encryption.
+        The app does not add its own encryption layer. An exported backup is an unencrypted SQLite
+        file, so store it somewhere you trust and delete copies you no longer need.
+      </p>
 
-    <h2>9. Third parties</h2>
-    <p>The only third party involved is Apple: the App Store and StoreKit for the one-time purchase, and
-    iOS itself for storage, notifications and the share sheet. There are no analytics providers, ad
-    networks, crash reporters or data brokers. We do not sell or share personal information, because we do
-    not have any.</p>
+      <h2>Children</h2>
+      <p>
+        The app is not directed at children and collects no personal data from anyone. A parent or
+        guardian can remove all data on the device with the controls above.
+      </p>
 
-    <h2>10. Children</h2>
-    <p>SleepHabit is a general-audience app and is not directed at children under 13. We do not knowingly
-    collect information from children — or from anyone, since the app collects no data at all.</p>
+      <h2>Changes to this policy</h2>
+      <p>
+        This policy may be updated when the app changes. The effective date at the top always
+        reflects the current version, and material changes are noted in the App Store release notes.
+      </p>
 
-    <h2>11. Security</h2>
-    <p>Your log sits inside the app's sandbox and is protected by iOS encryption and your device passcode.
-    The app stores no credentials and implements no cryptography of its own. The practical risk to your
-    data is device-level: keep a passcode on, keep iOS current, and be careful where you send an exported
-    backup.</p>
+      <h2>Health notice</h2>
+      <p>
+        Calories, macros and micronutrients — including the bundled reference foods and anything
+        estimated by a local model — are approximations. They are not medical advice, diagnosis or
+        treatment. Consult a qualified professional for dietary or medical decisions.
+      </p>
 
-    <h2>12. Changes to this policy</h2>
-    <p>If the app's behaviour changes in a way that affects privacy — for example, if a future version adds
-    optional iCloud sync — this page will be updated and the date at the top will change, with material
-    changes noted in the app's release notes. Continuing to use the app after an update means the revised
-    policy applies. This version describes SleepHabit 1.0.5.</p>
+      <h2>Contact</h2>
+      <p>
+        Questions about privacy: <a href="mailto:vegaodm@outlook.com?subject=Spendly%20Food%20Track%20privacy">vegaodm@outlook.com</a>.
+        See also the <a href="support.html" data-keep-lang>support page</a>.
+      </p>
+    </section>
 
-    <h2>13. Contact</h2>
-    <p>Questions about this policy or the app's data handling:</p>
-    <p class="contact"><a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
-  </main>
+    <!-- ================================================================ DE -->
+    <section class="lang" data-lang="de" lang="de">
+      <div class="hero">
+        <p class="eyebrow">Datenschutz</p>
+        <h1>Dein Ernährungstagebuch bleibt auf deinem Gerät.</h1>
+        <p class="lede">
+          Spendly Food Track ist ein lokales Ernährungstagebuch. Es gibt kein Konto, keine
+          Analyse, keine Werbung und keine SDKs von Drittanbietern. Deine Mahlzeiten, Fotos,
+          Sprachnotizen, Ziele und deine Lebensmittelbibliothek liegen auf deinem iPhone oder
+          iPad – der Entwickler erhält sie nie.
+        </p>
+        <p class="meta">Gültig ab 3. November 2026 · Version 1.0.0 · iPhone und iPad</p>
+      </div>
 
-  <main data-lang="de" lang="de" hidden>
-    <h1>Datenschutzerklärung</h1>
-    <p class="meta">SleepHabit für iPhone · Zuletzt aktualisiert am 2. November 2026</p>
+      <div class="card">
+        <h2>Auf einen Blick</h2>
+        <ul>
+          <li><strong>Kein Konto.</strong> Die App funktioniert vollständig offline und fragt nie nach einer E-Mail-Adresse.</li>
+          <li><strong>Kein Tracking.</strong> Keine Analyse, keine Werbe-IDs, keine Crash-Reporting-SDKs, kein app-übergreifendes Tracking.</li>
+          <li><strong>Keine Erhebung.</strong> Der Entwickler erhält und speichert deine Daten nicht auf einem Server.</li>
+          <li><strong>Keine Weitergabe.</strong> Nichts verlässt das Gerät, außer du exportierst selbst eine Datei.</li>
+          <li><strong>Käufe über Apple.</strong> Die App erfährt nur, ob die Lifetime-Mitgliedschaft vorhanden ist – nie Zahlungsdaten.</li>
+        </ul>
+      </div>
 
-    <div class="lede">
-      <p><strong>Kurz gesagt:</strong> SleepHabit speichert dein Schlaftagebuch auf deinem iPhone. Es gibt kein
-      Konto, keinen Server von uns, keine Analyse, keine Werbung und kein Tracking. Was du erfasst, erreicht
-      uns nie — wir haben keine Möglichkeit, es zu lesen.</p>
-    </div>
+      <h2>Was die App auf deinem Gerät speichert</h2>
+      <p>
+        Alles Folgende bleibt in der App-Sandbox auf deinem Gerät. Die App lädt es nirgendwohin hoch.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Daten</th><th>Inhalt</th><th>Speicherort</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tagebucheinträge</td>
+              <td>Lebensmittel, Portion in Gramm, Mahlzeit, Datum und Uhrzeit, optionale Notiz sowie die daraus berechneten Kalorien und Nährwerte.</td>
+              <td>SQLite-Datenbank in Application Support</td>
+            </tr>
+            <tr>
+              <td>Lebensmittelbibliothek</td>
+              <td>Namen, Kategorien, Portionsgrößen und Nährwerte pro 100 g, auch selbst angelegte oder importierte Lebensmittel.</td>
+              <td>SQLite-Datenbank</td>
+            </tr>
+            <tr>
+              <td>Ziele und Profil</td>
+              <td>Geschlecht, Geburtsjahr, Größe, Gewicht, Aktivitätsniveau, Kalorienziel, Makroziele und die Verteilung auf die Mahlzeiten.</td>
+              <td>SQLite-Datenbank</td>
+            </tr>
+            <tr>
+              <td>Sport</td>
+              <td>Name, Dauer und die von dir eingetragenen Kalorien. HealthKit wird nicht gelesen.</td>
+              <td>SQLite-Datenbank</td>
+            </tr>
+            <tr>
+              <td>Fotos und Sprachnotizen</td>
+              <td>Nur die von dir gewählten oder aufgenommenen Fotos und Aufnahmen, gespeichert als JPEG und M4A und einem Eintrag zugeordnet.</td>
+              <td>Documents/FoodTrack/{Photos,Audio}</td>
+            </tr>
+            <tr>
+              <td>Diagnose</td>
+              <td>Ein lokales Textprotokoll über Fehler und Wartungsereignisse, etwa einen fehlgeschlagenen Import. Es enthält keine Notizen oder Nährwerte.</td>
+              <td>Documents/FoodTrack/Diagnostics</td>
+            </tr>
+            <tr>
+              <td>Einstellungen</td>
+              <td>Sprache, die URL-Vorlage für das lokale Modell und ein zwischengespeicherter Mitgliedsstatus, damit der richtige Bildschirm vor der StoreKit-Antwort erscheint.</td>
+              <td>UserDefaults</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-    <h2>1. Was SleepHabit ist</h2>
-    <p>SleepHabit ist ein Schlaftagebuch. Für jede Nacht hältst du fest, wann du ins Bett gegangen bist, wann
-    du aufgewacht bist, wie oft du nachts wach warst und wie du dich gefühlt hast (1–5). Für den Tag davor
-    kannst du Koffein, Alkohol, Sport, Stress, Bildschirmzeit oder einen Mittagsschlaf markieren, jeweils mit
-    einer groben Tageszeit. Die App vergleicht dann deine eigenen Nächte und beschreibt die Muster, die sie
-    findet.</p>
-    <p>Dazu kommt ein Widget für den Home-Bildschirm: Tippe <em>Start</em>, wenn du ins Bett gehst, und
-    <em>Stopp</em>, wenn du aufwachst — beide Zeiten werden festgehalten, du musst sie dir nicht merken. Beim
-    nächsten Öffnen macht die App daraus eine normale Nacht: gleiche Daten, gleicher Ort.</p>
-    <p>All diese Berechnung läuft auf deinem Gerät. Diese Erklärung beschreibt, was die App speichert, was das
-    Gerät verlässt und was wir damit tun — nämlich nichts, weil wir deine Daten nie erhalten.</p>
-    <p>Die App gibt es auf Deutsch, Englisch (USA und UK) und Französisch; in den Einstellungen wechselst du
-    zwischen ihnen, ohne die App zu verlassen. Die Wahl liegt auf dem Gerät, und nichts davon wird irgendwohin
-    gesendet. Diese Erklärung gibt es ebenfalls auf Deutsch, Englisch und Französisch.</p>
+      <div class="note">
+        Ist in iOS das iCloud-Backup aktiv, kann deine Gerätesicherung auch die App-Daten
+        einschließlich Fotos und Aufnahmen enthalten. Diese Sicherung erstellt und verschlüsselt
+        Apple unter deiner Apple-ID; der Entwickler hat keinen Zugriff darauf. Du kannst die App
+        unter Einstellungen › Apple-ID › iCloud › Accountspeicher verwalten › Backups ausschließen.
+      </div>
 
-    <h2>2. Welche Daten wir erheben</h2>
-    <p><span class="pill">Keine Datenerhebung</span></p>
-    <p>Wir erheben keine personenbezogenen Daten. Es gibt keine Anmeldung, in dieser Version keine
-    iCloud-Synchronisierung, kein Backend und keine Nutzerdatenbank — bei uns gibt es also keinen Ort, an dem
-    deine Angaben liegen könnten.</p>
-    <ul>
-      <li>Keine Analyse-, Telemetrie-, Absturzberichts- oder Werbe-SDKs.</li>
-      <li>Keine Werbe-ID (IDFA) und kein geräte- oder websiteübergreifendes Tracking.</li>
-      <li>Kein Zugriff auf HealthKit, Standort, Kontakte, Fotos, Mikrofon oder Kamera.</li>
-      <li>Keine Bibliotheken von Drittanbietern — keine einzige ist in der App enthalten.</li>
-    </ul>
+      <h2>Berechtigungen</h2>
+      <ul>
+        <li><strong>Kamera</strong> — nur beim Fotografieren einer Mahlzeit; das Bild bleibt in der App.</li>
+        <li><strong>Mikrofon</strong> — nur beim Aufnehmen einer Sprachnotiz; die Aufnahme bleibt in der App.</li>
+        <li><strong>Fotomediathek</strong> — die App nutzt die Systemauswahl und erhält nur das ausgewählte Foto. Sie hat keinen Zugriff auf deine Mediathek.</li>
+        <li>Standort, Kontakte, Kalender, Gesundheit, Bewegung und Mitteilungen werden nicht angefragt.</li>
+      </ul>
 
-    <h2>3. Was die App auf deinem Gerät speichert</h2>
-    <p>Alles unten liegt im abgeschotteten Speicher der App auf deinem iPhone. Nichts davon wird von der App
-    hochgeladen.</p>
-    <div class="tablecard">
-      <table>
-        <caption>Lokal gespeichert; nur SleepHabit und sein Widget auf deinem Gerät können es lesen</caption>
-        <thead>
-          <tr><th scope="col">Was</th><th scope="col">Inhalt</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Nächte</td>
-            <td>Datum der Nacht, Einschlafzeit, Aufwachzeit, Anzahl der nächtlichen Aufwachen, Energie 1–5,
-            eine optionale Notiz (bis 280 Zeichen) und die gewählten Faktoren mit Tageszeit.</td>
-          </tr>
-          <tr>
-            <td>App-Einstellungen</td>
-            <td>Ob du die Einführung abgeschlossen hast, ob die tägliche Erinnerung an ist und um wie viel Uhr,
-            die gewählte Sprache und ein gespeicherter Hinweis, dass du die bezahlten Funktionen freigeschaltet
-            hast — damit die Freischaltung auch offline gilt.</td>
-          </tr>
-          <tr>
-            <td>Übergabe vom Widget</td>
-            <td>Wenn du das Widget nutzt: die Zeit des Tipps auf <em>Start</em> und die Zeit des Tipps auf
-            <em>Stopp</em>. Sonst nichts — kein Faktor, keine Energie, keine Notiz. Das liegt in einem kleinen
-            Speicher, den sich App und eigenes Widget auf demselben Gerät teilen, und wird mit der nächsten
-            erfassten Nacht ersetzt.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Nächte bleiben, bis du sie löschst oder die App deinstallierst. Notizen sind freiwillig und ganz deine
-    Sache — schreib dort bitte nichts hinein, was du nicht in einer einfachen Textdatei haben möchtest, denn
-    ein Export <em>ist</em> eine einfache Textdatei.</p>
+      <h2>Übergabe an das lokale Modell</h2>
+      <p>
+        In den Einstellungen steht eine anpassbare URL-Vorlage (standardmäßig
+        <code>localgemma://ask?q={prompt}</code>). Tippst du auf „Lokales Modell fragen“, öffnet die
+        App diese URL in der von dir gewählten App – mit einer Frage zum eingegebenen Lebensmittel.
+        Die Frage enthält den Namen und die Liste der gewünschten Nährstofffelder. Spendly Food
+        Track sendet nichts an einen Server und erhält keine automatische Antwort: Du kopierst die
+        Antwort selbst zurück.
+      </p>
+      <p>
+        Was die andere App mit der Frage macht, regelt deren eigene Datenschutzerklärung. Läuft dort
+        ein lokales Modell auf deinem Gerät, verlässt auch die Frage das Gerät nicht.
+      </p>
 
-    <h2>4. Was dein Gerät verlässt</h2>
-    <p>Die App hat keinen Server, mit dem sie sprechen könnte. Daten bewegen sich in genau zwei Situationen,
-    und beide löst du aus.</p>
-    <div class="tablecard">
-      <table>
-        <caption>Vollständige Liste der Datenflüsse nach außen</caption>
-        <thead>
-          <tr><th scope="col">Situation</th><th scope="col">Was gesendet wird</th><th scope="col">An wen</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Du tippst auf <em>Freischalten</em> oder <em>Kauf wiederherstellen</em></td>
-            <td>Die Kaufanfrage und deine App-Store-Sitzung, abgewickelt von StoreKit. Keine Schlafdaten sind
-            darin enthalten.</td>
-            <td>Apple, unter deinem Apple-Account und Apples Datenschutzrichtlinie.</td>
-          </tr>
-          <tr>
-            <td>Du tippst auf <em>Sicherung exportieren</em></td>
-            <td>Eine JSON-Datei mit allen deinen Nächten; das Teilen-Menü des Systems gibt sie an das Ziel
-            weiter, das du auswählst (Dateien, AirDrop, Mail und so weiter).</td>
-            <td>Die App oder den Dienst, den du wählst. Wir sind daran nicht beteiligt und erhalten nichts.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Das ist die ganze Liste. Die App stellt keine weitere Netzwerkanfrage: kein Abruf von Konfiguration,
-    keine entfernten Schalter, keine entfernten Inhalte und keine eigene Update-Prüfung.</p>
-    <p><strong>Zur Exportdatei.</strong> Die Sicherung ist unverschlüsseltes JSON, damit sie lesbar und
-    übertragbar bleibt. Behandle sie wie jedes andere Dokument mit persönlichen Notizen und bewahre sie an
-    einem Ort auf, dem du vertraust. Beim Import werden alle vorhandenen Nächte ersetzt; die App fragt vorher
-    nach.</p>
+      <h2>Käufe</h2>
+      <p>
+        Die Lifetime-Mitgliedschaft ist ein einmaliger, nicht verbrauchbarer Kauf, der vollständig
+        von Apple über StoreKit abgewickelt wird. Spendly Food Track erfährt nur, ob das Produkt
+        vorhanden ist – niemals Name, Zahlungskarte oder Apple-ID. Für die Transaktion gilt die
+        Datenschutzerklärung von Apple.
+      </p>
 
-    <h2>5. Mitteilungen</h2>
-    <p>Die tägliche Erinnerung ist eine lokale Mitteilung, die iOS auf deinem Gerät einplant. Es gibt keinen
-    Push-Server, und kein Inhalt einer Mitteilung verlässt dein Telefon. Wenn du Erinnerungen einschaltest,
-    fragt die App iOS einmal um Erlaubnis; abschalten kannst du sie jederzeit in den Einstellungen der App
-    oder in den iOS-Einstellungen.</p>
+      <h2>Was die App nicht tut</h2>
+      <ul>
+        <li>Kein Konto, keine Anmeldung, keine Cloudsynchronisierung, kein Server.</li>
+        <li>Keine Analyse-, Werbe-, Attributions-, Crash- oder Tracking-SDKs.</li>
+        <li>Kein Verkauf, Vermieten oder Weitergeben von Daten an Dritte.</li>
+        <li>Keine Uploads im Hintergrund und keine Netzwerkanfragen für deine Tagebuchinhalte.</li>
+        <li>Kein Lesen von Fotomediathek, Kontakten, Standort oder Gesundheitsdaten.</li>
+      </ul>
 
-    <h2>6. Gerätesicherungen</h2>
-    <p>SleepHabit lädt deine Daten nicht hoch. Wenn du iCloud-Backup oder eine Sicherung am Computer nutzt,
-    kann iOS die Daten der App in diese Sicherung aufnehmen. Diese Übertragung führt Apple unter deinem
-    Apple-Account und deinen Sicherungseinstellungen aus; es gilt Apples Datenschutzrichtlinie, nicht die
-    dieser App. In den iOS-Einstellungen kannst du Sicherungen prüfen oder abschalten.</p>
+      <h2>Deine Kontrolle und Löschung</h2>
+      <ul>
+        <li>Jeden Eintrag, jedes Foto und jede Aufnahme im Tagebuch bearbeiten oder löschen.</li>
+        <li>Lebensmittel löschen oder archivieren. Ein Lebensmittel, das in Einträgen vorkommt, wird archiviert statt gelöscht, damit die Historie ihre Werte behält.</li>
+        <li>Unter <strong>Einstellungen › Alle Daten löschen</strong> Mahlzeiten, Sport, Fotos, Aufnahmen und eigene Lebensmittel entfernen; Referenzbibliothek und Ziele bleiben.</li>
+        <li>Das Löschen der App entfernt ihre Sandbox einschließlich Datenbank und Medien, soweit iOS das vorsieht.</li>
+        <li>Selbst exportierte Sicherungen sind deine Dateien: lösche sie in Dateien oder iCloud Drive, wenn du sie nicht mehr brauchst.</li>
+      </ul>
+      <p>
+        Da der Entwickler keine personenbezogenen Daten hält, gibt es auf einem Server nichts
+        auszulesen, zu berichtigen oder zu löschen. Wenn du im EWR, in Großbritannien, in Kalifornien
+        oder einer anderen Region mit Datenschutzrechten lebst, erfüllen die Bedienelemente auf dem
+        Gerät diese Rechte; du kannst dich trotzdem jederzeit an die unten stehende Adresse wenden.
+      </p>
 
-    <h2>7. Deine Kontrolle und das Löschen</h2>
-    <ul>
-      <li><strong>Eine Nacht ändern:</strong> öffne sie in „Heute“ oder „Verlauf“ und ändere jeden Wert.</li>
-      <li><strong>Eine Nacht löschen:</strong> wische sie im Verlauf nach links oder nutze „Löschen“ in der
-      Nacht selbst.</li>
-      <li><strong>Alles löschen:</strong> mit dem Deinstallieren der App wird ihr gesamter Speicher entfernt —
-      Nächte, Einstellungen und die gespeicherte Freischaltung.</li>
-      <li><strong>Eine Kopie behalten:</strong> Einstellungen → Sicherung exportieren, bevor du etwas
-      löschst.</li>
-    </ul>
-    <p>Weil wir deine Daten nie erhalten, gibt es keine Kopie auf einem Server, die du anfragen, berichtigen
-    oder löschen lassen könntest — und keine Daten von dir, die wir herausgeben könnten. Löschen in der App
-    ist sofort und endgültig; es bleiben nur Kopien, die du selbst exportiert hast oder die iOS in einer
-    Gerätesicherung angelegt hat.</p>
+      <h2>Sicherheit</h2>
+      <p>
+        Die App-Daten sind durch die iOS-Sandbox sowie durch Gerätecode und Verschlüsselung
+        geschützt. Die App fügt keine eigene Verschlüsselung hinzu. Ein exportiertes Backup ist eine
+        unverschlüsselte SQLite-Datei – bewahre sie an einem vertrauenswürdigen Ort auf und lösche
+        Kopien, die du nicht mehr benötigst.
+      </p>
 
-    <h2>8. Wie die Einblicke berechnet werden</h2>
-    <p>Einblicke sind einfache Statistik über dein eigenes Protokoll, gerechnet auf deinem Gerät. Damit sie
-    ehrlich bleiben, zeigt die App einen Befund nur, wenn genug Daten da sind und der Unterschied groß genug
-    ist, um etwas zu bedeuten.</p>
-    <ul>
-      <li><strong>Kostenlos:</strong> ein Fenster von 14 Tagen (7 Tage ist ebenfalls wählbar), mindestens 3
-      Nächte mit und 3 ohne den Faktor sowie mindestens 5 erfasste Nächte insgesamt.</li>
-      <li><strong>Freigeschaltet:</strong> 14, 30, 90, 365 Tage oder die gesamte Zeit, mindestens 5 Nächte mit
-      und 5 ohne den Faktor sowie mindestens 14 erfasste Nächte.</li>
-      <li><strong>Rauschgrenze:</strong> 15 Minuten Schlafzeit, 0,5 nächtliches Aufwachen oder 0,3
-      Energiepunkte. Darunter schweigt die App, statt ein Muster zu erfinden.</li>
-    </ul>
-    <p><strong>Ergebnisse sind Zusammenhänge, keine Ursachen.</strong> SleepHabit ist kein Medizinprodukt und
-    diagnostiziert, behandelt, heilt oder verhindert keine Erkrankung. Wenn du ein Schlafproblem hast, sprich
-    mit einer Ärztin oder einem Arzt.</p>
+      <h2>Kinder</h2>
+      <p>
+        Die App richtet sich nicht an Kinder und erhebt von niemandem personenbezogene Daten.
+        Eltern oder Erziehungsberechtigte können alle Daten mit den oben genannten Möglichkeiten
+        vom Gerät entfernen.
+      </p>
 
-    <h2>9. Dritte</h2>
-    <p>Der einzige beteiligte Dritte ist Apple: der App Store und StoreKit für den einmaligen Kauf und iOS
-    selbst für Speicher, Mitteilungen und das Teilen-Menü. Es gibt keine Analyseanbieter, Werbenetzwerke,
-    Absturzberichtsdienste oder Datenhändler. Wir verkaufen oder teilen keine personenbezogenen Daten, weil
-    wir keine haben.</p>
+      <h2>Änderungen dieser Erklärung</h2>
+      <p>
+        Diese Erklärung wird bei Änderungen der App aktualisiert. Das Datum oben nennt immer die
+        aktuelle Fassung; wesentliche Änderungen stehen in den Versionshinweisen im App Store.
+      </p>
 
-    <h2>10. Kinder</h2>
-    <p>SleepHabit richtet sich an ein allgemeines Publikum und nicht an Kinder unter 13 Jahren. Wir erheben
-    wissentlich keine Daten von Kindern — und von niemandem sonst, weil die App überhaupt keine Daten
-    erhebt.</p>
+      <h2>Hinweis zur Gesundheit</h2>
+      <p>
+        Kalorien, Makros und Mikronährstoffe – einschließlich der mitgelieferten Referenzdaten und
+        der Schätzungen eines lokalen Modells – sind Näherungswerte. Sie sind keine medizinische
+        Beratung, Diagnose oder Behandlung. Für Ernährungs- oder Gesundheitsentscheidungen wende
+        dich an qualifiziertes Fachpersonal.
+      </p>
 
-    <h2>11. Sicherheit</h2>
-    <p>Dein Protokoll liegt im abgeschotteten Speicher der App und ist durch die Verschlüsselung von iOS und
-    deinen Gerätecode geschützt. Die App speichert keine Zugangsdaten und setzt keine eigene Kryptografie ein.
-    Das praktische Risiko für deine Daten liegt auf Geräteebene: Halte einen Code aktiv, halte iOS aktuell und
-    überlege, wohin du eine exportierte Sicherung schickst.</p>
+      <h2>Kontakt</h2>
+      <p>
+        Fragen zum Datenschutz: <a href="mailto:vegaodm@outlook.com?subject=Spendly%20Food%20Track%20Datenschutz">vegaodm@outlook.com</a>.
+        Siehe auch die <a href="support.html" data-keep-lang>Support-Seite</a>.
+      </p>
+    </section>
 
-    <h2>12. Änderungen dieser Erklärung</h2>
-    <p>Ändert sich das Verhalten der App in einer Weise, die den Datenschutz betrifft — etwa wenn eine
-    künftige Version eine optionale iCloud-Synchronisierung einführt —, wird diese Seite aktualisiert und das
-    Datum oben angepasst; wesentliche Änderungen stehen zusätzlich in den Versionshinweisen der App. Wenn du
-    die App nach einer Aktualisierung weiter nutzt, gilt die geänderte Erklärung. Diese Fassung beschreibt
-    SleepHabit 1.0.5.</p>
+    <!-- ================================================================ FR -->
+    <section class="lang" data-lang="fr" lang="fr">
+      <div class="hero">
+        <p class="eyebrow">Confidentialité</p>
+        <h1>Votre journal alimentaire reste sur votre appareil.</h1>
+        <p class="lede">
+          Spendly Food Track est un journal alimentaire local. Aucun compte à créer, aucune
+          analyse, aucune publicité et aucun SDK tiers. Vos repas, photos, notes vocales, objectifs
+          et votre bibliothèque d'aliments restent sur votre iPhone ou iPad ; le développeur ne les
+          reçoit jamais.
+        </p>
+        <p class="meta">En vigueur le 3 novembre 2026 · Version 1.0.0 · iPhone et iPad</p>
+      </div>
 
-    <h2>13. Kontakt</h2>
-    <p>Fragen zu dieser Erklärung oder zum Umgang der App mit Daten:</p>
-    <p class="contact"><a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
-  </main>
+      <div class="card">
+        <h2>En bref</h2>
+        <ul>
+          <li><strong>Aucun compte.</strong> L'app fonctionne entièrement hors ligne et ne demande jamais d'adresse e-mail.</li>
+          <li><strong>Aucun suivi.</strong> Ni analyse, ni identifiant publicitaire, ni SDK de rapport de plantage, ni suivi entre apps.</li>
+          <li><strong>Aucune collecte.</strong> Le développeur ne reçoit ni ne stocke vos données sur un serveur.</li>
+          <li><strong>Aucun partage.</strong> Rien ne quitte l'appareil, sauf si vous exportez vous-même un fichier.</li>
+          <li><strong>Achats via Apple.</strong> L'app sait seulement si l'adhésion à vie est détenue ; elle ne voit jamais les données de paiement.</li>
+        </ul>
+      </div>
 
-  <main data-lang="fr" lang="fr" hidden>
-    <h1>Politique de confidentialité</h1>
-    <p class="meta">SleepHabit pour iPhone · Dernière mise à jour le 2 novembre 2026</p>
+      <h2>Ce que l'app stocke sur votre appareil</h2>
+      <p>
+        Tout ce qui suit reste dans le bac à sable de l'app sur votre appareil. L'app ne l'envoie nulle part.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Données</th><th>Contenu</th><th>Emplacement</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Entrées du journal</td>
+              <td>Aliment, portion en grammes, repas, date et heure, note facultative, et les calories et nutriments qui en découlent.</td>
+              <td>Base SQLite dans Application Support</td>
+            </tr>
+            <tr>
+              <td>Bibliothèque d'aliments</td>
+              <td>Noms, catégories, tailles de portion et valeurs pour 100 g, y compris les aliments créés ou importés.</td>
+              <td>Base SQLite</td>
+            </tr>
+            <tr>
+              <td>Objectifs et profil</td>
+              <td>Sexe, année de naissance, taille, poids, niveau d'activité, objectif calorique, objectifs de macros et répartition entre les repas.</td>
+              <td>Base SQLite</td>
+            </tr>
+            <tr>
+              <td>Activité</td>
+              <td>Nom, durée et les calories que vous saisissez. HealthKit n'est pas lu.</td>
+              <td>Base SQLite</td>
+            </tr>
+            <tr>
+              <td>Photos et notes vocales</td>
+              <td>Uniquement les photos choisies ou prises et les enregistrements réalisés, stockés en JPEG et M4A et liés à une entrée.</td>
+              <td>Documents/FoodTrack/{Photos,Audio}</td>
+            </tr>
+            <tr>
+              <td>Diagnostics</td>
+              <td>Un journal texte local des erreurs et opérations d'entretien, par exemple un import échoué. Il ne contient ni vos notes ni vos valeurs nutritionnelles.</td>
+              <td>Documents/FoodTrack/Diagnostics</td>
+            </tr>
+            <tr>
+              <td>Préférences</td>
+              <td>Langue de l'interface, modèle d'URL du modèle local et indicateur d'adhésion en cache pour afficher le bon écran avant la réponse de StoreKit.</td>
+              <td>UserDefaults</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-    <div class="lede">
-      <p><strong>En bref :</strong> SleepHabit garde votre journal de sommeil sur votre iPhone. Aucun compte,
-      aucun serveur chez nous, aucune analyse, aucune publicité et aucun pistage. Ce que vous notez ne nous
-      parvient jamais — nous n'avons aucun moyen de le lire.</p>
-    </div>
+      <div class="note">
+        Si la sauvegarde iCloud est activée dans iOS, votre sauvegarde d'appareil peut inclure les
+        données de l'app, photos et enregistrements compris. Cette sauvegarde est créée et chiffrée
+        par Apple sous votre identifiant Apple ; le développeur n'y a pas accès. Vous pouvez exclure
+        l'app dans Réglages › Identifiant Apple › iCloud › Gérer le stockage › Sauvegardes.
+      </div>
 
-    <h2>1. Ce qu'est SleepHabit</h2>
-    <p>SleepHabit est un journal de sommeil. Chaque nuit, vous indiquez l'heure du coucher, l'heure du lever,
-    le nombre de réveils et votre forme (1–5). Pour la journée qui précède, vous pouvez marquer la caféine,
-    l'alcool, le sport, le stress, les écrans ou une sieste, avec un moment de la journée approximatif.
-    L'app compare ensuite vos propres nuits et décrit les régularités qu'elle trouve.</p>
-    <p>Il y a aussi un widget pour l'écran d'accueil : touchez <em>Démarrer</em> au coucher et <em>Arrêter</em>
-    au réveil, et ces deux heures sont notées — vous n'avez rien à retenir. À la prochaine ouverture, l'app en
-    fait une nuit normale : mêmes données, même endroit.</p>
-    <p>Tous ces calculs se font sur votre appareil. Cette politique explique ce que l'app enregistre, ce qui
-    quitte l'appareil et ce que nous en faisons — c'est-à-dire rien, puisque nous ne recevons jamais vos
-    données.</p>
-    <p>L'app existe en français, en anglais (États-Unis et Royaume-Uni) et en allemand ; les réglages
-    permettent de changer de langue sans quitter l'app. Ce choix reste sur l'appareil et rien n'en est envoyé.
-    Cette politique existe elle aussi en français, en anglais et en allemand.</p>
+      <h2>Autorisations</h2>
+      <ul>
+        <li><strong>Appareil photo</strong> — demandé uniquement pour photographier un repas ; l'image reste dans l'app.</li>
+        <li><strong>Microphone</strong> — demandé uniquement pour enregistrer une note vocale ; l'enregistrement reste dans l'app.</li>
+        <li><strong>Photothèque</strong> — le sélecteur système est utilisé : l'app ne reçoit que la photo choisie et n'a pas accès à votre photothèque.</li>
+        <li>Aucune autorisation de localisation, contacts, calendrier, santé, mouvement ou notification n'est demandée.</li>
+      </ul>
 
-    <h2>2. Données que nous collectons</h2>
-    <p><span class="pill">Aucune donnée collectée</span></p>
-    <p>Nous ne collectons aucune donnée personnelle. Il n'y a pas d'inscription, pas de synchronisation iCloud
-    dans cette version, pas de serveur et pas de base d'utilisateurs : il n'existe donc chez nous aucun endroit
-    où vos informations pourraient être conservées.</p>
-    <ul>
-      <li>Aucun SDK d'analyse, de télémétrie, de rapport de plantage ou de publicité.</li>
-      <li>Aucun identifiant publicitaire (IDFA) et aucun pistage entre applis ou sites.</li>
-      <li>Aucun accès à HealthKit, à la localisation, aux contacts, aux photos, au micro ou à l'appareil photo.</li>
-      <li>Aucune bibliothèque tierce : pas une seule n'est intégrée à l'app.</li>
-    </ul>
+      <h2>Passage au modèle local</h2>
+      <p>
+        Les Réglages contiennent un modèle d'URL modifiable (par défaut
+        <code>localgemma://ask?q={prompt}</code>). Quand vous touchez « Interroger le modèle local »,
+        l'app ouvre cette URL dans l'app configurée avec une question sur l'aliment saisi. La
+        question contient le nom de l'aliment et la liste des champs de nutriments demandés. Spendly
+        Food Track n'envoie rien à un serveur et ne reçoit aucune réponse automatique : vous copiez
+        la réponse vous-même.
+      </p>
+      <p>
+        Ce que l'autre app fait de cette question relève de sa propre politique de confidentialité.
+        S'il s'agit d'un modèle local exécuté sur votre appareil, la question ne quitte pas non plus
+        l'appareil.
+      </p>
 
-    <h2>3. Ce que l'app enregistre sur votre appareil</h2>
-    <p>Tout ce qui suit se trouve dans l'espace isolé de l'app, sur votre iPhone. Rien n'est envoyé par
-    l'app.</p>
-    <div class="tablecard">
-      <table>
-        <caption>Stocké localement ; seuls SleepHabit et son widget sur votre appareil peuvent le lire</caption>
-        <thead>
-          <tr><th scope="col">Quoi</th><th scope="col">Contenu</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Nuits</td>
-            <td>Date de la nuit, heure du coucher, heure du lever, nombre de réveils, énergie de 1 à 5, une
-            note facultative (280 caractères au plus) et les facteurs choisis avec leur moment de la
-            journée.</td>
-          </tr>
-          <tr>
-            <td>Réglages de l'app</td>
-            <td>Si vous avez terminé la présentation, si le rappel quotidien est actif et à quelle heure, la
-            langue choisie dans les réglages, et un indicateur mémorisé attestant que vous avez débloqué les
-            fonctions payantes — pour que le déblocage fonctionne aussi hors ligne.</td>
-          </tr>
-          <tr>
-            <td>Passage par le widget</td>
-            <td>Si vous utilisez le widget : l'heure du toucher sur <em>Démarrer</em> et celle du toucher sur
-            <em>Arrêter</em>. Rien d'autre — ni facteur, ni énergie, ni note. Cela vit dans un petit espace que
-            l'app et son propre widget partagent sur le même appareil, et c'est remplacé par la nuit suivante
-            que vous notez.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Les nuits restent jusqu'à ce que vous les supprimiez ou désinstalliez l'app. Les notes sont
-    facultatives et vous appartiennent — évitez d'y écrire ce que vous ne voudriez pas voir dans un simple
-    fichier texte, car un export <em>est</em> un simple fichier texte.</p>
+      <h2>Achats</h2>
+      <p>
+        L'adhésion à vie est un achat unique non consommable, traité entièrement par Apple via
+        StoreKit. Spendly Food Track sait seulement si le produit est détenu. Elle ne voit jamais
+        votre nom, votre carte de paiement ni votre identifiant Apple. La politique de
+        confidentialité d'Apple s'applique à la transaction.
+      </p>
 
-    <h2>4. Ce qui quitte votre appareil</h2>
-    <p>L'app n'a aucun serveur à contacter. Les données circulent dans exactement deux situations, et vous en
-    êtes à chaque fois à l'origine.</p>
-    <div class="tablecard">
-      <table>
-        <caption>Liste complète des flux sortants</caption>
-        <thead>
-          <tr><th scope="col">Situation</th><th scope="col">Ce qui est envoyé</th><th scope="col">À qui</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Vous touchez <em>Débloquer</em> ou <em>Restaurer l'achat</em></td>
-            <td>La demande d'achat et votre session App Store, gérées par StoreKit. Aucune donnée de sommeil
-            n'y figure.</td>
-            <td>Apple, sous votre identifiant Apple et selon la politique de confidentialité d'Apple.</td>
-          </tr>
-          <tr>
-            <td>Vous touchez <em>Exporter la sauvegarde</em></td>
-            <td>Un fichier JSON contenant toutes vos nuits, que la feuille de partage du système remet à la
-            destination que vous choisissez (Fichiers, AirDrop, Mail, etc.).</td>
-            <td>L'app ou le service que vous choisissez. Nous n'y participons pas et ne recevons rien.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p>C'est la liste complète. L'app ne fait aucune autre requête réseau : pas de récupération de
-    configuration, pas de réglages à distance, pas de contenu distant et pas de vérification de mise à jour
-    maison.</p>
-    <p><strong>À propos du fichier d'export.</strong> La sauvegarde est du JSON non chiffré, pour rester
-    lisible et transportable. Traitez-la comme tout document contenant des notes personnelles et gardez-la
-    dans un endroit de confiance. Importer une sauvegarde remplace toutes les nuits présentes dans l'app ;
-    l'app demande confirmation avant.</p>
+      <h2>Ce que l'app ne fait pas</h2>
+      <ul>
+        <li>Aucun compte, connexion, synchronisation cloud ni serveur.</li>
+        <li>Aucun SDK d'analyse, de publicité, d'attribution, de rapport de plantage ou de suivi.</li>
+        <li>Aucune vente, location ou communication de données à des tiers.</li>
+        <li>Aucun envoi en arrière-plan et aucune requête réseau pour le contenu du journal.</li>
+        <li>Aucune lecture de la photothèque, des contacts, de la localisation ou des données de santé.</li>
+      </ul>
 
-    <h2>5. Notifications</h2>
-    <p>Le rappel quotidien est une notification locale programmée par iOS sur votre appareil. Il n'y a pas de
-    serveur de notifications et aucun contenu ne quitte votre téléphone. Si vous activez les rappels, l'app
-    demande l'autorisation à iOS une seule fois ; vous pouvez les désactiver à tout moment dans les réglages
-    de l'app ou dans les réglages d'iOS.</p>
+      <h2>Vos choix et la suppression</h2>
+      <ul>
+        <li>Modifier ou supprimer toute entrée, photo ou note vocale du journal.</li>
+        <li>Supprimer ou archiver des aliments. Un aliment utilisé par des entrées passées est archivé plutôt que supprimé, pour que l'historique garde ses valeurs.</li>
+        <li>Utiliser <strong>Réglages › Supprimer toutes les données</strong> pour retirer repas, activité, photos, enregistrements et aliments personnels, tout en conservant la bibliothèque de référence et vos objectifs.</li>
+        <li>La suppression de l'app retire son bac à sable, base et médias compris, selon le comportement d'iOS.</li>
+        <li>Les sauvegardes exportées sont vos fichiers : supprimez-les de Fichiers ou d'iCloud Drive lorsqu'elles ne sont plus utiles.</li>
+      </ul>
+      <p>
+        Le développeur ne détenant aucune donnée personnelle, il n'y a rien sur un serveur à
+        consulter, rectifier ou effacer en votre nom. Si vous relevez de l'EEE, du Royaume-Uni, de
+        Californie ou d'une autre région dotée de droits de protection des données, les contrôles
+        sur l'appareil ci-dessus les satisfont ; vous pouvez néanmoins écrire à l'adresse ci-dessous.
+      </p>
 
-    <h2>6. Sauvegardes de l'appareil</h2>
-    <p>SleepHabit n'envoie pas vos données, mais si vous utilisez la sauvegarde iCloud ou une sauvegarde sur
-    ordinateur, iOS peut inclure les données de l'app dans cette sauvegarde. Ce transfert est effectué par
-    Apple sous votre identifiant Apple et vos réglages de sauvegarde, et relève de la politique de
-    confidentialité d'Apple, pas de cette app. Vous pouvez consulter ou désactiver les sauvegardes dans les
-    réglages d'iOS.</p>
+      <h2>Sécurité</h2>
+      <p>
+        Les données de l'app sont protégées par le bac à sable iOS ainsi que par le code et le
+        chiffrement de votre appareil. L'app n'ajoute pas sa propre couche de chiffrement. Une
+        sauvegarde exportée est un fichier SQLite non chiffré : conservez-la dans un endroit sûr et
+        supprimez les copies inutiles.
+      </p>
 
-    <h2>7. Votre contrôle et la suppression</h2>
-    <ul>
-      <li><strong>Modifier une nuit :</strong> ouvrez-la depuis « Aujourd'hui » ou « Historique » et changez
-      n'importe quelle valeur.</li>
-      <li><strong>Supprimer une nuit :</strong> balayez la ligne vers la gauche dans l'historique, ou utilisez
-      « Supprimer » dans la nuit elle-même.</li>
-      <li><strong>Tout supprimer :</strong> désinstaller l'app efface tout son espace de stockage — nuits,
-      réglages et indicateur de déblocage.</li>
-      <li><strong>Garder une copie :</strong> Réglages → Exporter la sauvegarde, avant de supprimer quoi que
-      ce soit.</li>
-    </ul>
-    <p>Comme nous ne recevons jamais vos données, il n'existe aucune copie côté serveur à demander, corriger ou
-    effacer, et aucune donnée à vous que nous pourrions transmettre. La suppression dans l'app est immédiate
-    et définitive ; seules subsistent les copies que vous avez exportées ou qu'iOS a faites dans une sauvegarde
-    de l'appareil.</p>
+      <h2>Enfants</h2>
+      <p>
+        L'app ne s'adresse pas aux enfants et ne collecte aucune donnée personnelle. Un parent ou
+        tuteur peut supprimer toutes les données de l'appareil avec les contrôles ci-dessus.
+      </p>
 
-    <h2>8. Comment les analyses sont calculées</h2>
-    <p>Les analyses sont de simples statistiques sur votre propre journal, calculées sur votre appareil. Pour
-    rester honnêtes, elles ne s'affichent que s'il y a assez de données et si l'écart est assez grand pour
-    compter.</p>
-    <ul>
-      <li><strong>Gratuit :</strong> une fenêtre de 14 jours (7 jours est aussi possible), au moins 3 nuits
-      avec et 3 sans le facteur, et au moins 5 nuits notées au total.</li>
-      <li><strong>Débloqué :</strong> 14, 30, 90, 365 jours ou toute la période, au moins 5 nuits avec et 5
-      sans, et au moins 14 nuits notées au total.</li>
-      <li><strong>Seuil de bruit :</strong> 15 minutes de décalage, 0,5 réveil nocturne ou 0,3 point
-      d'énergie. En dessous, l'app se tait plutôt que d'inventer une régularité.</li>
-    </ul>
-    <p><strong>Les résultats sont des associations, pas des causes.</strong> SleepHabit n'est pas un
-    dispositif médical et ne diagnostique, ne traite, ne guérit ni ne prévient aucune affection. Si vous avez
-    un problème de sommeil, parlez-en à un professionnel de santé.</p>
+      <h2>Modifications de cette politique</h2>
+      <p>
+        Cette politique peut être mise à jour avec l'app. La date en haut indique toujours la
+        version en vigueur ; les changements importants figurent dans les notes de version de l'App Store.
+      </p>
 
-    <h2>9. Tiers</h2>
-    <p>Le seul tiers impliqué est Apple : l'App Store et StoreKit pour l'achat unique, et iOS lui-même pour le
-    stockage, les notifications et la feuille de partage. Aucun fournisseur d'analyse, aucune régie publicitaire,
-    aucun service de rapports de plantage, aucun courtier de données. Nous ne vendons ni ne partageons
-    d'informations personnelles, parce que nous n'en avons aucune.</p>
+      <h2>Avertissement santé</h2>
+      <p>
+        Les calories, macros et micronutriments — y compris les aliments de référence fournis et
+        toute estimation d'un modèle local — sont des approximations. Ils ne constituent pas un avis
+        médical, un diagnostic ou un traitement. Consultez un professionnel qualifié pour toute
+        décision alimentaire ou médicale.
+      </p>
 
-    <h2>10. Enfants</h2>
-    <p>SleepHabit est une app grand public, qui ne s'adresse pas aux enfants de moins de 13 ans. Nous ne
-    collectons pas sciemment de données auprès d'enfants — ni auprès de quiconque, puisque l'app ne collecte
-    aucune donnée.</p>
-
-    <h2>11. Sécurité</h2>
-    <p>Votre journal se trouve dans l'espace isolé de l'app, protégé par le chiffrement d'iOS et le code de
-    votre appareil. L'app ne stocke aucun identifiant et n'implémente aucune cryptographie. Le risque pratique
-    pour vos données est au niveau de l'appareil : gardez un code actif, tenez iOS à jour et réfléchissez à
-    deux fois avant d'envoyer une sauvegarde exportée.</p>
-
-    <h2>12. Modifications de cette politique</h2>
-    <p>Si le comportement de l'app change d'une manière qui touche à la vie privée — par exemple si une
-    version future ajoute une synchronisation iCloud facultative — cette page sera mise à jour et la date en
-    haut changera, les changements importants étant signalés dans les notes de version de l'app. Continuer à
-    utiliser l'app après une mise à jour vaut acceptation de la politique révisée. Cette version décrit
-    SleepHabit 1.0.5.</p>
-
-    <h2>13. Contact</h2>
-    <p>Questions sur cette politique ou sur la façon dont l'app traite les données :</p>
-    <p class="contact"><a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
+      <h2>Contact</h2>
+      <p>
+        Questions sur la confidentialité : <a href="mailto:vegaodm@outlook.com?subject=Spendly%20Food%20Track%20confidentialite">vegaodm@outlook.com</a>.
+        Voir aussi la <a href="support.html" data-keep-lang>page d'assistance</a>.
+      </p>
+    </section>
   </main>
 
   <footer>
-    <span id="foot-tag">SleepHabit · Find what's wrecking your sleep.</span>
-    <span><a href="support.html" id="foot-a">Support</a> · <a href="https://www.apple.com/legal/privacy/" id="foot-b">Apple Privacy</a></span>
+    <div class="footer-inner">
+      <span>© 2026 Spendly Food Track</span>
+      <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a>
+      <span class="sep"></span>
+      <a href="index.html" data-keep-lang aria-current="page">
+        <span data-lang="en">Privacy</span><span data-lang="de">Datenschutz</span><span data-lang="fr">Confidentialité</span>
+      </a>
+      <a href="support.html" data-keep-lang>
+        <span data-lang="en">Support</span><span data-lang="de">Support</span><span data-lang="fr">Assistance</span>
+      </a>
+    </div>
   </footer>
-</div>
-<script>
-(function () {
-  "use strict";
-  // One page, three languages: the switch is a data attribute on <main> plus a
-  // localStorage value, so the URL, the selection and a shared link all agree.
-  var META = {
-    en: { title: "Privacy Policy · SleepHabit", desc: "SleepHabit keeps your sleep log on your iPhone. No account, no server, no analytics, no tracking. Read the full privacy policy.", navPrivacy: "Privacy", navSupport: "Support", navSite: "Site", navLang: "Language", tag: "SleepHabit · Find what's wrecking your sleep.", footA: "Support", footB: "Apple Privacy" },
-    de: { title: "Datenschutzerklärung · SleepHabit", desc: "SleepHabit speichert dein Schlaftagebuch auf deinem iPhone. Kein Konto, kein Server, keine Analyse, kein Tracking. Die vollständige Datenschutzerklärung.", navPrivacy: "Datenschutz", navSupport: "Hilfe", navSite: "Website", navLang: "Sprache", tag: "SleepHabit · Finde, was deinen Schlaf kaputtmacht.", footA: "Hilfe", footB: "Apple Datenschutz" },
-    fr: { title: "Politique de confidentialité · SleepHabit", desc: "SleepHabit garde votre journal de sommeil sur votre iPhone. Aucun compte, aucun serveur, aucune analyse, aucun pistage. Lisez la politique de confidentialité complète.", navPrivacy: "Confidentialité", navSupport: "Assistance", navSite: "Site", navLang: "Langue", tag: "SleepHabit · Trouvez ce qui gâche votre sommeil.", footA: "Assistance", footB: "Confidentialité Apple" }
-  };
-  var KEY = "sleephabit.lang";
-  var LANGS = ["en", "de", "fr"];
 
-  function normalize(tag) {
-    tag = String(tag || "").toLowerCase();
-    if (tag.indexOf("de") === 0) return "de";
-    if (tag.indexOf("fr") === 0) return "fr";
-    return "en";
-  }
+  <script>
+    (function () {
+      var languages = ["en", "de", "fr"];
+      var titles = {
+        en: "Privacy Policy — Spendly Food Track",
+        de: "Datenschutz — Spendly Food Track",
+        fr: "Confidentialité — Spendly Food Track"
+      };
+      var descriptions = {
+        en: "Spendly Food Track privacy policy: meals, photos, voice notes and goals stay on your device. No account, no analytics, no advertising, no tracking.",
+        de: "Datenschutz von Spendly Food Track: Mahlzeiten, Fotos, Sprachnotizen und Ziele bleiben auf deinem Gerät. Kein Konto, keine Analyse, keine Werbung, kein Tracking.",
+        fr: "Confidentialité de Spendly Food Track : repas, photos, notes vocales et objectifs restent sur votre appareil. Aucun compte, aucune analyse, aucune publicité, aucun suivi."
+      };
+      var storageKey = "spendly-food-language";
+      var root = document.documentElement;
+      var description = document.querySelector('meta[name="description"]');
+      var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-set-lang]"));
+      var links = Array.prototype.slice.call(document.querySelectorAll("a[data-keep-lang]"));
+      var current = "en";
 
-  function preferred() {
-    var fromUrl = "";
-    try { fromUrl = new URLSearchParams(location.search).get("lang") || ""; } catch (e) {}
-    if (fromUrl) return normalize(fromUrl);
-    try {
-      var saved = localStorage.getItem(KEY);
-      if (saved && LANGS.indexOf(saved) >= 0) return saved;
-    } catch (e) {}
-    var list = navigator.languages && navigator.languages.length
-      ? navigator.languages : [navigator.language || "en"];
-    for (var i = 0; i < list.length; i++) {
-      var guess = normalize(list[i]);
-      if (guess !== "en") return guess;
-    }
-    return "en";
-  }
+      function apply(language, remember) {
+        if (languages.indexOf(language) < 0) { language = "en"; }
+        current = language;
+        root.setAttribute("data-lang", language);
+        root.setAttribute("lang", language);
+        document.title = titles[language];
+        if (description) { description.setAttribute("content", descriptions[language]); }
+        buttons.forEach(function (button) {
+          button.setAttribute("aria-pressed", String(button.getAttribute("data-set-lang") === language));
+        });
+        links.forEach(function (link) {
+          var base = link.getAttribute("data-href") || link.getAttribute("href");
+          link.setAttribute("data-href", base);
+          link.setAttribute("href", base + (base.indexOf("?") >= 0 ? "&" : "?") + "lang=" + language);
+        });
+        if (remember) {
+          try { localStorage.setItem(storageKey, language); } catch (error) {}
+        }
+      }
 
-  function text(id, value) {
-    var node = document.getElementById(id);
-    if (node && node.textContent !== value) node.textContent = value;
-  }
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          apply(button.getAttribute("data-set-lang"), true);
+        });
+      });
 
-  function apply(lang, remember) {
-    var meta = META[lang] || META.en;
-    document.documentElement.lang = lang;
-    document.title = meta.title;
-    var desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.setAttribute("content", meta.desc);
-
-    var mains = document.querySelectorAll("main[data-lang]");
-    for (var i = 0; i < mains.length; i++) {
-      mains[i].hidden = mains[i].getAttribute("data-lang") !== lang;
-    }
-
-    text("nav-privacy", meta.navPrivacy);
-    text("nav-support", meta.navSupport);
-    text("foot-tag", meta.tag);
-    text("foot-a", meta.footA);
-    text("foot-b", meta.footB);
-    var siteNav = document.getElementById("sitenav");
-    if (siteNav) siteNav.setAttribute("aria-label", meta.navSite);
-    var langGroup = document.getElementById("langswitch");
-    if (langGroup) langGroup.setAttribute("aria-label", meta.navLang);
-
-    var buttons = document.querySelectorAll("#langswitch button[data-lang]");
-    for (var j = 0; j < buttons.length; j++) {
-      buttons[j].setAttribute("aria-pressed", buttons[j].getAttribute("data-lang") === lang ? "true" : "false");
-    }
-
-    // Keep the language when moving between the two pages, by click or by copy.
-    var links = document.querySelectorAll('a[href^="index.html"], a[href^="support.html"]');
-    for (var k = 0; k < links.length; k++) {
-      var page = links[k].getAttribute("href").split("?")[0];
-      links[k].setAttribute("href", lang === "en" ? page : page + "?lang=" + lang);
-    }
-
-    if (remember) {
-      try { localStorage.setItem(KEY, lang); } catch (e) {}
-      try {
-        var url = location.pathname + (lang === "en" ? "" : "?lang=" + lang);
-        history.replaceState(null, "", url);
-      } catch (e) {}
-    }
-  }
-
-  var switcher = document.getElementById("langswitch");
-  if (switcher) {
-    switcher.addEventListener("click", function (event) {
-      var button = event.target.closest ? event.target.closest("button[data-lang]") : null;
-      if (!button) return;
-      apply(button.getAttribute("data-lang"), true);
-    });
-  }
-
-  apply(preferred(), false);
-}());
-</script>
+      var query = new URLSearchParams(window.location.search).get("lang");
+      var saved = null;
+      try { saved = localStorage.getItem(storageKey); } catch (error) {}
+      var device = (navigator.language || "en").slice(0, 2).toLowerCase();
+      var initial = (query || saved || (languages.indexOf(device) >= 0 ? device : "en")).toLowerCase();
+      apply(initial, false);
+    })();
+  </script>
 </body>
 </html>
