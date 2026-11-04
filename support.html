@@ -97,7 +97,8 @@
     .lang { display: none; }
     html[data-lang="en"] .lang[data-lang="en"],
     html[data-lang="de"] .lang[data-lang="de"],
-    html[data-lang="fr"] .lang[data-lang="fr"] { display: block; }
+    html[data-lang="fr"] .lang[data-lang="fr"],
+    html[data-lang="es"] .lang[data-lang="es"] { display: block; }
 
     .hero { padding: 6px 0 22px; }
     .eyebrow {
@@ -202,6 +203,7 @@
     <span data-lang="en">Skip to content</span>
     <span data-lang="de">Zum Inhalt springen</span>
     <span data-lang="fr">Aller au contenu</span>
+    <span data-lang="es">Ir al contenido</span>
   </a>
 
   <header class="site-header">
@@ -224,16 +226,17 @@
       </a>
       <nav class="site-nav" aria-label="Site">
         <a href="index.html" data-keep-lang>
-          <span data-lang="en">Privacy</span><span data-lang="de">Datenschutz</span><span data-lang="fr">Confidentialité</span>
+          <span data-lang="en">Privacy</span><span data-lang="de">Datenschutz</span><span data-lang="fr">Confidentialité</span><span data-lang="es">Privacidad</span>
         </a>
         <a href="support.html" data-keep-lang aria-current="page">
-          <span data-lang="en">Support</span><span data-lang="de">Support</span><span data-lang="fr">Assistance</span>
+          <span data-lang="en">Support</span><span data-lang="de">Support</span><span data-lang="fr">Assistance</span><span data-lang="es">Soporte</span>
         </a>
       </nav>
       <div class="lang-switch" role="group" aria-label="Language">
         <button type="button" data-set-lang="en" lang="en" aria-pressed="true">EN</button>
         <button type="button" data-set-lang="de" lang="de" aria-pressed="false">DE</button>
         <button type="button" data-set-lang="fr" lang="fr" aria-pressed="false">FR</button>
+        <button type="button" data-set-lang="es" lang="es" aria-pressed="false">ES</button>
       </div>
     </div>
   </header>
@@ -406,17 +409,22 @@
           <summary>How do I set up AI lookup?</summary>
           <div class="body">
             <p>
-              Open <strong>Settings → AI lookup</strong> and choose a service: ChatGPT (the default),
-              Claude, Perplexity, Microsoft Copilot, Brave Search, LocalGemma, or a custom URL. In
-              the meal form, tap <strong>Estimate with AI</strong>, check the question, then
+              Open <strong>Settings → AI lookup</strong>. Pocket LLMG — a local app by the same
+              developer — is the default; Pocket LLM, ChatGPT, Claude, Perplexity, Microsoft Copilot,
+              Brave Search and a custom URL are also available. In the meal form, tap
+              <strong>Estimate with AI</strong>, check the question, then
               <strong>Copy question</strong> or <strong>Open the AI</strong>. Paste the answer back
               and tap <strong>Read reply</strong>.
             </p>
             <p>
               Spendly Food Track sends nothing itself and stores no API key. An online service
               receives the question under its own privacy policy; a local model keeps it on the
-              device. If a service does not open, copy the question instead, or point the custom URL
-              at an app you have installed.
+              device. Pocket LLM and Pocket LLMG are local apps by the same developer; they run on
+              the device and record nothing. If Pocket LLMG is not installed, the app offers the
+              App Store, another assistant, or copying the question. The apps are on the App Store:
+              <a href="https://apps.apple.com/us/app/pocket-llmg/id6811747722">Pocket LLMG</a> and
+              <a href="https://apps.apple.com/us/app/pocket-llm-chat/id6805865627">Pocket LLM</a>. If a service does not open, copy
+              the question instead, or point the custom URL at an app you have installed.
             </p>
           </div>
         </details>
@@ -656,11 +664,19 @@
           <summary>Wie richte ich die KI-Abfrage ein?</summary>
           <div class="body">
             <p>
-              Öffne <strong>Einstellungen → KI-Abfrage</strong> und wähle einen Dienst: ChatGPT
-              (Standard), Claude, Perplexity, Microsoft Copilot, Brave Search, LocalGemma oder eine
-              eigene URL. Tippe im Mahlzeiten-Formular auf <strong>Mit KI schätzen</strong>, prüfe
+              Öffne <strong>Einstellungen → KI-Abfrage</strong>. Standard ist Pocket LLMG — eine
+              lokale App desselben Entwicklers; Pocket LLM, ChatGPT, Claude, Perplexity, Microsoft
+              Copilot, Brave Search und eine eigene URL stehen ebenfalls zur Wahl. Tippe im
+              Mahlzeiten-Formular auf <strong>Mit KI schätzen</strong>, prüfe
               die Frage und dann <strong>Frage kopieren</strong> oder <strong>KI öffnen</strong>.
               Füge die Antwort ein und tippe auf <strong>Antwort lesen</strong>.
+            </p>
+            <p>
+              Pocket LLM und Pocket LLMG sind lokale Apps desselben Entwicklers; sie laufen auf dem
+              Gerät und zeichnen nichts auf. Ist Pocket LLMG nicht installiert, bietet die App den
+              App Store, eine andere KI oder das Kopieren der Frage an. Die Apps gibt es im App Store:
+              <a href="https://apps.apple.com/us/app/pocket-llmg/id6811747722">Pocket LLMG</a> und
+              <a href="https://apps.apple.com/us/app/pocket-llm-chat/id6805865627">Pocket LLM</a>.
             </p>
             <p>
               Spendly Food Track sendet nichts selbst und speichert keinen API-Schlüssel. Ein
@@ -907,12 +923,20 @@
           <summary>Comment configurer la recherche IA ?</summary>
           <div class="body">
             <p>
-              Ouvrez <strong>Réglages → Recherche IA</strong> et choisissez un service : ChatGPT
-              (par défaut), Claude, Perplexity, Microsoft Copilot, Brave Search, LocalGemma ou une URL
-              personnalisée. Dans le formulaire de repas, touchez <strong>Estimer avec l'IA</strong>,
+              Ouvrez <strong>Réglages → Recherche IA</strong>. Pocket LLMG — une app locale du même
+              développeur — est le choix par défaut ; Pocket LLM, ChatGPT, Claude, Perplexity,
+              Microsoft Copilot, Brave Search et une URL personnalisée restent disponibles. Dans le
+              formulaire de repas, touchez <strong>Estimer avec l'IA</strong>,
               vérifiez la question, puis <strong>Copier la question</strong> ou
               <strong>Ouvrir l'IA</strong>. Collez la réponse et touchez
               <strong>Lire la réponse</strong>.
+            </p>
+            <p>
+              Pocket LLM et Pocket LLMG sont des apps locales du même développeur ; elles
+              fonctionnent sur l'appareil et n'enregistrent rien. Si Pocket LLMG n'est pas installé,
+              l'app propose l'App Store, une autre IA ou la copie de la question. Les apps sont sur
+              l'App Store : <a href="https://apps.apple.com/us/app/pocket-llmg/id6811747722">Pocket LLMG</a>
+              et <a href="https://apps.apple.com/us/app/pocket-llm-chat/id6805865627">Pocket LLM</a>.
             </p>
             <p>
               Spendly Food Track n'envoie rien lui-même et ne stocke aucune clé API. Un service en
@@ -987,6 +1011,267 @@
         stocke et où.
       </div>
     </section>
+
+    <!-- ================================================================ ES -->
+    <section class="lang" data-lang="es" lang="es">
+      <div class="hero">
+        <p class="eyebrow">Soporte</p>
+        <h1>¿Cómo podemos ayudarte?</h1>
+        <p class="lede">
+          Spendly Food Track lo desarrolla y mantiene un solo desarrollador. Escribe en español,
+          inglés, alemán o francés y recibirás respuesta, normalmente en dos días laborables.
+        </p>
+      </div>
+
+      <div class="contact">
+        <div class="contact-text">
+          <h2>Soporte por correo</h2>
+          <p>
+            Incluye el modelo de tu iPhone o iPad, la versión de iOS, la versión de la app (en
+            «Acerca de») y qué estabas haciendo justo antes del problema.
+          </p>
+        </div>
+        <a class="button" href="mailto:vegaodm@outlook.com?subject=Spendly%20Food%20Track%20soporte">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+          </svg>
+          vegaodm@outlook.com
+        </a>
+      </div>
+
+      <div class="card">
+        <h2>Para empezar</h2>
+        <ul>
+          <li><strong>Registrar una comida:</strong> Registro → <strong>+</strong> → Añadir comida, elige un alimento, indica gramos o porciones y guarda.</li>
+          <li><strong>Añadir un alimento que falta:</strong> Ajustes → Categorías → <strong>+</strong>, o importa un archivo CSV/JSON.</li>
+          <li><strong>Cambiar tu objetivo:</strong> Ajustes → Objetivos.</li>
+          <li><strong>Copia de seguridad:</strong> Ajustes → Copia de seguridad (membresía de por vida).</li>
+        </ul>
+        <ul class="req" aria-label="Requisitos">
+          <li>iOS 26 o posterior</li>
+          <li>iPhone y iPad</li>
+          <li>Sin cuenta</li>
+          <li>Funciona sin conexión</li>
+        </ul>
+      </div>
+
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq">
+        <details>
+          <summary>¿Cómo registro algo que he comido?</summary>
+          <div class="body">
+            <p>
+              Abre <strong>Registro</strong> y toca <strong>+</strong> →
+              <strong>Añadir comida</strong>. Elige un alimento, indica la cantidad en gramos (o
+              cambia a porciones si el alimento tiene una), selecciona la comida y la hora, y añade
+              si quieres una nota, una foto o una nota de voz. Al guardar, la entrada aparece en el
+              día seleccionado y cuenta para tu objetivo.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Falta un alimento. ¿Y ahora?</summary>
+          <div class="body">
+            <p>
+              Créalo tú: <strong>Ajustes → Categorías → +</strong>. Introduce los valores por 100 g
+              del envase; solo el nombre es obligatorio. También puedes tocar
+              <strong>Preguntar a una IA</strong> en el selector de alimentos y pegar la respuesta,
+              o importar un archivo CSV/JSON desde
+              <strong>Ajustes → Categorías → Importar biblioteca</strong>.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Por qué cambiaron entradas anteriores al editar un alimento?</summary>
+          <div class="body">
+            <p>
+              Las entradas leen los valores nutricionales actuales del alimento, así que corregir un
+              alimento también corrige el historial. Es intencionado: un valor equivocado no debe
+              seguir equivocado en filas antiguas. Si quieres conservar los valores anteriores,
+              duplica el alimento antes de editarlo. Un alimento que ya no uses puede archivarse en
+              lugar de borrarse, y las entradas conservan su nombre y sus valores.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Gramos, porciones o ambos?</summary>
+          <div class="body">
+            <p>
+              Todo se guarda por 100 g. Si un alimento tiene tamaño de porción (por ejemplo, una
+              rebanada = 43 g), el formulario ofrece un interruptor de porciones. La porción se
+              multiplica por los gramos de la porción antes de calcular los valores nutricionales.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cómo se calcula mi objetivo de calorías?</summary>
+          <div class="body">
+            <p>
+              A partir del perfil en <strong>Ajustes → Objetivos</strong>: Mifflin-St Jeor para el
+              metabolismo basal, multiplicado por tu nivel de actividad. Puedes sustituir el
+              resultado por tu propio objetivo. Los objetivos de macros son gramos al día, y el
+              reparto por comidas decide qué parte de cada macro corresponde al desayuno, la comida,
+              la cena y los tentempiés.
+            </p>
+            <p>
+              Calorías restantes = objetivo − comido + ejercicio registrado. El ejercicio se
+              introduce a mano; la app no lee HealthKit.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Qué es gratis y qué necesita la membresía de por vida?</summary>
+          <div class="body">
+            <p>
+              Gratis: registrar comidas, fotos y notas de voz, la biblioteca de alimentos, los
+              objetivos, el ejercicio, las estadísticas del día y la importación/exportación de la
+              biblioteca. La membresía de por vida (4,99 US$, pago único) desbloquea las
+              estadísticas de semana, mes y año y la copia de seguridad, exportación e importación
+              de la base de datos.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cómo restauro mi compra en un dispositivo nuevo?</summary>
+          <div class="body">
+            <p>
+              Instala la app, abre <strong>Ajustes → Membresía → Restaurar compras</strong> e inicia
+              sesión con el mismo ID de Apple de la compra. Si no encuentra nada, comprueba que usas
+              esa cuenta. El uso compartido en familia no está activado para este producto.
+            </p>
+            <p>
+              Los reembolsos los gestiona Apple:
+              <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cómo funcionan las copias de seguridad?</summary>
+          <div class="body">
+            <p>
+              <strong>Ajustes → Copia de seguridad → Exportar base de datos</strong> crea el archivo
+              SQLite y abre la hoja de compartir. Guárdalo en Archivos o iCloud Drive. Al importar,
+              primero se valida el archivo y luego se pide confirmación, porque reemplaza todo en el
+              dispositivo. La base anterior se conserva en <code>FoodTrack/Backups</code> dentro de
+              Archivos.
+            </p>
+            <p>
+              Una copia contiene solo la base de datos. Las fotos y grabaciones están en
+              <code>FoodTrack/Photos</code> y <code>FoodTrack/Audio</code>; cópialas por separado si
+              quieres llevarlas a otro dispositivo.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Dónde están mis fotos y grabaciones?</summary>
+          <div class="body">
+            <p>
+              En la carpeta Documentos de la app, visible en <strong>Archivos → En mi iPhone →
+              Spendly Food → FoodTrack</strong>. Las fotos son archivos JPEG en
+              <code>Photos/AAAA/MM</code>; las notas de voz son archivos M4A con marca de tiempo en
+              <code>Audio</code>. Al eliminar una entrada se eliminan sus archivos.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cómo configuro la consulta de IA?</summary>
+          <div class="body">
+            <p>
+              Abre <strong>Ajustes → Consulta de IA</strong>. Pocket LLMG —una app local del mismo
+              desarrollador— es la opción predeterminada; también están Pocket LLM, ChatGPT, Claude,
+              Perplexity, Microsoft Copilot, Brave Search y una URL personalizada. En el formulario de
+              comida, toca
+              <strong>Estimar con IA</strong>, revisa la pregunta y luego
+              <strong>Copiar pregunta</strong> o <strong>Abrir la IA</strong>. Pega la respuesta y
+              toca <strong>Leer respuesta</strong>.
+            </p>
+            <p>
+              Pocket LLM y Pocket LLMG son apps locales del mismo desarrollador; funcionan en el
+              dispositivo y no registran nada. Si Pocket LLMG no está instalada, la app ofrece la
+              App Store, otra IA o copiar la pregunta. Las apps están en la App Store:
+              <a href="https://apps.apple.com/us/app/pocket-llmg/id6811747722">Pocket LLMG</a> y
+              <a href="https://apps.apple.com/us/app/pocket-llm-chat/id6805865627">Pocket LLM</a>.
+            </p>
+            <p>
+              Spendly Food Track no envía nada por sí mismo ni guarda claves de API. Un servicio en
+              línea recibe la pregunta según su propia política de privacidad; un modelo local la
+              mantiene en el dispositivo. Si un servicio no se abre, copia la pregunta o indica en la
+              URL personalizada una app que tengas instalada.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>La cámara o el micrófono no están disponibles.</summary>
+          <div class="body">
+            <p>
+              Spendly Food Track pide cada permiso solo cuando lo usas. Si lo denegaste antes,
+              actívalo en <strong>Ajustes de iOS → Spendly Food</strong>. Elegir una foto de la
+              fototeca usa el selector del sistema y no necesita ningún permiso.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cómo empiezo de cero o lo borro todo?</summary>
+          <div class="body">
+            <p>
+              <strong>Ajustes → Eliminar todos los datos</strong> quita comidas, ejercicio, fotos,
+              grabaciones y alimentos propios, y conserva la biblioteca de referencia y tus
+              objetivos. Eliminar la app borra todo su contenedor. Una copia exportada es un archivo
+              tuyo: bórralo tú mismo en Archivos.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Qué significa «Recuperación de la base de datos»?</summary>
+          <div class="body">
+            <p>
+              La base guardada no se pudo abrir, así que la app empieza vacía en esta sesión. Los
+              registros existentes no se eliminaron. Exporta una copia si puedes, reinstala la app o
+              contacta con soporte con la versión y el mensaje que viste.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cómo cambio el idioma?</summary>
+          <div class="body">
+            <p>
+              <strong>Ajustes → Idioma</strong>: sigue el idioma del dispositivo o fija inglés,
+              alemán, francés o español. El cambio se aplica de inmediato a toda la app.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Algo ha fallado. ¿Cómo ayudo a diagnosticarlo?</summary>
+          <div class="body">
+            <p>
+              <strong>Ajustes → Datos → Compartir diagnóstico</strong> comparte el registro local.
+              Contiene errores y eventos de mantenimiento de la app, no tus notas ni valores
+              nutricionales. Describe qué estabas haciendo cuando ocurrió.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="note">
+        Los valores nutricionales son estimaciones y no constituyen consejo médico. La
+        <a href="index.html" data-keep-lang>política de privacidad</a> describe qué guarda la app y
+        dónde.
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -995,26 +1280,28 @@
       <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a>
       <span class="sep"></span>
       <a href="index.html" data-keep-lang>
-        <span data-lang="en">Privacy</span><span data-lang="de">Datenschutz</span><span data-lang="fr">Confidentialité</span>
+        <span data-lang="en">Privacy</span><span data-lang="de">Datenschutz</span><span data-lang="fr">Confidentialité</span><span data-lang="es">Privacidad</span>
       </a>
       <a href="support.html" data-keep-lang aria-current="page">
-        <span data-lang="en">Support</span><span data-lang="de">Support</span><span data-lang="fr">Assistance</span>
+        <span data-lang="en">Support</span><span data-lang="de">Support</span><span data-lang="fr">Assistance</span><span data-lang="es">Soporte</span>
       </a>
     </div>
   </footer>
 
   <script>
     (function () {
-      var languages = ["en", "de", "fr"];
+      var languages = ["en", "de", "fr", "es"];
       var titles = {
         en: "Support — Spendly Food Track",
         de: "Support — Spendly Food Track",
-        fr: "Assistance — Spendly Food Track"
+        fr: "Assistance — Spendly Food Track",
+        es: "Soporte — Spendly Food Track"
       };
       var descriptions = {
         en: "Support for Spendly Food Track: how to record a meal, add foods, manage goals and backups, restore a purchase, and reach the developer.",
         de: "Support für Spendly Food Track: Mahlzeiten erfassen, Lebensmittel anlegen, Ziele und Sicherungen verwalten, Käufe wiederherstellen und den Entwickler erreichen.",
-        fr: "Assistance pour Spendly Food Track : enregistrer un repas, ajouter des aliments, gérer objectifs et sauvegardes, restaurer un achat et contacter le développeur."
+        fr: "Assistance pour Spendly Food Track : enregistrer un repas, ajouter des aliments, gérer objectifs et sauvegardes, restaurer un achat et contacter le développeur.",
+        es: "Soporte de Spendly Food Track: registrar comidas, añadir alimentos, gestionar objetivos y copias, restaurar una compra y contactar con el desarrollador."
       };
       var storageKey = "spendly-food-language";
       var root = document.documentElement;

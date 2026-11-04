@@ -93,7 +93,8 @@
     .lang { display: none; }
     html[data-lang="en"] .lang[data-lang="en"],
     html[data-lang="de"] .lang[data-lang="de"],
-    html[data-lang="fr"] .lang[data-lang="fr"] { display: block; }
+    html[data-lang="fr"] .lang[data-lang="fr"],
+    html[data-lang="es"] .lang[data-lang="es"] { display: block; }
 
     .hero { padding: 6px 0 22px; }
     .eyebrow {
@@ -157,6 +158,7 @@
     <span data-lang="en">Skip to content</span>
     <span data-lang="de">Zum Inhalt springen</span>
     <span data-lang="fr">Aller au contenu</span>
+    <span data-lang="es">Ir al contenido</span>
   </a>
 
   <header class="site-header">
@@ -179,16 +181,17 @@
       </a>
       <nav class="site-nav" aria-label="Site">
         <a href="index.html" data-keep-lang aria-current="page">
-          <span data-lang="en">Privacy</span><span data-lang="de">Datenschutz</span><span data-lang="fr">Confidentialité</span>
+          <span data-lang="en">Privacy</span><span data-lang="de">Datenschutz</span><span data-lang="fr">Confidentialité</span><span data-lang="es">Privacidad</span>
         </a>
         <a href="support.html" data-keep-lang>
-          <span data-lang="en">Support</span><span data-lang="de">Support</span><span data-lang="fr">Assistance</span>
+          <span data-lang="en">Support</span><span data-lang="de">Support</span><span data-lang="fr">Assistance</span><span data-lang="es">Soporte</span>
         </a>
       </nav>
       <div class="lang-switch" role="group" aria-label="Language">
         <button type="button" data-set-lang="en" lang="en" aria-pressed="true">EN</button>
         <button type="button" data-set-lang="de" lang="de" aria-pressed="false">DE</button>
         <button type="button" data-set-lang="fr" lang="fr" aria-pressed="false">FR</button>
+        <button type="button" data-set-lang="es" lang="es" aria-pressed="false">ES</button>
       </div>
     </div>
   </header>
@@ -286,18 +289,23 @@
 
       <h2>AI lookup</h2>
       <p>
-        Settings lets you choose where a nutrition question goes: ChatGPT, Claude, Perplexity,
-        Microsoft Copilot, Brave Search, a local model such as LocalGemma, or a custom URL. When you
-        tap “Open the AI”, the app opens that service — a website in your browser, or an installed
-        app through its own URL scheme — with a question about the food and portion you are entering.
+        Settings lets you choose where a nutrition question goes. Pocket LLMG — a local app by the
+        same developer — is the default; ChatGPT, Claude, Perplexity, Microsoft Copilot, Brave
+        Search, Pocket LLM or a custom URL are also available. When you tap “Open the AI”, the app
+        opens that service — a website in your browser, or an installed app through its own URL
+        scheme — with a question about the food and portion you are entering.
         The question contains the food name, the grams and the nutrient fields being requested.
+      </p>
+      <p>
+        Pocket LLM and Pocket LLMG are local apps made by the same developer as Spendly Food Track.
+        They run on your device and do not record your questions or any other personal data.
       </p>
       <p>
         Spendly Food Track itself sends nothing, stores no API key and never receives a reply
         automatically: you copy the question into any AI, then paste the answer back yourself. If you
         choose an online service, that service receives the question and its own privacy policy
         applies; do not put sensitive personal information into a food name or note. If you choose
-        LocalGemma or another on-device model, the question stays on your device.
+        Pocket LLM, Pocket LLMG or another on-device model, the question stays on your device.
       </p>
 
       <h2>Purchases</h2>
@@ -354,7 +362,7 @@
       <h2>Health notice</h2>
       <p>
         Calories, macros and micronutrients — including the bundled reference foods and anything
-        estimated by a local model — are approximations. They are not medical advice, diagnosis or
+        estimated by an AI — are approximations. They are not medical advice, diagnosis or
         treatment. Consult a qualified professional for dietary or medical decisions.
       </p>
 
@@ -456,17 +464,21 @@
 
       <h2>KI-Abfrage</h2>
       <p>
-        In den Einstellungen wählst du, wohin eine Nährwertfrage geht: ChatGPT, Claude, Perplexity,
-        Microsoft Copilot, Brave Search, ein lokales Modell wie LocalGemma oder eine eigene URL.
-        Tippst du auf „KI öffnen“, öffnet die App diesen Dienst – eine Website im Browser oder eine
-        installierte App über ihr URL-Schema – mit einer Frage zum eingegebenen Lebensmittel und zur
-        Portion. Die Frage enthält Name, Grammzahl und die gewünschten Nährstofffelder.
+        In den Einstellungen wählst du, wohin eine Nährwertfrage geht. Standard ist Pocket LLMG –
+        eine lokale App desselben Entwicklers; außerdem stehen ChatGPT, Claude, Perplexity,
+        Microsoft Copilot, Brave Search, Pocket LLM oder eine eigene URL zur Wahl. Tippst du auf
+        „KI öffnen“, öffnet die App diesen Dienst – eine Website im Browser oder eine installierte
+        App über ihr URL-Schema – mit einer Frage zum eingegebenen Lebensmittel und zur Portion. Die Frage enthält Name, Grammzahl und die gewünschten Nährstofffelder.
+      </p>
+      <p>
+        Pocket LLM und Pocket LLMG sind lokale Apps desselben Entwicklers wie Spendly Food Track.
+        Sie laufen auf deinem Gerät und zeichnen weder deine Fragen noch andere persönliche Daten auf.
       </p>
       <p>
         Spendly Food Track selbst sendet nichts, speichert keinen API-Schlüssel und erhält keine
         Antwort automatisch: Du kopierst die Frage in eine beliebige KI und fügst die Antwort selbst
         ein. Bei einem Online-Dienst erhält dieser die Frage; es gilt seine Datenschutzerklärung.
-        Schreibe keine sensiblen persönlichen Daten in Lebensmittelnamen oder Notizen. Bei LocalGemma
+        Schreibe keine sensiblen persönlichen Daten in Lebensmittelnamen oder Notizen. Bei Pocket LLM, Pocket LLMG
         oder einem anderen lokalen Modell bleibt die Frage auf deinem Gerät.
       </p>
 
@@ -526,7 +538,7 @@
       <h2>Hinweis zur Gesundheit</h2>
       <p>
         Kalorien, Makros und Mikronährstoffe – einschließlich der mitgelieferten Referenzdaten und
-        der Schätzungen eines lokalen Modells – sind Näherungswerte. Sie sind keine medizinische
+        der Schätzungen einer KI – sind Näherungswerte. Sie sind keine medizinische
         Beratung, Diagnose oder Behandlung. Für Ernährungs- oder Gesundheitsentscheidungen wende
         dich an qualifiziertes Fachpersonal.
       </p>
@@ -629,19 +641,24 @@
 
       <h2>Recherche IA</h2>
       <p>
-        Les Réglages déterminent où va une question nutritionnelle : ChatGPT, Claude, Perplexity,
-        Microsoft Copilot, Brave Search, un modèle local comme LocalGemma, ou une URL personnalisée.
-        Quand vous touchez « Ouvrir l'IA », l'app ouvre ce service — un site web dans votre
-        navigateur, ou une app installée via son schéma d'URL — avec une question sur l'aliment et la
-        portion saisis. La question contient le nom, les grammes et les champs de nutriments demandés.
+        Les Réglages déterminent où va une question nutritionnelle. Pocket LLMG — une app locale du
+        même développeur — est le choix par défaut ; ChatGPT, Claude, Perplexity, Microsoft Copilot,
+        Brave Search, Pocket LLM ou une URL personnalisée restent disponibles. Quand vous touchez
+        « Ouvrir l'IA », l'app ouvre ce service — un site web dans votre navigateur, ou une app
+        installée via son schéma d'URL — avec une question sur l'aliment et la portion saisis. La question contient le nom, les grammes et les champs de nutriments demandés.
+      </p>
+      <p>
+        Pocket LLM et Pocket LLMG sont des apps locales du même développeur que Spendly Food Track.
+        Elles fonctionnent sur votre appareil et n'enregistrent ni vos questions ni d'autres données
+        personnelles.
       </p>
       <p>
         Spendly Food Track n'envoie rien lui-même, ne stocke aucune clé API et ne reçoit jamais de
         réponse automatiquement : vous copiez la question dans n'importe quelle IA, puis vous collez
         la réponse vous-même. Avec un service en ligne, celui-ci reçoit la question et sa propre
         politique de confidentialité s'applique ; n'inscrivez pas de données personnelles sensibles
-        dans un nom d'aliment ou une note. Avec LocalGemma ou un autre modèle local, la question reste
-        sur votre appareil.
+        dans un nom d'aliment ou une note. Avec Pocket LLM, Pocket LLMG ou un autre modèle local, la question
+        reste sur votre appareil.
       </p>
 
       <h2>Achats</h2>
@@ -699,7 +716,7 @@
       <h2>Avertissement santé</h2>
       <p>
         Les calories, macros et micronutriments — y compris les aliments de référence fournis et
-        toute estimation d'un modèle local — sont des approximations. Ils ne constituent pas un avis
+        toute estimation d'une IA — sont des approximations. Ils ne constituent pas un avis
         médical, un diagnostic ou un traitement. Consultez un professionnel qualifié pour toute
         décision alimentaire ou médicale.
       </p>
@@ -710,6 +727,185 @@
         Voir aussi la <a href="support.html" data-keep-lang>page d'assistance</a>.
       </p>
     </section>
+
+    <!-- ================================================================ ES -->
+    <section class="lang" data-lang="es" lang="es">
+      <div class="hero">
+        <p class="eyebrow">Privacidad</p>
+        <h1>Tu diario de comidas se queda en tu dispositivo.</h1>
+        <p class="lede">
+          Spendly Food Track es un diario de comidas local. No hay cuenta que crear, ni analíticas,
+          ni publicidad y ningún SDK de terceros. Tus comidas, fotos, notas de voz, objetivos y tu
+          biblioteca de alimentos se guardan en tu iPhone o iPad, y el desarrollador nunca los recibe.
+        </p>
+        <p class="meta">En vigor el 3 de noviembre de 2026 · Versión 1.0.0 · iPhone y iPad</p>
+      </div>
+
+      <div class="card">
+        <h2>De un vistazo</h2>
+        <ul>
+          <li><strong>Sin cuenta.</strong> La app funciona totalmente sin conexión y nunca pide un correo electrónico.</li>
+          <li><strong>Sin seguimiento.</strong> Sin analíticas, identificadores publicitarios, SDK de informes de fallos ni seguimiento entre apps.</li>
+          <li><strong>Sin recopilación.</strong> El desarrollador no recibe ni guarda tus datos en ningún servidor.</li>
+          <li><strong>Sin compartir.</strong> Nada sale del dispositivo salvo que exportes un archivo o entregues explícitamente una pregunta a un servicio de IA que hayas elegido.</li>
+          <li><strong>Compras mediante Apple.</strong> La app solo sabe si la membresía de por vida está comprada; nunca ve datos de pago.</li>
+        </ul>
+      </div>
+
+      <h2>Qué guarda la app en tu dispositivo</h2>
+      <p>
+        Todo lo siguiente se queda dentro del espacio de la app en tu dispositivo. La app no lo sube
+        a ningún sitio.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Datos</th><th>Contenido</th><th>Ubicación</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Entradas del diario</td>
+              <td>Alimento, porción en gramos, comida, fecha y hora, nota opcional y las calorías y nutrientes derivados de ese alimento.</td>
+              <td>Base de datos SQLite en Application Support</td>
+            </tr>
+            <tr>
+              <td>Biblioteca de alimentos</td>
+              <td>Nombres, categorías, tamaños de porción y valores por 100 g, incluidos los alimentos que creas o importas.</td>
+              <td>Base de datos SQLite</td>
+            </tr>
+            <tr>
+              <td>Objetivos y perfil</td>
+              <td>Sexo, año de nacimiento, altura, peso, nivel de actividad, objetivo de calorías, objetivos de macros y el reparto entre comidas.</td>
+              <td>Base de datos SQLite</td>
+            </tr>
+            <tr>
+              <td>Ejercicio</td>
+              <td>Nombre, duración y las calorías que escribes. La app no lee HealthKit.</td>
+              <td>Base de datos SQLite</td>
+            </tr>
+            <tr>
+              <td>Fotos y notas de voz</td>
+              <td>Solo las fotos que eliges o tomas y las grabaciones que haces, guardadas como JPEG y M4A y vinculadas a una entrada.</td>
+              <td>Documents/FoodTrack/{Photos,Audio}</td>
+            </tr>
+            <tr>
+              <td>Diagnóstico</td>
+              <td>Un registro de texto local de errores y eventos de mantenimiento, como una importación fallida. Nunca contiene tus notas ni valores nutricionales.</td>
+              <td>Documents/FoodTrack/Diagnostics</td>
+            </tr>
+            <tr>
+              <td>Preferencias</td>
+              <td>Idioma de la interfaz, la plantilla de URL del modelo local y un indicador de membresía en caché para mostrar la pantalla correcta antes de que responda StoreKit.</td>
+              <td>UserDefaults</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        Si tienes activada la copia de seguridad de iCloud en iOS, la copia de tu dispositivo puede
+        incluir los datos de la app, fotos y grabaciones incluidas. Esa copia la crea y cifra Apple
+        con tu ID de Apple; el desarrollador no tiene acceso. Puedes excluir la app en Ajustes ›
+        ID de Apple › iCloud › Gestionar almacenamiento › Copias de seguridad.
+      </div>
+
+      <h2>Permisos</h2>
+      <ul>
+        <li><strong>Cámara</strong>: se pide solo cuando decides fotografiar una comida; la imagen se guarda dentro de la app.</li>
+        <li><strong>Micrófono</strong>: se pide solo cuando grabas una nota de voz; la grabación se guarda dentro de la app.</li>
+        <li><strong>Fototeca</strong>: se usa el selector del sistema, así que la app solo recibe la foto que eliges. No tiene acceso a tu biblioteca.</li>
+        <li>No se solicitan permisos de ubicación, contactos, calendario, salud, movimiento ni notificaciones.</li>
+      </ul>
+
+      <h2>Consulta de IA</h2>
+      <p>
+        En Ajustes eliges adónde va una pregunta nutricional. Pocket LLMG —una app local del mismo
+        desarrollador— es la opción predeterminada; también están disponibles ChatGPT, Claude,
+        Perplexity, Microsoft Copilot, Brave Search, Pocket LLM o una URL personalizada. Al tocar
+        «Abrir la IA», la app abre ese servicio —un sitio web en tu navegador, o una app instalada
+        mediante su esquema de URL— con una pregunta sobre el alimento y la porción que estás
+        registrando. La pregunta incluye el nombre, los gramos y los campos de
+        nutrientes solicitados.
+      </p>
+      <p>
+        Pocket LLM y Pocket LLMG son apps locales del mismo desarrollador que Spendly Food Track.
+        Funcionan en tu dispositivo y no registran tus preguntas ni ningún otro dato personal.
+      </p>
+      <p>
+        Spendly Food Track no envía nada por sí mismo, no guarda ninguna clave de API y nunca recibe
+        una respuesta automáticamente: copias la pregunta en cualquier IA y pegas la respuesta tú
+        mismo. Si eliges un servicio en línea, ese servicio recibe la pregunta y se aplica su propia
+        política de privacidad; no incluyas datos personales sensibles en el nombre de un alimento ni
+        en una nota. Con Pocket LLM, Pocket LLMG u otro modelo en el dispositivo, la pregunta no sale
+        del dispositivo.
+      </p>
+
+      <h2>Compras</h2>
+      <p>
+        La membresía de por vida es una compra única y no consumible, procesada íntegramente por Apple
+        mediante StoreKit. Spendly Food Track solo sabe si el producto está comprado. Nunca ve tu
+        nombre, tu tarjeta de pago ni tu ID de Apple. A la transacción se le aplica la política de
+        privacidad de Apple.
+      </p>
+
+      <h2>Lo que la app no hace</h2>
+      <ul>
+        <li>Sin cuenta, inicio de sesión, sincronización en la nube ni servidor de ningún tipo.</li>
+        <li>Sin SDK de analíticas, publicidad, atribución, informes de fallos ni seguimiento.</li>
+        <li>Sin vender, alquilar ni compartir datos con terceros.</li>
+        <li>Sin subidas en segundo plano ni peticiones de red para el contenido de tu diario.</li>
+        <li>Sin leer tu fototeca, contactos, ubicación ni datos de salud.</li>
+      </ul>
+
+      <h2>Tu control y la eliminación</h2>
+      <ul>
+        <li>Edita o elimina cualquier entrada, foto o grabación del diario.</li>
+        <li>Elimina o archiva alimentos de la biblioteca. Un alimento usado por entradas anteriores se archiva en lugar de borrarse, para que el historial conserve sus valores.</li>
+        <li>Usa <strong>Ajustes › Eliminar todos los datos</strong> para quitar comidas, ejercicio, fotos, grabaciones y alimentos propios, manteniendo la biblioteca de referencia y tus objetivos.</li>
+        <li>Eliminar la app borra su espacio, incluida la base de datos y los medios, según el comportamiento de iOS.</li>
+        <li>Las copias de seguridad que exportes son tus archivos: bórralas de Archivos o iCloud Drive cuando ya no las necesites.</li>
+      </ul>
+      <p>
+        Como el desarrollador no guarda datos personales, no hay nada en un servidor que consultar,
+        corregir ni borrar en tu nombre. Si estás en el EEE, el Reino Unido, California u otra región
+        con derechos de protección de datos, los controles del dispositivo anteriores los cubren; aun
+        así puedes escribir a la dirección de abajo con cualquier duda.
+      </p>
+
+      <h2>Seguridad</h2>
+      <p>
+        Los datos de la app están protegidos por el espacio aislado de iOS y por el código y el
+        cifrado de tu dispositivo. La app no añade su propia capa de cifrado. Una copia de seguridad
+        exportada es un archivo SQLite sin cifrar: guárdala en un lugar de confianza y elimina las
+        copias que ya no necesites.
+      </p>
+
+      <h2>Menores</h2>
+      <p>
+        La app no está dirigida a menores y no recopila datos personales de nadie. Un padre, madre o
+        tutor puede eliminar todos los datos del dispositivo con los controles anteriores.
+      </p>
+
+      <h2>Cambios en esta política</h2>
+      <p>
+        Esta política puede actualizarse cuando cambie la app. La fecha de arriba refleja siempre la
+        versión vigente y los cambios importantes se indican en las notas de la versión de la App Store.
+      </p>
+
+      <h2>Aviso de salud</h2>
+      <p>
+        Las calorías, los macros y los micronutrientes —incluidos los alimentos de referencia
+        incluidos y cualquier estimación de una IA— son aproximaciones. No son consejo médico,
+        diagnóstico ni tratamiento. Consulta a un profesional cualificado para decisiones dietéticas
+        o médicas.
+      </p>
+
+      <h2>Contacto</h2>
+      <p>
+        Dudas sobre privacidad: <a href="mailto:vegaodm@outlook.com?subject=Spendly%20Food%20Track%20privacidad">vegaodm@outlook.com</a>.
+        Consulta también la <a href="support.html" data-keep-lang>página de soporte</a>.
+      </p>
+    </section>
   </main>
 
   <footer>
@@ -718,26 +914,28 @@
       <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a>
       <span class="sep"></span>
       <a href="index.html" data-keep-lang aria-current="page">
-        <span data-lang="en">Privacy</span><span data-lang="de">Datenschutz</span><span data-lang="fr">Confidentialité</span>
+        <span data-lang="en">Privacy</span><span data-lang="de">Datenschutz</span><span data-lang="fr">Confidentialité</span><span data-lang="es">Privacidad</span>
       </a>
       <a href="support.html" data-keep-lang>
-        <span data-lang="en">Support</span><span data-lang="de">Support</span><span data-lang="fr">Assistance</span>
+        <span data-lang="en">Support</span><span data-lang="de">Support</span><span data-lang="fr">Assistance</span><span data-lang="es">Soporte</span>
       </a>
     </div>
   </footer>
 
   <script>
     (function () {
-      var languages = ["en", "de", "fr"];
+      var languages = ["en", "de", "fr", "es"];
       var titles = {
         en: "Privacy Policy — Spendly Food Track",
         de: "Datenschutz — Spendly Food Track",
-        fr: "Confidentialité — Spendly Food Track"
+        fr: "Confidentialité — Spendly Food Track",
+        es: "Privacidad — Spendly Food Track"
       };
       var descriptions = {
         en: "Spendly Food Track privacy policy: meals, photos, voice notes and goals stay on your device. No account, no analytics, no advertising, no tracking.",
         de: "Datenschutz von Spendly Food Track: Mahlzeiten, Fotos, Sprachnotizen und Ziele bleiben auf deinem Gerät. Kein Konto, keine Analyse, keine Werbung, kein Tracking.",
-        fr: "Confidentialité de Spendly Food Track : repas, photos, notes vocales et objectifs restent sur votre appareil. Aucun compte, aucune analyse, aucune publicité, aucun suivi."
+        fr: "Confidentialité de Spendly Food Track : repas, photos, notes vocales et objectifs restent sur votre appareil. Aucun compte, aucune analyse, aucune publicité, aucun suivi.",
+        es: "Privacidad de Spendly Food Track: comidas, fotos, notas de voz y objetivos se quedan en tu dispositivo. Sin cuenta, sin analíticas, sin publicidad y sin seguimiento."
       };
       var storageKey = "spendly-food-language";
       var root = document.documentElement;
