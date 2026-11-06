@@ -274,7 +274,8 @@
         <ul>
           <li><strong>Record a meal:</strong> Records → <strong>+</strong> → Add meal, choose a food, enter grams or servings, then Save.</li>
           <li><strong>Add a food that is missing:</strong> Settings → Categories → <strong>+</strong>, or import a CSV/JSON file.</li>
-          <li><strong>Change your target:</strong> Settings → Goals.</li>
+          <li><strong>Set your target:</strong> Settings → Goals (BMR → expenditure → goal), then calibrate it over four weeks.</li>
+          <li><strong>Log your weight:</strong> Records → <strong>+</strong> → Log weight, or tap the weight card under the day summary.</li>
           <li><strong>Back up:</strong> Settings → Backup (Lifetime Membership).</li>
         </ul>
         <ul class="req" aria-label="Requirements">
@@ -339,14 +340,35 @@
           <summary>How is my calorie target calculated?</summary>
           <div class="body">
             <p>
-              From the profile in <strong>Settings → Goals</strong>: Mifflin-St Jeor for basal
-              metabolic rate, multiplied by your activity level. You can override the result with
-              your own target. Macro goals are grams per day, and the meal split decides how much of
-              each macro belongs to breakfast, lunch, dinner and snacks.
+              From the profile in <strong>Settings → Goals</strong>: Mifflin-St Jeor basal metabolic
+              rate — or Katch-McArdle if you know your body-fat percentage — multiplied by your
+              activity level, then adjusted for <strong>Maintain</strong>, <strong>Lose fat</strong>
+              or <strong>Gain muscle</strong>. The deficit or surplus is a share of expenditure,
+              usually 15–25 % and never more than 30 %. You can replace the result with your own
+              target. Macro goals are grams per day, or anchored protein in lightweight mode, and the
+              meal split decides how much of each macro belongs to each meal.
             </p>
             <p>
               Remaining calories = target − what you ate + what you logged as exercise. Exercise is
               entered by hand; the app does not read HealthKit.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I log my weight, and what is the four-week calibration?</summary>
+          <div class="body">
+            <p>
+              Open <strong>Records</strong>, tap <strong>+</strong> → <strong>Log weight</strong>
+              and enter your morning weight. One value per day; logging the same day again replaces
+              it. The card under the day summary shows the latest weight and the seven-day average.
+            </p>
+            <p>
+              <strong>Settings → Goals → 4-week calibration</strong> runs the protocol: weigh in
+              every morning, compare the weekly averages, and change the target by 100–200 kcal if
+              the trend is faster or slower than planned. A week needs at least three mornings to
+              count. Once the trend is stable, lightweight mode anchors protein at 1.6–2.2 g per
+              kilogram and leaves carbohydrates and fat to appetite.
             </p>
           </div>
         </details>
@@ -523,7 +545,8 @@
         <ul>
           <li><strong>Mahlzeit erfassen:</strong> Erfassung → <strong>+</strong> → Mahlzeit hinzufügen, Lebensmittel wählen, Gramm oder Portionen eintragen, sichern.</li>
           <li><strong>Fehlendes Lebensmittel:</strong> Einstellungen → Kategorien → <strong>+</strong> oder eine CSV-/JSON-Datei importieren.</li>
-          <li><strong>Ziel ändern:</strong> Einstellungen → Ziele.</li>
+          <li><strong>Ziel festlegen:</strong> Einstellungen → Ziele (Grundumsatz → Tagesumsatz → Ziel), dann über vier Wochen kalibrieren.</li>
+          <li><strong>Gewicht erfassen:</strong> Erfassung → <strong>+</strong> → Gewicht erfassen, oder auf die Gewichtskarte unter der Tagesübersicht tippen.</li>
           <li><strong>Sicherung:</strong> Einstellungen → Sicherung (Lifetime-Mitgliedschaft).</li>
         </ul>
         <ul class="req" aria-label="Voraussetzungen">
@@ -591,14 +614,38 @@
           <summary>Wie wird mein Kalorienziel berechnet?</summary>
           <div class="body">
             <p>
-              Aus dem Profil unter <strong>Einstellungen → Ziele</strong>: Mifflin-St Jeor für den
-              Grundumsatz, multipliziert mit deinem Aktivitätsniveau. Du kannst das Ergebnis durch
-              ein eigenes Ziel ersetzen. Makroziele sind Gramm pro Tag; die Mahlzeitenverteilung
-              legt fest, welcher Anteil auf Frühstück, Mittagessen, Abendessen und Snacks entfällt.
+              Aus dem Profil unter <strong>Einstellungen → Ziele</strong>: Grundumsatz nach
+              Mifflin-St Jeor – oder Katch-McArdle, wenn du deinen Körperfettanteil kennst –
+              multipliziert mit deinem Aktivitätsniveau und angepasst an
+              <strong>Halten</strong>, <strong>Fett abbauen</strong> oder
+              <strong>Muskeln aufbauen</strong>. Das Defizit oder Plus ist ein Anteil des Umsatzes,
+              üblich sind 15–25 % und nie mehr als 30 %. Du kannst das Ergebnis durch ein eigenes
+              Ziel ersetzen. Makroziele sind Gramm pro Tag oder verankertes Protein im Leichtmodus;
+              die Mahlzeitenverteilung legt fest, welcher Anteil auf Frühstück, Mittagessen,
+              Abendessen und Snacks entfällt.
             </p>
             <p>
               Verbleibende Kalorien = Ziel − Gegessenes + eingetragener Sport. Sport trägst du manuell
               ein; HealthKit wird nicht gelesen.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Wie erfasse ich mein Gewicht, und wie funktioniert die 4-Wochen-Kalibrierung?</summary>
+          <div class="body">
+            <p>
+              Öffne <strong>Erfassung</strong>, tippe auf <strong>+</strong> →
+              <strong>Gewicht erfassen</strong> und trage dein Morgengewicht ein. Ein Wert pro Tag;
+              erneutes Erfassen am selben Tag ersetzt ihn. Die Karte unter der Tagesübersicht zeigt
+              das letzte Gewicht und den 7-Tage-Schnitt.
+            </p>
+            <p>
+              <strong>Einstellungen → Ziele → 4-Wochen-Kalibrierung</strong> führt durch das
+              Protokoll: jeden Morgen wiegen, Wochendurchschnitte vergleichen und das Ziel um
+              100–200 kcal anpassen, wenn der Trend schneller oder langsamer läuft als geplant. Eine
+              Woche zählt ab drei Morgen. Wenn der Trend stabil ist, verankert der Leichtmodus
+              Protein bei 1,6–2,2 g pro Kilogramm und überlässt Kohlenhydrate und Fett dem Appetit.
             </p>
           </div>
         </details>
@@ -783,7 +830,8 @@
         <ul>
           <li><strong>Enregistrer un repas :</strong> Journal → <strong>+</strong> → Ajouter un repas, choisissez un aliment, saisissez les grammes ou les portions, puis Enregistrer.</li>
           <li><strong>Ajouter un aliment manquant :</strong> Réglages → Catégories → <strong>+</strong>, ou importez un fichier CSV/JSON.</li>
-          <li><strong>Modifier l'objectif :</strong> Réglages → Objectifs.</li>
+          <li><strong>Définir l'objectif :</strong> Réglages → Objectifs (métabolisme de base → dépense → objectif), puis calibrez-le sur quatre semaines.</li>
+          <li><strong>Relever le poids :</strong> Journal → <strong>+</strong> → Relever le poids, ou touchez la carte de poids sous le résumé du jour.</li>
           <li><strong>Sauvegarder :</strong> Réglages → Sauvegarde (adhésion à vie).</li>
         </ul>
         <ul class="req" aria-label="Configuration requise">
@@ -850,15 +898,38 @@
           <summary>Comment mon objectif calorique est-il calculé ?</summary>
           <div class="body">
             <p>
-              À partir du profil dans <strong>Réglages → Objectifs</strong> : Mifflin-St Jeor pour le
-              métabolisme de base, multiplié par votre niveau d'activité. Vous pouvez remplacer le
-              résultat par votre propre objectif. Les objectifs de macros sont en grammes par jour, et
-              la répartition par repas décide de la part de chaque macro au petit-déjeuner, déjeuner,
-              dîner et collation.
+              À partir du profil dans <strong>Réglages → Objectifs</strong> : métabolisme de base
+              selon Mifflin-St Jeor — ou Katch-McArdle si vous connaissez votre taux de masse
+              grasse — multiplié par votre niveau d'activité, puis ajusté selon
+              <strong>Maintenir</strong>, <strong>Perdre du gras</strong> ou
+              <strong>Prendre du muscle</strong>. Le déficit ou le surplus est une part de la
+              dépense, en général 15 à 25 % et jamais plus de 30 %. Vous pouvez remplacer le résultat
+              par votre propre objectif. Les objectifs de macros sont en grammes par jour, ou des
+              protéines ancrées en mode léger ; la répartition par repas décide de la part de chaque
+              macro.
             </p>
             <p>
               Calories restantes = objectif − consommé + activité saisie. L'activité est saisie à la
               main ; l'app ne lit pas HealthKit.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Comment relever mon poids, et comment fonctionne la calibration sur 4 semaines ?</summary>
+          <div class="body">
+            <p>
+              Ouvrez <strong>Journal</strong>, touchez <strong>+</strong> →
+              <strong>Relever le poids</strong> et saisissez votre poids du matin. Une valeur par
+              jour ; relever à nouveau le même jour la remplace. La carte sous le résumé du jour
+              affiche le dernier poids et la moyenne sur sept jours.
+            </p>
+            <p>
+              <strong>Réglages → Objectifs → Calibration sur 4 semaines</strong> suit le protocole :
+              pesez-vous chaque matin, comparez les moyennes hebdomadaires et ajustez l'objectif de
+              100 à 200 kcal si la tendance est plus rapide ou plus lente que prévu. Une semaine
+              compte à partir de trois matins. Quand la tendance est stable, le mode léger ancre les
+              protéines à 1,6–2,2 g par kilogramme et laisse les glucides et les lipides à l'appétit.
             </p>
           </div>
         </details>
@@ -1044,7 +1115,8 @@
         <ul>
           <li><strong>Registrar una comida:</strong> Registro → <strong>+</strong> → Añadir comida, elige un alimento, indica gramos o porciones y guarda.</li>
           <li><strong>Añadir un alimento que falta:</strong> Ajustes → Categorías → <strong>+</strong>, o importa un archivo CSV/JSON.</li>
-          <li><strong>Cambiar tu objetivo:</strong> Ajustes → Objetivos.</li>
+          <li><strong>Definir tu objetivo:</strong> Ajustes → Objetivos (metabolismo basal → gasto → objetivo), y calíbralo durante cuatro semanas.</li>
+          <li><strong>Registrar tu peso:</strong> Registro → <strong>+</strong> → Registrar peso, o toca la tarjeta de peso bajo el resumen del día.</li>
           <li><strong>Copia de seguridad:</strong> Ajustes → Copia de seguridad (membresía de por vida).</li>
         </ul>
         <ul class="req" aria-label="Requisitos">
@@ -1111,15 +1183,36 @@
           <summary>¿Cómo se calcula mi objetivo de calorías?</summary>
           <div class="body">
             <p>
-              A partir del perfil en <strong>Ajustes → Objetivos</strong>: Mifflin-St Jeor para el
-              metabolismo basal, multiplicado por tu nivel de actividad. Puedes sustituir el
-              resultado por tu propio objetivo. Los objetivos de macros son gramos al día, y el
-              reparto por comidas decide qué parte de cada macro corresponde al desayuno, la comida,
-              la cena y los tentempiés.
+              A partir del perfil en <strong>Ajustes → Objetivos</strong>: metabolismo basal con
+              Mifflin-St Jeor —o Katch-McArdle si conoces tu porcentaje de grasa corporal—
+              multiplicado por tu nivel de actividad y ajustado según <strong>Mantener</strong>,
+              <strong>Perder grasa</strong> o <strong>Ganar músculo</strong>. El déficit o superávit
+              es una parte del gasto, normalmente 15–25 % y nunca más del 30 %. Puedes sustituir el
+              resultado por tu propio objetivo. Los objetivos de macros son gramos al día, o proteína
+              anclada en modo ligero; el reparto por comidas decide qué parte corresponde a cada una.
             </p>
             <p>
               Calorías restantes = objetivo − comido + ejercicio registrado. El ejercicio se
               introduce a mano; la app no lee HealthKit.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cómo registro mi peso y cómo funciona la calibración de 4 semanas?</summary>
+          <div class="body">
+            <p>
+              Abre <strong>Registro</strong>, toca <strong>+</strong> →
+              <strong>Registrar peso</strong> e introduce tu peso de la mañana. Un valor al día;
+              registrarlo otra vez el mismo día lo sustituye. La tarjeta bajo el resumen del día
+              muestra el último peso y la media de siete días.
+            </p>
+            <p>
+              <strong>Ajustes → Objetivos → Calibración de 4 semanas</strong> sigue el protocolo:
+              pésate cada mañana, compara las medias semanales y ajusta el objetivo en 100–200 kcal
+              si la tendencia va más rápida o más lenta de lo previsto. Una semana cuenta a partir de
+              tres mañanas. Cuando la tendencia es estable, el modo ligero fija la proteína en
+              1,6–2,2 g por kilogramo y deja los carbohidratos y las grasas al apetito.
             </p>
           </div>
         </details>
